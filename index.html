@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Техосмотр • Зелёный стиль</title>
+  <title>Техосмотр • БАШСНАБГАЗ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
@@ -13,334 +13,64 @@
       --text: #232323;
       --menu-height: 68px;
     }
-    body {
-      margin: 0;
-      background: var(--white);
-      color: var(--text);
-      font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
-    }
-    .main-header {
-      background: var(--green);
-      text-align: center;
-      padding-top: 28px;
-      position: relative;
-    }
-    .main-logo {
-      width: 130px;
-      max-width: 36vw;
-      margin-bottom: 10px;
-      filter: drop-shadow(0 4px 10px #0002);
-      z-index: 2;
-      position: relative;
-    }
-    .pattern-wrap {
-      width: 100%;
-      height: 60px;
-      position: relative;
-      overflow: hidden;
-      margin-top: -14px;
-      z-index: 1;
-      line-height: 0;
-    }
-    nav.navbar {
-      background: var(--white);
-      box-shadow: 0 3px 10px #0001;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: var(--menu-height);
-      gap: 36px;
-      font-weight: bold;
-      font-size: 1.09em;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav.navbar a {
-      color: var(--green);
-      text-decoration: none;
-      padding: 9px 18px;
-      border-radius: 6px;
-      transition: background .18s, color .18s;
-    }
-    nav.navbar a:hover, nav.navbar a.active {
-      background: var(--green);
-      color: var(--white);
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-    .hero-row {
-      display: flex;
-      gap: 40px;
-      align-items: flex-start;
-      justify-content: center;
-      margin: 60px 0 30px 0;
-      flex-wrap: wrap;
-    }
-    .hero-main {
-      flex: 1.5;
-      min-width: 320px;
-    }
-    .hero-main h1 {
-      font-size: 2.3rem;
-      color: var(--green);
-      margin-bottom: 10px;
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: 0.01em;
-    }
-    .hero-main .subtitle {
-      font-size: 1.15rem;
-      color: var(--yellow);
-      margin-bottom: 10px;
-    }
-    .hero-main .desc {
-      color: #333;
-      font-size: 1.07rem;
-      margin-bottom: 25px;
-      opacity: .91;
-    }
-    .hero-card {
-      flex: 1;
-      background: #e8fbe6;
-      border-radius: 18px;
-      box-shadow: 0 6px 24px #0002;
-      padding: 28px 28px 18px 28px;
-      min-width: 320px;
-      margin-top: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      max-width: 370px;
-    }
-    .hero-card .contacts {
-      font-size: 1rem;
-      margin-bottom: 18px;
-      color: #2a4d32;
-      line-height: 1.6;
-    }
-    .hero-card .contacts strong {
-      color: var(--green);
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-    }
-    .hero-card .contacts .addr {font-style: italic; margin-bottom: 4px;}
-    .hero-card .contacts .wa-link {
-      color: #3edb5b;
-      text-decoration: none;
-      font-size: 1.13em;
-      margin-left: 7px;
-    }
-    .hero-card form {
-      display: flex; flex-direction: column;
-      gap: 12px;
-      margin-bottom: 6px;
-    }
-    .hero-card input {
-      padding: 11px 14px;
-      border-radius: 7px;
-      border: 1px solid #d0e6d0;
-      font-size: 1em;
-      background: #fff;
-      color: var(--text);
-      outline: none;
-      margin-bottom: 2px;
-    }
-    .hero-card input:focus {box-shadow: 0 0 0 2px var(--green);}
-    .hero-card button {
-      padding: 13px 0;
-      font-weight: bold;
-      font-size: 1.05em;
-      background: var(--green);
-      border: none;
-      color: #fff;
-      border-radius: 7px;
-      cursor: pointer;
-      transition: background 0.19s;
-      margin-top: 3px;
-    }
-    .hero-card button:hover {background: #0b871b;}
-    .hero-card .agree {
-      font-size: 0.95em;
-      color: #678564;
-      opacity: .82;
-      margin-top: 5px;
-      text-align: left;
-    }
-    .hero-card .agree a {
-      color: var(--green); text-decoration: underline;
-    }
-    .hero-card .worktime {
-      margin-top: 9px;
-      color: #ad9402;
-      font-size: 0.98em;
-    }
-    .hero-card .map {
-      margin: 20px 0 0 0;
-      border-radius: 8px;
-      border: none;
-      width: 100%;
-      height: 160px;
-    }
-    .section {
-      margin: 50px 0 0 0;
-      padding-bottom: 0;
-    }
-    .section-title {
-      color: var(--green);
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 35px;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-    .cards-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 28px;
-      margin-bottom: 30px;
-    }
-    .card {
-      background: #e8fbe6;
-      border-radius: 13px;
-      min-width: 215px;
-      max-width: 260px;
-      padding: 30px 20px 24px 20px;
-      box-shadow: 0 4px 14px #0001;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: transform .19s;
-    }
-    .card:hover {transform: translateY(-5px) scale(1.02);}
-    .card i {
-      font-size: 2.6em;
-      color: var(--green);
-      margin-bottom: 12px;
-    }
-    .card h3 {
-      margin: 7px 0 6px 0;
-      color: var(--yellow);
-      font-size: 1.18em;
-      font-weight: 600;
-      letter-spacing: .01em;
-    }
-    .card p {
-      color: #333;
-      font-size: 1em;
-      opacity: .87;
-    }
-    .prices-table {
-      margin: 0 auto 20px auto;
-      max-width: 420px;
-      width: 100%;
-      border-radius: 12px;
-      background: #f8fff6;
-      box-shadow: 0 4px 14px #0001;
-      overflow: hidden;
-    }
-    .prices-table table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .prices-table th, .prices-table td {
-      padding: 13px 8px;
-      text-align: left;
-      font-size: 1.05em;
-    }
-    .prices-table th {
-      background: #e4f2e2;
-      color: var(--green);
-      font-weight: 700;
-    }
-    .prices-table tr:not(:last-child) td {
-      border-bottom: 1px solid #d0e6d0;
-    }
-    .prices-table td {
-      color: #333;
-    }
-    .prices-table .cat {
-      color: var(--yellow);
-      font-weight: 600;
-      font-size: 1.08em;
-    }
-    .faq {
-      margin: 40px auto 0 auto;
-      max-width: 650px;
-    }
-    .faq-item {
-      background: #e8fbe6;
-      border-radius: 9px;
-      margin-bottom: 12px;
-      padding: 17px 24px;
-      cursor: pointer;
-      color: #2a4d32;
-      box-shadow: 0 2px 8px #0001;
-      transition: background .15s;
-      position: relative;
-      user-select: none;
-    }
-    .faq-item .faq-q {
-      font-weight: 600;
-      font-size: 1.08em;
-      color: var(--green);
-    }
-    .faq-item .faq-toggle {
-      position: absolute; right: 22px; top: 15px;
-      font-size: 1.4em;
-      color: var(--yellow);
-      transition: transform .21s;
-    }
-    .faq-item.open .faq-toggle {
-      transform: rotate(45deg);
-    }
-    .faq-item .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height .4s, opacity .32s;
-      font-size: 1em;
-      margin-top: 8px;
-    }
-    .faq-item.open .faq-a {
-      max-height: 320px;
-      opacity: 1;
-      margin-top: 13px;
-    }
-    footer {
-      margin-top: 60px;
-      background: #f7faf7;
-      padding: 26px 0;
-      text-align: center;
-      color: #8b8b8b;
-      font-size: 15px;
-    }
-    @media (max-width: 900px) {
-      .hero-row {
-        flex-direction: column;
-        gap: 18px;
-        align-items: stretch;
-      }
-      .hero-card {max-width: none;}
-    }
-    @media (max-width: 600px) {
-      .main-logo { width: 90px; }
-      nav.navbar { gap: 10px; font-size: 0.97em; }
-      .container {padding: 0 4px;}
-    }
+    body { margin: 0; background: var(--white); color: var(--text); font-family: 'Segoe UI','Montserrat',Arial,sans-serif;}
+    .main-header {background:var(--green);text-align:center;padding-top:28px;position:relative;}
+    .main-logo {width:130px;max-width:36vw;margin-bottom:10px;filter:drop-shadow(0 4px 10px #0002);z-index:2;position:relative;}
+    .pattern-wrap {width:100%;height:60px;position:relative;overflow:hidden;margin-top:-14px;z-index:1;line-height:0;}
+    nav.navbar {background:var(--white);box-shadow:0 3px 10px #0001;display:flex;justify-content:center;align-items:center;height:var(--menu-height);gap:36px;font-weight:bold;font-size:1.09em;position:sticky;top:0;z-index:10;}
+    nav.navbar a {color:var(--green);text-decoration:none;padding:9px 18px;border-radius:6px;transition:background .18s, color .18s;}
+    nav.navbar a:hover,nav.navbar a.active{background:var(--green);color:var(--white);}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px;}
+    .hero-row{display:flex;gap:40px;align-items:flex-start;justify-content:center;margin:60px 0 30px 0;flex-wrap:wrap;}
+    .hero-main{flex:1.5;min-width:320px;}
+    .hero-main h1{font-size:2.3rem;color:var(--green);margin-bottom:10px;font-weight:700;line-height:1.15;letter-spacing:0.01em;}
+    .hero-main .subtitle{font-size:1.15rem;color:var(--yellow);margin-bottom:10px;}
+    .hero-main .desc{color:#333;font-size:1.07rem;margin-bottom:25px;opacity:.91;}
+    .hero-card{flex:1;background:#e8fbe6;border-radius:18px;box-shadow:0 6px 24px #0002;padding:28px 28px 18px 28px;min-width:320px;margin-top:0;display:flex;flex-direction:column;align-items:stretch;max-width:370px;}
+    .hero-card .contacts{font-size:1rem;margin-bottom:18px;color:#2a4d32;line-height:1.6;}
+    .hero-card .contacts strong{color:var(--green);display:block;font-size:1.1rem;margin-bottom:6px;}
+    .hero-card .contacts .addr{font-style:italic;margin-bottom:4px;}
+    .hero-card .contacts .wa-link{color:#3edb5b;text-decoration:none;font-size:1.13em;margin-left:7px;}
+    .hero-card form{display:flex;flex-direction:column;gap:12px;margin-bottom:6px;}
+    .hero-card input{padding:11px 14px;border-radius:7px;border:1px solid #d0e6d0;font-size:1em;background:#fff;color:var(--text);outline:none;margin-bottom:2px;}
+    .hero-card input:focus{box-shadow:0 0 0 2px var(--green);}
+    .hero-card button{padding:13px 0;font-weight:bold;font-size:1.05em;background:var(--green);border:none;color:#fff;border-radius:7px;cursor:pointer;transition:background 0.19s;margin-top:3px;}
+    .hero-card button:hover{background:#0b871b;}
+    .hero-card .agree{font-size:0.95em;color:#678564;opacity:.82;margin-top:5px;text-align:left;}
+    .hero-card .agree a{color:var(--green);text-decoration:underline;}
+    .hero-card .worktime{margin-top:9px;color:#ad9402;font-size:0.98em;}
+    .hero-card .map{margin:20px 0 0 0;border-radius:8px;border:none;width:100%;height:160px;}
+    .section{margin:50px 0 0 0;padding-bottom:0;}
+    .section-title{color:var(--green);font-size:2rem;text-align:center;margin-bottom:35px;font-weight:700;letter-spacing:0.01em;}
+    .cards-list{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:30px;}
+    .card{background:#e8fbe6;border-radius:13px;min-width:215px;max-width:260px;padding:30px 20px 24px 20px;box-shadow:0 4px 14px #0001;display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .19s;}
+    .card:hover{transform:translateY(-5px) scale(1.02);}
+    .card i{font-size:2.6em;color:var(--green);margin-bottom:12px;}
+    .card h3{margin:7px 0 6px 0;color:var(--yellow);font-size:1.18em;font-weight:600;letter-spacing:.01em;}
+    .card p{color:#333;font-size:1em;opacity:.87;}
+    .prices-table{margin:0 auto 20px auto;max-width:420px;width:100%;border-radius:12px;background:#f8fff6;box-shadow:0 4px 14px #0001;overflow:hidden;}
+    .prices-table table{width:100%;border-collapse:collapse;}
+    .prices-table th,.prices-table td{padding:13px 8px;text-align:left;font-size:1.05em;}
+    .prices-table th{background:#e4f2e2;color:var(--green);font-weight:700;}
+    .prices-table tr:not(:last-child) td{border-bottom:1px solid #d0e6d0;}
+    .prices-table td{color:#333;}
+    .prices-table .cat{color:var(--yellow);font-weight:600;font-size:1.08em;}
+    .faq{margin:40px auto 0 auto;max-width:650px;}
+    .faq-item{background:#e8fbe6;border-radius:9px;margin-bottom:12px;padding:17px 24px;cursor:pointer;color:#2a4d32;box-shadow:0 2px 8px #0001;transition:background .15s;position:relative;user-select:none;}
+    .faq-item .faq-q{font-weight:600;font-size:1.08em;color:var(--green);}
+    .faq-item .faq-toggle{position:absolute;right:22px;top:15px;font-size:1.4em;color:var(--yellow);transition:transform .21s;}
+    .faq-item.open .faq-toggle{transform:rotate(45deg);}
+    .faq-item .faq-a{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s,opacity .32s;font-size:1em;margin-top:8px;}
+    .faq-item.open .faq-a{max-height:500px;opacity:1;margin-top:13px;}
+    footer{margin-top:60px;background:#f7faf7;padding:26px 0;text-align:center;color:#8b8b8b;font-size:15px;}
+    @media (max-width:900px){.hero-row{flex-direction:column;gap:18px;align-items:stretch;}.hero-card{max-width:none;}}
+    @media (max-width:600px){.main-logo{width:90px;}nav.navbar{gap:10px;font-size:0.97em;}.container{padding:0 4px;}}
   </style>
 </head>
 <body>
   <header class="main-header">
     <img src="logo.jfif" alt="Логотип" class="main-logo">
     <div class="pattern-wrap">
-      <!-- SVG-паттерн -->
       <svg width="100%" height="60" viewBox="0 0 340 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <rect width="340" height="60" fill="#11a021"/>
         <polygon points="0,60 0,42 14,60" fill="#fff"/>
@@ -380,18 +110,18 @@
   <div class="container">
     <div class="hero-row">
       <div class="hero-main">
-        <h1>Техосмотр в Уфе<br>ул. Новочеркасская, 13/2</h1>
-        <div class="subtitle">Сертифицированный пункт. Официальная карта ЕАИСТО.</div>
-        <div class="desc">Выдаём диагностическую карту для ОСАГО за 30 минут. Легковые, грузовые и мото. Без очередей и переплат. Работаем строго по 170‑ФЗ.</div>
+        <h1>Техосмотр в Уфе<br>ул. Цветочная, 1/4</h1>
+        <div class="subtitle">ООО "БАШСНАБГАЗ"</div>
+        <div class="desc">Официальный пункт проведения технического осмотра транспорта. Выдаём диагностическую карту для ОСАГО за 30 минут. Все категории: легковые, грузовые, мото. Без очередей и переплат. Работаем строго по 170‑ФЗ.</div>
       </div>
       <div class="hero-card">
         <div class="contacts">
-          <strong>Пункт №102</strong>
-          <div class="addr"><i class="fa fa-map-marker-alt"></i> Уфа, Новочеркасская, 13/2</div>
-          <div><i class="fa fa-phone"></i> <a href="tel:+79872589238" style="color:var(--green);text-decoration:none;">+7 (987) 258-92-38</a>
-            <a class="wa-link" href="https://wa.me/79872589238" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <strong>ООО "БАШСНАБГАЗ"</strong>
+          <div class="addr"><i class="fa fa-map-marker-alt"></i> Уфа, Цветочная, 1/4</div>
+          <div><i class="fa fa-phone"></i> <a href="tel:+79272351405" style="color:var(--green);text-decoration:none;">+7 (927) 235-14-05</a>
+            <a class="wa-link" href="https://wa.me/79272351405" target="_blank"><i class="fab fa-whatsapp"></i></a>
           </div>
-          <div><i class="fa fa-envelope"></i> ufa.tehosmotr@yandex.ru</div>
+          <div><i class="fa fa-envelope"></i> to1629271@gmail.com</div>
         </div>
         <form action="https://formspree.io/f/mwkgrvko" method="POST" autocomplete="on">
           <input type="text" name="car" placeholder="Госномер или VIN" required>
@@ -403,24 +133,28 @@
             Отправляя заявку, вы соглашаетесь с <a href="#">политикой обработки данных</a>
           </div>
         </form>
-        <div class="worktime"><i class="fa fa-clock"></i> Пн–Сб: 9:00–18:00</div>
-        <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae54ef236f130c882c8f8bfe02f7257dbf897bded7bd9cf57f59a8ef2d7203e03&amp;source=constructor" loading="lazy"></iframe>
+        <div class="worktime">
+          <i class="fa fa-clock"></i>
+          <div>
+            <b>Режим работы:</b><br>
+            Пн–Пт: 08:00–19:00<br>
+            Сб: 08:00–15:00<br>
+            Вс: выходной
+          </div>
+        </div>
+        <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3Aec9b64fa31320aa337e2228180e61c7d3e36d438e6a24dc65d441d24631e28b8&amp;source=constructor" loading="lazy"></iframe>
       </div>
     </div>
     <section id="services" class="section">
-      <div class="section-title">Услуги и категории</div>
+      <div class="section-title">Категории транспортных средств</div>
       <div class="cards-list">
-        <div class="card"><i class="fas fa-car"></i>
-          <h3>M1 – Легковые</h3>
-          <p>Авто до 8 мест<br>1050,79 ₽</p>
-        </div>
-        <div class="card"><i class="fas fa-truck"></i>
-          <h3>N1 – Грузовые</h3>
-          <p>До 3,5 тонн<br>1133,04 ₽</p>
-        </div>
         <div class="card"><i class="fas fa-motorcycle"></i>
-          <h3>L – Мото</h3>
-          <p>Мотоциклы, мопеды<br>364,07 ₽</p>
+          <h3>A – L</h3>
+          <p>Мотоциклы, мопеды и скутеры</p>
+        </div>
+        <div class="card"><i class="fas fa-car"></i>
+          <h3>B – M1, N1</h3>
+          <p>Легковые (до 8 мест), грузовые (до 3,5 т)</p>
         </div>
       </div>
     </section>
@@ -434,7 +168,12 @@
             <th>Время</th>
           </tr>
           <tr>
-            <td class="cat">M1</td>
+            <td class="cat">A, L</td>
+            <td>364,07 ₽</td>
+            <td>10 мин</td>
+          </tr>
+          <tr>
+            <td class="cat">B, M1</td>
             <td>1050,79 ₽</td>
             <td>30 мин</td>
           </tr>
@@ -442,11 +181,6 @@
             <td class="cat">N1</td>
             <td>1133,04 ₽</td>
             <td>32 мин</td>
-          </tr>
-          <tr>
-            <td class="cat">L</td>
-            <td>364,07 ₽</td>
-            <td>10 мин</td>
           </tr>
         </table>
       </div>
@@ -456,40 +190,73 @@
       <div class="section-title">Часто задаваемые вопросы</div>
       <div class="faq">
         <div class="faq-item">
-          <div class="faq-q">Как часто нужно проходить техосмотр?
-            <span class="faq-toggle">+</span>
-          </div>
+          <div class="faq-q">Кто обязан проходить техосмотр?</div>
+          <span class="faq-toggle">+</span>
           <div class="faq-a">
-            Новые легковые авто проходят ТО впервые через 4 года с выпуска, затем — каждые 2 года. Грузовые и такси — ежегодно. Мотоциклы — каждые 2 года после 4 лет эксплуатации.
+            Техосмотр обязателен для всех транспортных средств, используемых на дорогах общего пользования, кроме новых легковых автомобилей младше 4 лет и мотоциклов младше 4 лет.<br>
+            Коммерческие, грузовые автомобили, такси и автобусы проходят ТО ежегодно.
           </div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Что нужно для техосмотра?
-            <span class="faq-toggle">+</span>
-          </div>
+          <div class="faq-q">Как часто нужно проходить техосмотр?</div>
+          <span class="faq-toggle">+</span>
           <div class="faq-a">
             <ul>
-              <li>Паспорт РФ</li>
-              <li>СТС или ПТС</li>
-              <li>Доверенность (если не владелец)</li>
-              <li>Оплата услуг</li>
+              <li>Легковые и мотоциклы: впервые через 4 года, далее — раз в 2 года</li>
+              <li>Грузовые, автобусы, такси: ежегодно</li>
             </ul>
+            Даты могут меняться в зависимости от возраста и типа транспортного средства.
           </div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Что такое диагностическая карта?
-            <span class="faq-toggle">+</span>
-          </div>
+          <div class="faq-q">Что необходимо для прохождения техосмотра?</div>
+          <span class="faq-toggle">+</span>
           <div class="faq-a">
-            Это документ, подтверждающий прохождение техосмотра и нужный для оформления ОСАГО. Вносится в базу ЕАИСТО.
+            <ul>
+              <li>Паспорт гражданина РФ</li>
+              <li>СТС или ПТС</li>
+              <li>Доверенность (если вы не владелец)</li>
+              <li>Оплата услуги</li>
+              <li>Чистое ТС — для быстрой диагностики</li>
+            </ul>
+            При подаче заявки онлайн оператор сам подскажет детали.
           </div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Где проверить свою карту?
-            <span class="faq-toggle">+</span>
-          </div>
+          <div class="faq-q">Что проверяют при техосмотре?</div>
+          <span class="faq-toggle">+</span>
           <div class="faq-a">
-            На сайте <a href="https://gibdd.ru" target="_blank" style="color:var(--green);">gibdd.ru</a> по VIN или номеру кузова.
+            <ul>
+              <li>Работу тормозной системы</li>
+              <li>Световые приборы, стеклоочистители</li>
+              <li>Ремни безопасности, подушки</li>
+              <li>Шины, протектор</li>
+              <li>Отсутствие течей и коррозии</li>
+              <li>Работу двигателя, подвески, рулевого управления</li>
+            </ul>
+            По результатам выдается диагностическая карта.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Что делать при утере диагностической карты?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            Карта восстанавливается через обращение к любому аккредитованному оператору или онлайн по VIN-номеру через реестр ЕАИСТО.<br>
+            При утере бумажного экземпляра — информация всегда доступна в электронной базе.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Где проверить действительность карты?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            Проверить действительность карты можно на сайте <a href="https://gibdd.ru" target="_blank" style="color:var(--green);">gibdd.ru</a> по VIN или номеру кузова.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Можно ли пройти техосмотр вне места регистрации автомобиля?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            Да, вы можете пройти техосмотр в любом регионе России, независимо от регистрации вашего ТС.
           </div>
         </div>
       </div>
@@ -497,22 +264,21 @@
     <section id="contacts" class="section">
       <div class="section-title">Контакты</div>
       <div style="text-align:center;margin-bottom:16px;">
-        <b>Пункт №102</b><br>
-        Уфа, ул. Новочеркасская, 13/2<br>
-        <a href="tel:+79872589238" style="color:var(--green);text-decoration:none;font-weight:600">+7 (987) 258‑92‑38</a><br>
-        <a href="mailto:ufa.tehosmotr@yandex.ru" style="color:#444;text-decoration:underline;">ufa.tehosmotr@yandex.ru</a>
+        <b>ООО "БАШСНАБГАЗ"</b><br>
+        Уфа, ул. Цветочная, 1/4<br>
+        <a href="tel:+79272351405" style="color:var(--green);text-decoration:none;font-weight:600">+7 (927) 235‑14‑05</a><br>
+        <a href="mailto:to1629271@gmail.com" style="color:#444;text-decoration:underline;">to1629271@gmail.com</a>
       </div>
       <div style="max-width: 550px; margin: 0 auto;">
-        <iframe class="map" style="height:200px;" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae54ef236f130c882c8f8bfe02f7257dbf897bded7bd9cf57f59a8ef2d7203e03&amp;source=constructor" loading="lazy"></iframe>
+        <iframe class="map" style="height:200px;" src="https://yandex.ru/map-widget/v1/?um=constructor%3Aec9b64fa31320aa337e2228180e61c7d3e36d438e6a24dc65d441d24631e28b8&amp;source=constructor" loading="lazy"></iframe>
       </div>
     </section>
   </div>
   <footer>
-    &copy; 2025 Пункт техосмотра Уфа &ndash; официальный сайт. <br>
-    ИП Газизова А.А., ОГРНИП 322028000092232, ИНН 027617127602
+    &copy; 2025 ООО "БАШСНАБГАЗ" — официальный сайт. <br>
+    Все права защищены.
   </footer>
   <script>
-    // FAQ раскрытие
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', function() {
         this.classList.toggle('open');
