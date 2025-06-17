@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Копия to-102.ru</title>
+  <title>Техосмотр Уфа — Официальный пункт</title>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; scroll-behavior: smooth; }
@@ -24,7 +24,7 @@
     .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
     .section h2 { text-align: center; margin-bottom: 40px; }
 
-    .services, .benefits {
+    .card-list, .benefits, .services {
       display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
     }
 
@@ -47,6 +47,7 @@
     }
 
     footer { background: #000; text-align: center; padding: 30px; margin-top: 60px; }
+    .text-center { text-align: center; }
   </style>
 </head>
 <body>
@@ -55,40 +56,53 @@
       <a href="#services">Услуги</a>
       <a href="#about">О компании</a>
       <a href="#benefits">Преимущества</a>
+      <a href="#prices">Цены</a>
       <a href="#contacts">Контакты</a>
     </nav>
   </header>
 
   <section class="hero" data-aos="fade">
-    <h1>Точная копия to-102.ru</h1>
-    <p>Готова к адаптации под ваш бренд</p>
+    <h1>Официальный техосмотр в Уфе</h1>
+    <p>Пункт на Новочеркасской 13/2 — лицензия, аккредитация, карта ЕАИСТО</p>
   </section>
 
   <section id="services" class="section" data-aos="fade-up">
-    <h2>Услуги</h2>
+    <h2>Категории ТС</h2>
     <div class="services">
-      <div class="card"><h3>Диагностика</h3><p>Полная проверка автомобиля</p></div>
-      <div class="card"><h3>Техобслуживание</h3><p>Регламентные работы</p></div>
-      <div class="card"><h3>Ремонт</h3><p>Ремонт подвески, ДВС и др.</p></div>
+      <div class="card"><h3>M1</h3><p>Легковые автомобили (до 8 мест)</p></div>
+      <div class="card"><h3>N1</h3><p>Грузовые ТС до 3,5 тонн</p></div>
+      <div class="card"><h3>L</h3><p>Мотоциклы, мопеды</p></div>
     </div>
   </section>
 
   <section id="about" class="section" data-aos="fade-up">
     <h2>О компании</h2>
-    <p style="text-align:center;">Мы работаем более 10 лет, оказывая квалифицированные услуги ТО и ремонта автомобилей всех категорий.</p>
+    <p class="text-center">Мы работаем по ФЗ №170, ведем фото- и видеофиксацию, сотрудники проходят регулярную аттестацию. <br>Техосмотр — обязательная процедура для продления ОСАГО.</p>
   </section>
 
   <section id="benefits" class="section" data-aos="fade-up">
-    <h2>Преимущества</h2>
+    <h2>Наши преимущества</h2>
     <div class="benefits">
-      <div class="card"><strong>Опыт 10+ лет</strong><br>Постоянная практика</div>
-      <div class="card"><strong>Сертифицированный персонал</strong><br>Обученные мастера</div>
-      <div class="card"><strong>Современное оборудование</strong><br>Диагностика и ремонт</div>
+      <div class="card"><strong>Аттестат РСА</strong><br>Бессрочная аккредитация</div>
+      <div class="card"><strong>Карта в ЕАИСТО</strong><br>Выдаётся в день обращения</div>
+      <div class="card"><strong>Оформление ОСАГО</strong><br>Сразу после диагностики</div>
+      <div class="card"><strong>Опыт с 2013 г.</strong><br>10+ лет без нареканий</div>
     </div>
+  </section>
+
+  <section id="prices" class="section" data-aos="fade-up">
+    <h2>Цены на техосмотр</h2>
+    <div class="card-list">
+      <div class="card"><h3>M1</h3><p>1050,79 ₽ / 30 мин</p></div>
+      <div class="card"><h3>N1</h3><p>1133,04 ₽ / 32 мин</p></div>
+      <div class="card"><h3>L</h3><p>364,07 ₽ / 10 мин</p></div>
+    </div>
+    <p class="text-center">Цены утверждены постановлением № 554 от 28.12.2024</p>
   </section>
 
   <section id="contacts" class="section" data-aos="fade-up">
     <h2>Контакты</h2>
+    <p class="text-center">📍 г. Уфа, ул. Новочеркасская 13/2<br>📞 8-987-258-92-38<br>✉️ ufa.tehosmotr@yandex.ru</p>
     <form class="contact-form" action="https://formspree.io/f/mwkgrvko" method="POST">
       <input type="text" name="name" placeholder="Ваше имя" required>
       <input type="email" name="email" placeholder="Email" required>
@@ -99,7 +113,7 @@
   </section>
 
   <footer>
-    &copy; 2025 Копия сайта to-102.ru
+    &copy; 2025 Пункт техосмотра Уфа · to-102.ru
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
