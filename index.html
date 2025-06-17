@@ -294,7 +294,7 @@
     }
     @keyframes zoomin {
       from { transform: scale(0.82);}
-      to { transform: 1;}
+      to { transform: scale(1);}
     }
     .doc-modal-caption {
       color: #fff;
@@ -316,51 +316,12 @@
       text-shadow: 0 2px 12px #111, 0 1px 4px #222;
     }
     .doc-modal-close:hover { color: #ffe13e; }
-    /* ---- ВСТАВКА: адаптивное меню ---- */
-    .burger {
-      display: none;
-      position: absolute;
-      right: 15px;
-      top: 16px;
-      width: 39px;
-      height: 39px;
-      background: none;
-      border: none;
-      z-index: 2001;
-      cursor: pointer;
-      padding: 0;
-    }
-    .burger span, .burger span:before, .burger span:after {
-      display: block;
-      position: absolute;
-      width: 29px;
-      height: 4px;
-      background: var(--green);
-      border-radius: 2px;
-      transition: 0.24s cubic-bezier(.4,2,.5,1);
-    }
-    .burger span { top: 17px; left: 5px;}
-    .burger span:before { content: '';top: -9px;left: 0;}
-    .burger span:after { content: '';top: 9px;left: 0;}
-    .burger.active span { background: transparent;}
-    .burger.active span:before { top: 0; transform: rotate(45deg);}
-    .burger.active span:after { top: 0; transform: rotate(-45deg);}
-    @media (max-width: 900px) {
-      nav.navbar {flex-wrap:wrap;flex-direction: column;height: auto;align-items: flex-start;background: var(--white);padding-top: 0;position: relative;}
-      nav.navbar a, nav.navbar .btn-signup {
-        display: none;
-        width: 100%;margin: 0;padding: 16px 19px;border-radius: 0;text-align: left;border-bottom: 1px solid #f2f2f2;background: #fff;
-      }
-      nav.navbar.open a, nav.navbar.open .btn-signup {display:block !important;}
-      .burger {display:block;}
-    }
-    @media (max-width:600px){
-      nav.navbar{gap:0;}
-      .btn-signup {font-size:1.04em;}
+    @media (max-width:600px) {
       .doc-thumb { width:60px;height:83px;}
       .doc-modal-img { max-width:99vw; max-height:68vh;}
       .doc-modal-close { top:11px; right:19px;}
     }
+    footer{margin-top:60px;background:#232323;padding:26px 0;text-align:center;color:#d1d1d1;font-size:16px;letter-spacing:0.02em;}
     @media (max-width:900px){
       .hero-row{flex-direction:column;gap:18px;align-items:stretch;}
       .hero-card{max-width:none;}
@@ -371,11 +332,11 @@
       .main-logo{width:46px;height:46px;}
       .logo-title-wrap{gap:12px;}
       .org-title{font-size:1.04rem;}
+      nav.navbar{gap:10px;font-size:0.97em;}
       .container{padding:0 4px;}
       .big-map iframe{height:180px;}
       .hero-main{padding:10px 3px;}
     }
-    footer{margin-top:60px;background:#232323;padding:26px 0;text-align:center;color:#d1d1d1;font-size:16px;letter-spacing:0.02em;}
   </style>
 </head>
 <body>
@@ -385,16 +346,15 @@
       <span class="org-title">ООО "БАШСНАБГАЗ"</span>
     </div>
     <div class="pattern-wrap">
-      <!-- svg паттерн ... -->
+      <!-- SVG pattern -->
       <svg width="100%" height="60" viewBox="0 0 340 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <rect width="340" height="60" fill="#11a021"/>
-        <polygon points="0,60 0,42 14,60" fill="#fff"/>
-        <!-- ... остальные polygon ... -->
+        <!-- ... Полигонные элементы ... -->
         <polygon points="332,60 326,37 340,60" fill="#fff"/>
       </svg>
     </div>
   </header>
-  <nav class="navbar" data-aos="fade-down" data-aos-delay="150" id="navbar">
+  <nav class="navbar" data-aos="fade-down" data-aos-delay="150">
     <a href="#services">Услуги</a>
     <a href="#prices">Цены</a>
     <a href="#about-inspection">О техосмотре</a>
@@ -402,14 +362,71 @@
     <a href="#faq">Вопросы</a>
     <a href="#contacts">Контакты</a>
     <a href="#form" class="btn-signup">Записаться</a>
-    <button class="burger" id="burger" aria-label="Меню"><span></span></button>
   </nav>
-  <!-- --- Всё дальше без изменений! --- -->
   <div class="container">
-    <!-- ... твоя разметка hero-row, услуги, секции, FAQ, контакты и т.д ... -->
-    <!-- (оставил без изменений, как в твоём коде выше) -->
-    <!-- ... -->
-    <!-- Весь остальной HTML - как у тебя, без правок ... -->
+    <div class="hero-row">
+      <div class="hero-main" data-aos="fade-right">
+        <div class="hero-textblock">
+          <span class="hero-org">ООО "БАШСНАБГАЗ"</span>
+          <span class="hero-title">Техосмотр в Уфе</span>
+          <span class="hero-address">ул. Цветочная, 1/4</span>
+          <span class="hero-desc">
+            Аккредитованный пункт технического осмотра для всех категорий транспортных средств — легковых, грузовых, мотоциклов и мопедов.
+            <br><br>
+            <b>Почему выбирают нас?</b>
+            <ul>
+              <li>Диагностическая карта для ОСАГО оформляется за 30 минут</li>
+              <li>Работаем строго по 170‑ФЗ, все этапы прозрачны и официальны</li>
+              <li>Современное оборудование и опытные эксперты</li>
+              <li>Принимаем без очередей — по записи и живой очереди</li>
+              <li>Бесплатная консультация по вопросам техосмотра и документов</li>
+            </ul>
+            Удобное расположение, возможность быстрой оплаты и дружелюбный персонал.<br>
+            <b>Официально. Надёжно. Прозрачно.</b>
+          </span>
+        </div>
+      </div>
+      <div class="hero-card" id="form" data-aos="fade-left">
+        <div class="contacts">
+          <strong>ООО "БАШСНАБГАЗ"</strong>
+          <div class="addr"><i class="fa fa-map-marker-alt"></i> Уфа, Цветочная, 1/4</div>
+          <div><i class="fa fa-phone"></i> <a href="tel:+79272351405" style="color:var(--green);text-decoration:none;">+7 (927) 235-14-05</a>
+            <a class="wa-link" href="https://wa.me/79272351405" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+          <div><i class="fa fa-envelope"></i> to1629271@gmail.com</div>
+        </div>
+        <!-- Форма на WhatsApp + Email -->
+        <form id="whatsappForm" action="https://formspree.io/f/mwkgrvko" method="POST" autocomplete="on">
+          <input type="text" name="car" placeholder="Госномер или VIN" required>
+          <input type="text" name="brand" placeholder="Марка/модель авто" required>
+          <input type="text" name="fio" placeholder="Ваше имя" required>
+          <input type="tel" name="tel" placeholder="Телефон" required pattern="[\d\s\-\+\(\)]{6,}">
+          <button type="submit">Записаться на техосмотр</button>
+          <div class="agree">
+            Отправляя заявку, вы соглашаетесь с <a href="#" onclick="document.getElementById('policy-modal').style.display='block';return false;">политикой обработки данных</a>
+          </div>
+        </form>
+        <!-- Сообщение "Спасибо!" -->
+        <div id="thanks-message" style="display:none; margin-top:32px; background:#e8fbe6; color:#146b24; border-radius:11px; padding:24px 20px; text-align:center; font-size:1.18em; box-shadow:0 6px 24px #0001; font-weight:600;">
+          <i class="fa fa-check-circle" style="font-size:1.8em;color:#31d158;vertical-align:middle;margin-right:10px;"></i>
+          Спасибо! Ваша заявка успешно отправлена.<br>
+          Мы свяжемся с вами в ближайшее время.<br>
+          <span style="font-size:0.98em;opacity:0.8;display:block;margin-top:10px;">(Не забудьте подтвердить запись в чате WhatsApp — окно уже открыто)</span>
+        </div>
+        <div class="worktime">
+          <i class="fa fa-clock"></i>
+          <div>
+            <b>Режим работы:</b><br>
+            Пн–Пт: 08:00–19:00<br>
+            Сб: 08:00–15:00<br>
+            Вс: выходной
+          </div>
+        </div>
+        <iframe class="map" src="https://yandex.ru/map-widget/v1/?ll=56.072328%2C54.805951&z=17&l=map&pt=56.072328,54.805951,pm2gnm" loading="lazy"></iframe>
+      </div>
+    </div>
+    <!-- Остальные секции — услуги, цены, этапы, faq, контакты, big-map, футер — полностью такие, как были в твоём рабочем коде -->
+    <!-- ... если нужно — вставь блоки отсюда ... -->
   </div>
   <!-- Кнопка "Наверх" -->
   <button class="btn-top" id="btnTop" title="Наверх"><i class="fas fa-arrow-up"></i></button>
@@ -423,7 +440,7 @@
     <img class="doc-modal-img" id="docModalImg" src="" alt="">
     <div class="doc-modal-caption" id="docModalCaption"></div>
   </div>
-  <!-- ...Политика, футер, всё как было... -->
+  <!-- Модальное окно "Политика конфиденциальности" -->
   <div id="policy-modal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:#0008;">
     <div style="max-width:500px;margin:70px auto;background:#fff;border-radius:13px;padding:34px 24px;box-shadow:0 5px 30px #0002;position:relative;">
       <button onclick="document.getElementById('policy-modal').style.display='none'" style="position:absolute;top:13px;right:19px;background:none;border:none;font-size:1.6em;color:#aaa;cursor:pointer;">&times;</button>
@@ -453,17 +470,19 @@
         this.classList.toggle('open');
       });
     });
-    // WhatsApp + Formspree форма (оставь как было)
+    // WhatsApp + Formspree форма
     document.getElementById('whatsappForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const car = this.car.value.trim();
       const brand = this.brand.value.trim();
       const fio = this.fio.value.trim();
       const tel = this.tel.value.trim();
+
       if (!car || !brand || !fio || !tel) {
         alert('Пожалуйста, заполните все поля.');
         return;
       }
+
       // 1. Открыть WhatsApp
       const message =
         `Здравствуйте! Хочу записаться на техосмотр:\n` +
@@ -471,9 +490,11 @@
         `• Марка/модель: ${brand}\n` +
         `• Имя: ${fio}\n` +
         `• Телефон: ${tel}`;
+
       const phone = "79272351405";
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
       window.open(url, "_blank");
+
       // 2. Отправить на Formspree (через AJAX)
       const formData = new FormData(this);
       fetch(this.action, {
@@ -502,35 +523,6 @@
         }, 180);
       }
     }
-    // Бургер-меню логика
-    const burger = document.getElementById('burger');
-    const navbar = document.getElementById('navbar');
-    burger.onclick = function(e) {
-      e.stopPropagation();
-      burger.classList.toggle('active');
-      navbar.classList.toggle('open');
-      if(navbar.classList.contains('open')) {
-        document.body.style.overflow = 'hidden'; // отключить скролл под меню
-        document.body.addEventListener('click', closeBurgerMenu, true);
-      } else {
-        document.body.style.overflow = '';
-      }
-    }
-    function closeBurgerMenu(e) {
-      if (!navbar.contains(e.target) && !burger.contains(e.target)) {
-        navbar.classList.remove('open');
-        burger.classList.remove('active');
-        document.body.style.overflow = '';
-        document.body.removeEventListener('click', closeBurgerMenu, true);
-      }
-    }
-    window.addEventListener('resize', () => {
-      if(window.innerWidth>900){
-        navbar.classList.remove('open');
-        burger.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
   </script>
 </body>
 </html>
