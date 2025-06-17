@@ -4,50 +4,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Техосмотр Уфа — Официальный пункт</title>
+  <title>Официальный техосмотр в Уфе</title>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; scroll-behavior: smooth; }
-    header { background: #000; padding: 20px; position: sticky; top: 0; z-index: 1000; }
-    nav { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    nav a { color: #0f0; text-decoration: none; font-weight: bold; }
+    :root {
+      --accent: #31d158;
+      --bg-dark: #0f0f0f;
+      --bg-light: #1a1a1a;
+      --text-light: #eaeaea;
+      --font-main: 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-main);
+      background: var(--bg-dark);
+      color: var(--text-light);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
 
     .hero {
       height: 90vh;
-      background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; padding: 20px;
+      background: linear-gradient(to right, #0f0f0f 40%, rgba(49,209,88,0.3)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      color: #fff;
     }
-    .hero h1 { font-size: 56px; margin-bottom: 10px; }
-    .hero p { font-size: 20px; opacity: 0.8; }
 
-    .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
-    .section h2 { text-align: center; margin-bottom: 40px; }
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 4px #000;
+    }
 
-    .card-list, .benefits, .services {
-      display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+    .hero p {
+      font-size: 22px;
+      opacity: 0.85;
+    }
+
+    .section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 36px;
+      color: var(--accent);
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
     }
 
     .card {
-      background: #222; padding: 20px; border-radius: 10px; width: 280px;
-      text-align: center; transition: transform 0.3s ease;
+      background: var(--bg-light);
+      padding: 25px;
+      border-radius: 15px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
     }
-    .card:hover { transform: scale(1.05); }
 
-    .contact-form input, .contact-form textarea {
-      width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 6px; border: none;
+    .card:hover {
+      transform: translateY(-5px);
     }
+
+    .contact-form {
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
     .contact-form button {
-      padding: 10px 20px; border: none; border-radius: 6px;
-      background: #0f0; color: #000; cursor: pointer;
+      width: 100%;
+      padding: 12px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #28b34a;
     }
 
     iframe.map {
-      width: 100%; height: 300px; border: none; border-radius: 10px; margin-top: 20px;
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 30px;
     }
 
-    footer { background: #000; text-align: center; padding: 30px; margin-top: 60px; }
-    .text-center { text-align: center; }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 30px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -61,48 +172,49 @@
     </nav>
   </header>
 
-  <section class="hero" data-aos="fade">
-    <h1>Официальный техосмотр в Уфе</h1>
-    <p>Пункт на Новочеркасской 13/2 — лицензия, аккредитация, карта ЕАИСТО</p>
+  <section class="hero" data-aos="zoom-in">
+    <div>
+      <h1>Официальный техосмотр в Уфе</h1>
+      <p>Сертифицированный пункт. Карта ЕАИСТО. ОСАГО без проблем.</p>
+    </div>
   </section>
 
   <section id="services" class="section" data-aos="fade-up">
     <h2>Категории ТС</h2>
-    <div class="services">
-      <div class="card"><h3>M1</h3><p>Легковые автомобили (до 8 мест)</p></div>
-      <div class="card"><h3>N1</h3><p>Грузовые ТС до 3,5 тонн</p></div>
+    <div class="cards">
+      <div class="card"><h3>M1</h3><p>Легковые авто до 8 мест</p></div>
+      <div class="card"><h3>N1</h3><p>Грузовики до 3,5 тонн</p></div>
       <div class="card"><h3>L</h3><p>Мотоциклы, мопеды</p></div>
     </div>
   </section>
 
   <section id="about" class="section" data-aos="fade-up">
     <h2>О компании</h2>
-    <p class="text-center">Мы работаем по ФЗ №170, ведем фото- и видеофиксацию, сотрудники проходят регулярную аттестацию. <br>Техосмотр — обязательная процедура для продления ОСАГО.</p>
+    <p class="text-center">Работаем по ФЗ №170 с фотофиксацией. Выдача карты в ЕАИСТО в день осмотра. Надёжно, быстро, без переплат.</p>
   </section>
 
   <section id="benefits" class="section" data-aos="fade-up">
     <h2>Наши преимущества</h2>
-    <div class="benefits">
-      <div class="card"><strong>Аттестат РСА</strong><br>Бессрочная аккредитация</div>
-      <div class="card"><strong>Карта в ЕАИСТО</strong><br>Выдаётся в день обращения</div>
-      <div class="card"><strong>Оформление ОСАГО</strong><br>Сразу после диагностики</div>
-      <div class="card"><strong>Опыт с 2013 г.</strong><br>10+ лет без нареканий</div>
+    <div class="cards">
+      <div class="card"><strong>Аккредитация РСА</strong><br>Бессрочный аттестат</div>
+      <div class="card"><strong>Оформим ОСАГО</strong><br>Без беготни по сервисам</div>
+      <div class="card"><strong>10+ лет опыта</strong><br>С 2013 года на рынке</div>
     </div>
   </section>
 
   <section id="prices" class="section" data-aos="fade-up">
-    <h2>Цены на техосмотр</h2>
-    <div class="card-list">
+    <h2>Стоимость ТО</h2>
+    <div class="cards">
       <div class="card"><h3>M1</h3><p>1050,79 ₽ / 30 мин</p></div>
       <div class="card"><h3>N1</h3><p>1133,04 ₽ / 32 мин</p></div>
       <div class="card"><h3>L</h3><p>364,07 ₽ / 10 мин</p></div>
     </div>
-    <p class="text-center">Цены утверждены постановлением № 554 от 28.12.2024</p>
+    <p class="text-center">Цены по постановлению №554 от 28.12.2024</p>
   </section>
 
   <section id="contacts" class="section" data-aos="fade-up">
     <h2>Контакты</h2>
-    <p class="text-center">📍 г. Уфа, ул. Новочеркасская 13/2<br>📞 8-987-258-92-38<br>✉️ ufa.tehosmotr@yandex.ru</p>
+    <p class="text-center">📍 Уфа, ул. Новочеркасская, 13/2<br>📞 +7 (987) 258‑92‑38<br>✉ ufa.tehosmotr@yandex.ru</p>
     <form class="contact-form" action="https://formspree.io/f/mwkgrvko" method="POST">
       <input type="text" name="name" placeholder="Ваше имя" required>
       <input type="email" name="email" placeholder="Email" required>
@@ -113,7 +225,7 @@
   </section>
 
   <footer>
-    &copy; 2025 Пункт техосмотра Уфа · to-102.ru
+    &copy; 2025 Пункт техосмотра Уфа · Официальный сайт
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
