@@ -2,55 +2,323 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Клон to-102.ru с формой и картой</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Официальный техосмотр в Уфе</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #1cb34b;
+      --bg-dark: #ffffff;
+      --bg-light: #f4f4f4;
+      --text-light: #333333;
+      --gold: #bfa14b;
+      --font-main: 'Segoe UI', sans-serif;
+    }
+
+    :root {
+      --accent: #31d158;
+      --bg-dark: #0f0f0f;
+      --bg-light: #1a1a1a;
+      --text-light: #eaeaea;
+      --font-main: 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background: #ffffff; color: #111111;
+      margin: 0;
+      font-family: var(--font-main);
+      background: var(--bg-dark);
+      color: var(--text-light);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #1cb34b; color: white;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .hero {
+      height: 90vh;
+      background: linear-gradient(to right, #0f0f0f 40%, rgba(49,209,88,0.3)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    .hero p {
+      font-size: 22px;
+      opacity: 0.85;
+    }
+
+    .section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 36px;
+      color: var(--accent);
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-light);
+      padding: 25px;
+      border-radius: 15px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-form {
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 12px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #28b34a;
+    }
+
+    iframe.map {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 30px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+  
+.outlined {
+  color: #bfa14b;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+</style>
 </head>
 <body>
   <header>
-    <h1>Пункт технического осмотра</h1>
     <nav>
-      <a href="#about">О нас</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Контакты</a>
+      <a href="#services">Услуги</a>
+      <a href="#about">О компании</a>
+      <a href="#benefits">Преимущества</a>
+      <a href="#prices">Цены</a>
+      <a href="#contacts">Контакты</a>
     </nav>
   </header>
 
-  <section id="about" class="section">
-    <h2>О компании</h2>
-    <p>Пункт техосмотра категории A - L, B - M1, N1. Мы обеспечиваем качество, комфорт и соответствие стандартам.</p>
-    <p>Адрес: Цветочная 1/4<br>Телефон: +7 (927) 235-14-05<br>Email: to1629271@gmail.com</p>
+  <section class="hero" data-aos="zoom-in">
+    <div>
+      <h1 class="outlined" style='color: var(--gold); text-shadow: 0 0 2px #bfa14b;'>Официальный техосмотр в Уфе</h1>
+      <p>Сертифицированный пункт. Карта ЕАИСТО. ОСАГО без проблем.</p>
+    </div>
   </section>
 
-  <section id="faq" class="section">
-    <h2>О техосмотре</h2>
-    <p>Все ТС обязаны регулярно проходить техосмотр. Проверка проводится аккредитованными организациями.</p>
-    <div class="faq">
-      <div class="faq-item">
-        <div class="faq-question">Когда проходить техосмотр?<span class="faq-toggle">+</span></div>
-        <div class="faq-answer">Новые авто — через 4 года, далее — каждые 2. Такси — ежегодно.</div>
+  <section id="services" class="section" data-aos="fade-up">
+    <h2 class="outlined" style='color: var(--gold);'>Категории ТС</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-car fa-2x" style="color:#31d158;margin-bottom:10px;"></i><h3>M1</h3><p>Легковые авто до 8 мест</p></div>
+      <div class="card"><i class="fas fa-truck fa-2x" style="color:#31d158;margin-bottom:10px;"></i><h3>N1</h3><p>Грузовики до 3,5 тонн</p></div>
+      <div class="card"><i class="fas fa-motorcycle fa-2x" style="color:#31d158;margin-bottom:10px;"></i><h3>L</h3><p>Мотоциклы, мопеды</p></div>
+    </div>
+  </section>
+
+  <section id="about" class="section" data-aos="fade-up">
+    <h2 class="outlined" style='color: var(--gold);'>О компании</h2>
+    <p class="text-center">Работаем по ФЗ №170 с фотофиксацией. Выдача карты в ЕАИСТО в день осмотра. Надёжно, быстро, без переплат.</p>
+  </section>
+
+  
+  <section id="about-inspection" class="section" data-aos="fade-up">
+    <h2 class="outlined" style='color: var(--gold);'>О техосмотре</h2>
+    <p class="text-center" style="max-width: 800px; margin: auto; line-height: 1.6;">
+      Все находящиеся в эксплуатации дорожные транспортные средства должны регулярно проходить технический осмотр для проверки соответствия технического состояния и оборудования транспортных средств требованиям безопасности дорожного движения.
+      <br><br>
+      <strong class="outlined" style='color: var(--gold);'>Куда обратиться?</strong> Техосмотр проводится организацией (оператором технического осмотра), прошедшим аккредитацию по проведению технического осмотра соответствующей категории транспортных средств. Проводит аккредитацию профессиональное объединение страховщиков.
+      <br><br>
+      Граждане и юридические лица вправе обратиться к любому оператору независимо от места регистрации транспортного средства.
+    </p>
+
+    <div class="faq" style="margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question"><span class="faq-toggle" style="float:right;font-weight:bold;font-size:20px;">+</span>Как часто нужно проходить техосмотр?</div>
+        <div class="faq-answer">Регулярность прохождения техосмотра зависит от возраста и назначения транспортного средства. Новые легковые автомобили проходят ТО впервые через 4 года с даты выпуска, затем — каждые 2 года. Коммерческие автомобили, автобусы и такси проходят техосмотр ежегодно. Мотоциклы — каждые 2 года после 4 лет эксплуатации.</div>
       </div>
-      <div class="faq-item">
-        <div class="faq-question">Что нужно взять?<span class="faq-toggle">+</span></div>
-        <div class="faq-answer">Паспорт, ПТС/СТС, доверенность, оплату.</div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question"><span class="faq-toggle" style="float:right;font-weight:bold;font-size:20px;">+</span>Что нужно для прохождения технического осмотра?</div>
+        <div class="faq-answer">Для прохождения техосмотра потребуется:
+          <ul style='padding-left: 20px;'>
+            <li>Паспорт гражданина РФ или иного удостоверяющего документа</li>
+            <li>ПТС или СТС (свидетельство о регистрации ТС)</li>
+            <li>Доверенность (если осмотр проходит не владелец)</li>
+            <li>Оплата услуги (возможна безналичная оплата)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question"><span class="faq-toggle" style="float:right;font-weight:bold;font-size:20px;">+</span>Что проверяется при техосмотре?</div>
+        <div class="faq-answer">Проверяется соответствие транспортного средства обязательным требованиям безопасности:
+          <ul style='padding-left: 20px;'>
+            <li>Работа тормозной системы</li>
+            <li>Световые приборы и стеклоочистители</li>
+            <li>Ремни безопасности и подушки</li>
+            <li>Состояние шин и протектора</li>
+            <li>Отсутствие течей жидкостей и коррозии</li>
+          </ul>
+        </div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question"><span class="faq-toggle" style="float:right;font-weight:bold;font-size:20px;">+</span>Что такое диагностическая карта?</div>
+        <div class="faq-answer">Это официальный документ, подтверждающий прохождение техосмотра. В карте указывается состояние всех основных систем автомобиля. После прохождения ТО, карта вносится в базу ЕАИСТО, и по ней возможно оформление ОСАГО.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question"><span class="faq-toggle" style="float:right;font-weight:bold;font-size:20px;">+</span>Где можно проверить свою карту?</div>
+        <div class="faq-answer">Диагностическая карта сразу после оформления появляется в федеральной базе ЕАИСТО. Проверить её можно на сайте ГИБДД по VIN или номеру кузова: <a href='https://gibdd.ru' target='_blank'>gibdd.ru</a></div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
-    <h2>Связаться с нами</h2>
-    <form action="https://formspree.io/f/moqgrzkr" method="POST">
-      <input type="text" name="name" placeholder="Ваше имя" required />
-      <input type="email" name="email" placeholder="Ваш email" required />
+  <section id="benefits" class="section" data-aos="fade-up">
+    <h2 class="outlined" style='color: var(--gold);'>Наши преимущества</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-certificate fa-2x" style="color:#31d158;margin-bottom:10px;"></i><strong class="outlined" style='color: var(--gold);'>Аккредитация РСА</strong><br>Бессрочный аттестат</div>
+      <div class="card"><i class="fas fa-file-signature fa-2x" style="color:#31d158;margin-bottom:10px;"></i><strong class="outlined" style='color: var(--gold);'>Оформим ОСАГО</strong><br>Без беготни по сервисам</div>
+      <div class="card"><i class="fas fa-briefcase fa-2x" style="color:#31d158;margin-bottom:10px;"></i><strong class="outlined" style='color: var(--gold);'>10+ лет опыта</strong><br>С 2013 года на рынке</div>
+    </div>
+  </section>
+
+  <section id="prices" class="section" data-aos="fade-up">
+    <h2 class="outlined" style='color: var(--gold);'>Стоимость ТО</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-car fa-2x" style="color:#31d158;margin-bottom:10px;"></i><h3>M1</h3><p>1050,79 ₽ / 30 мин</p></div>
+      <div class="card"><i class="fas fa-truck fa-2x" style="color:#31d158;margin-bottom:10px;"></i><h3>N1</h3><p>1133,04 ₽ / 32 мин</p></div>
+      <div class="card"><i class="fas fa-motorcycle fa-2x" style="color:#31d158;margin-bottom:10px;"></i><h3>L</h3><p>364,07 ₽ / 10 мин</p></div>
+    </div>
+    <p class="text-center">Цены по постановлению №554 от 28.12.2024</p>
+  </section>
+
+  <section id="contacts" class="section" data-aos="fade-up">
+    <h2 class="outlined" style='color: var(--gold);'>Контакты</h2>
+    <p class="text-center">📍 Уфа, ул. Новочеркасская, 13/2<br>📞 +7 (987) 258‑92‑38<br>✉ ufa.tehosmotr@yandex.ru</p>
+    <form class="contact-form" action="https://formspree.io/f/mwkgrvko" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="email" name="email" placeholder="Email" required>
       <textarea name="message" rows="5" placeholder="Ваше сообщение" required></textarea>
       <button type="submit">Отправить</button>
     </form>
-    <div style="margin-top: 30px">
-      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A71f2f07d190dfc69be01e57e77cb58e0a5374f78571d7c8dcf953bc768240c9f&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
-    </div>
+    <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae54ef236f130c882c8f8bfe02f7257dbf897bded7bd9cf57f59a8ef2d7203e03&amp;source=constructor"></iframe>
   </section>
 
-  <script src="js/faq.js"></script>
+  <footer>
+    &copy; 2025 Пункт техосмотра Уфа · Официальный сайт
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <script>
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('open');
+        const icon = item.querySelector('.faq-toggle');
+        if (item.classList.contains('open')) {
+          icon.textContent = '−';
+        } else {
+          icon.textContent = '+';
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
