@@ -4,8 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Техосмотр • БАШСНАБГАЗ</title>
+  <meta name="description" content="Официальный техосмотр транспорта в Уфе. ООО 'БАШСНАБГАЗ' — выдача диагностических карт для ОСАГО, все категории. Без очередей, быстро, по закону.">
+  <meta name="keywords" content="техосмотр, Уфа, БАШСНАБГАЗ, диагностическая карта, ОСАГО, транспорт, технический осмотр">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ООО БАШСНАБГАЗ",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Цветочная, 1/4",
+      "addressLocality": "Уфа",
+      "addressCountry": "RU"
+    },
+    "telephone": "+79272351405",
+    "email": "to1629271@gmail.com",
+    "openingHours": "Mo-Fr 08:00-19:00, Sa 08:00-15:00",
+    "url": "https://ВАШ_САЙТ.РУ"
+  }
+  </script>
   <style>
     :root {
       --green: #11a021;
@@ -191,6 +210,29 @@
       transition: background .18s, box-shadow .15s;
     }
     .btn-top:hover { background: #19d541; box-shadow: 0 6px 24px #0004; }
+    .call-fab {
+      display: none;
+      position: fixed;
+      bottom: 85px;
+      right: 22px;
+      z-index: 999;
+      background: #11a021;
+      color: #fff;
+      border-radius: 50%;
+      width: 54px;
+      height: 54px;
+      box-shadow: 0 5px 18px #0002;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.1em;
+      transition: background .17s, box-shadow .2s;
+      text-align: center;
+      line-height: 54px;
+    }
+    .call-fab:hover { background: #2fd158; color: #fff;}
+    @media (max-width: 700px) {
+      .call-fab { display: flex; }
+    }
     footer{margin-top:60px;background:#232323;padding:26px 0;text-align:center;color:#d1d1d1;font-size:16px;letter-spacing:0.02em;}
     @media (max-width:900px){
       .hero-row{flex-direction:column;gap:18px;align-items:stretch;}
@@ -250,6 +292,7 @@
     <a href="#services">Услуги</a>
     <a href="#prices">Цены</a>
     <a href="#about-inspection">О техосмотре</a>
+    <a href="#steps">Этапы</a>
     <a href="#faq">Вопросы</a>
     <a href="#contacts">Контакты</a>
     <a href="#form" class="btn-signup">Записаться</a>
@@ -286,16 +329,24 @@
           </div>
           <div><i class="fa fa-envelope"></i> to1629271@gmail.com</div>
         </div>
-        <form action="https://formspree.io/f/mwkgrvko" method="POST" autocomplete="on">
+        <!-- Форма на WhatsApp + Email -->
+        <form id="whatsappForm" action="https://formspree.io/f/mwkgrvko" method="POST" autocomplete="on">
           <input type="text" name="car" placeholder="Госномер или VIN" required>
           <input type="text" name="brand" placeholder="Марка/модель авто" required>
           <input type="text" name="fio" placeholder="Ваше имя" required>
           <input type="tel" name="tel" placeholder="Телефон" required pattern="[\d\s\-\+\(\)]{6,}">
           <button type="submit">Записаться на техосмотр</button>
           <div class="agree">
-            Отправляя заявку, вы соглашаетесь с <a href="#">политикой обработки данных</a>
+            Отправляя заявку, вы соглашаетесь с <a href="#" onclick="document.getElementById('policy-modal').style.display='block';return false;">политикой обработки данных</a>
           </div>
         </form>
+        <!-- Сообщение "Спасибо!" -->
+        <div id="thanks-message" style="display:none; margin-top:32px; background:#e8fbe6; color:#146b24; border-radius:11px; padding:24px 20px; text-align:center; font-size:1.18em; box-shadow:0 6px 24px #0001; font-weight:600;">
+          <i class="fa fa-check-circle" style="font-size:1.8em;color:#31d158;vertical-align:middle;margin-right:10px;"></i>
+          Спасибо! Ваша заявка успешно отправлена.<br>
+          Мы свяжемся с вами в ближайшее время.<br>
+          <span style="font-size:0.98em;opacity:0.8;display:block;margin-top:10px;">(Не забудьте подтвердить запись в чате WhatsApp — окно уже открыто)</span>
+        </div>
         <div class="worktime">
           <i class="fa fa-clock"></i>
           <div>
@@ -358,6 +409,32 @@
       <div style="max-width:760px;margin:0 auto 32px auto;line-height:1.6;font-size:1.12em;color:#333;opacity:.94;">
         Все находящиеся в эксплуатации дорожные транспортные средства должны регулярно проходить технический осмотр для проверки соответствия технического состояния и оборудования транспортных средств требованиям безопасности дорожного движения.<br><br>
         <b>Куда обратиться?</b> Техосмотр проводится организацией (оператором технического осмотра), прошедшим аккредитацию по проведению технического осмотра соответствующей категории транспортных средств. Проводит аккредитацию профессиональное объединение страховщиков. Граждане и юридические лица вправе обратиться к любому оператору независимо от места регистрации транспортного средства.
+      </div>
+    </section>
+    <!-- БЛОК ЭТАПОВ -->
+    <section id="steps" class="section" data-aos="fade-up">
+      <div class="section-title" data-aos="zoom-in">Как проходит техосмотр?</div>
+      <div class="cards-list" style="gap:32px;">
+        <div class="card" data-aos="fade-up" data-aos-delay="50">
+          <i class="fas fa-edit"></i>
+          <h3>1. Оставьте заявку</h3>
+          <p>Заполните простую форму на сайте или напишите нам в WhatsApp.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <i class="fas fa-comment-dots"></i>
+          <h3>2. Подтвердите время</h3>
+          <p>Мы свяжемся с вами для подтверждения даты и времени осмотра.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="150">
+          <i class="fas fa-car-side"></i>
+          <h3>3. Приезжайте на пункт</h3>
+          <p>Приезжайте по адресу: Цветочная, 1/4. Наши специалисты всё объяснят.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <i class="fas fa-file-signature"></i>
+          <h3>4. Получите карту</h3>
+          <p>Через 30 минут получите официальную диагностическую карту для ОСАГО.</p>
+        </div>
       </div>
     </section>
     <section id="faq" class="section" data-aos="fade-up">
@@ -448,7 +525,23 @@
       </div>
     </section>
   </div>
+  <!-- Кнопка "Наверх" -->
   <button class="btn-top" id="btnTop" title="Наверх"><i class="fas fa-arrow-up"></i></button>
+  <!-- Кнопка "Позвонить" (мобильная) -->
+  <a href="tel:+79272351405" class="call-fab" title="Позвонить">
+    <i class="fas fa-phone"></i>
+  </a>
+  <!-- Модальное окно "Политика конфиденциальности" -->
+  <div id="policy-modal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:#0008;">
+    <div style="max-width:500px;margin:70px auto;background:#fff;border-radius:13px;padding:34px 24px;box-shadow:0 5px 30px #0002;position:relative;">
+      <button onclick="document.getElementById('policy-modal').style.display='none'" style="position:absolute;top:13px;right:19px;background:none;border:none;font-size:1.6em;color:#aaa;cursor:pointer;">&times;</button>
+      <h2 style="color:#11a021;margin-top:0;">Политика конфиденциальности</h2>
+      <div style="font-size:1em;color:#222;line-height:1.7;">
+        Ваши данные используются только для обратной связи и записи на техосмотр. Они не передаются третьим лицам и обрабатываются строго в соответствии с ФЗ РФ №152 "О персональных данных".<br><br>
+        Оставляя заявку, вы соглашаетесь с обработкой персональных данных для связи и предоставления услуг.
+      </div>
+    </div>
+  </div>
   <footer>
     &copy; 2025 ООО "БАШСНАБГАЗ" — официальный сайт.<br>
     Все права защищены.
@@ -466,6 +559,44 @@
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', function() {
         this.classList.toggle('open');
+      });
+    });
+    // WhatsApp + Formspree форма
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const car = this.car.value.trim();
+      const brand = this.brand.value.trim();
+      const fio = this.fio.value.trim();
+      const tel = this.tel.value.trim();
+
+      if (!car || !brand || !fio || !tel) {
+        alert('Пожалуйста, заполните все поля.');
+        return;
+      }
+
+      // 1. Открыть WhatsApp
+      const message =
+        `Здравствуйте! Хочу записаться на техосмотр:\n` +
+        `• Госномер/VIN: ${car}\n` +
+        `• Марка/модель: ${brand}\n` +
+        `• Имя: ${fio}\n` +
+        `• Телефон: ${tel}`;
+
+      const phone = "79272351405";
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+
+      // 2. Отправить на Formspree (через AJAX)
+      const formData = new FormData(this);
+      fetch(this.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+          document.getElementById('whatsappForm').style.display = 'none';
+          document.getElementById('thanks-message').style.display = 'block';
+      }).catch(function(error) {
+          alert('Ошибка при отправке. Пожалуйста, попробуйте еще раз.');
       });
     });
   </script>
