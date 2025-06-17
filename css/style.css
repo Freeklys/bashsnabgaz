@@ -1,0 +1,137 @@
+
+:root {
+  --accent: #1cb34b;
+  --text: #111;
+  --gold: #bfa14b;
+  --white: #ffffff;
+  --gray: #f9f9f9;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--white);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: var(--accent);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.section {
+  padding: 40px 20px;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1, h2, h3, strong {
+  color: var(--gold);
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+.faq {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.faq-item {
+  background: var(--gray);
+  border-left: 5px solid var(--accent);
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.faq-item:hover {
+  background: #e7ffe7;
+}
+
+.faq-question {
+  font-weight: bold;
+  position: relative;
+}
+
+.faq-toggle {
+  float: right;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.faq-answer {
+  display: none;
+  padding-top: 10px;
+  text-align: left;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: var(--accent);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #14913a;
+}

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Клон to-102.ru с формой и картой</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Пункт технического осмотра</h1>
+    <nav>
+      <a href="#about">О нас</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <section id="about" class="section">
+    <h2>О компании</h2>
+    <p>Пункт техосмотра категории A - L, B - M1, N1. Мы обеспечиваем качество, комфорт и соответствие стандартам.</p>
+    <p>Адрес: Цветочная 1/4<br>Телефон: +7 (927) 235-14-05<br>Email: to1629271@gmail.com</p>
+  </section>
+
+  <section id="faq" class="section">
+    <h2>О техосмотре</h2>
+    <p>Все ТС обязаны регулярно проходить техосмотр. Проверка проводится аккредитованными организациями.</p>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-question">Когда проходить техосмотр?<span class="faq-toggle">+</span></div>
+        <div class="faq-answer">Новые авто — через 4 года, далее — каждые 2. Такси — ежегодно.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Что нужно взять?<span class="faq-toggle">+</span></div>
+        <div class="faq-answer">Паспорт, ПТС/СТС, доверенность, оплату.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Связаться с нами</h2>
+    <form action="https://formspree.io/f/moqgrzkr" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя" required />
+      <input type="email" name="email" placeholder="Ваш email" required />
+      <textarea name="message" rows="5" placeholder="Ваше сообщение" required></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+    <div style="margin-top: 30px">
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A71f2f07d190dfc69be01e57e77cb58e0a5374f78571d7c8dcf953bc768240c9f&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <script src="js/faq.js"></script>
+</body>
+</html>
