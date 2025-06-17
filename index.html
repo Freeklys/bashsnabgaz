@@ -1,25 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>to-102 Копия — промежуточная версия</title>
+  <title>Копия to-102.ru — версия 2</title>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
-    body { margin: 0; background: #0f0f0f; color: #fff; font-family: sans-serif; }
-    header { background: #000; padding: 20px; position: sticky; top: 0; z-index: 1000; }
-    nav { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; }
+    header { background: #000; position: sticky; top: 0; z-index: 1000; padding: 20px; }
+    nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
     nav a { color: #0f0; text-decoration: none; font-weight: bold; }
+
     .hero {
       height: 80vh;
       background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
       text-align: center; padding: 20px;
     }
-    .hero h1 { font-size: 48px; margin: 0; }
+    .hero h1 { font-size: 48px; margin: 0 0 20px 0; }
     .hero p { font-size: 20px; opacity: 0.8; }
+
     .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
-    .section h2 { text-align: center; margin-bottom: 20px; }
+    .section h2 { text-align: center; margin-bottom: 40px; }
+
+    .services { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .service-card {
+      background: #222; padding: 20px; border-radius: 10px; width: 280px;
+      text-align: center; transition: transform 0.3s ease;
+    }
+    .service-card:hover { transform: scale(1.03); }
+    .service-card i { font-size: 32px; margin-bottom: 10px; color: #0f0; }
+
+    .benefits { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .benefit { background: #1a1a1a; padding: 20px; border-radius: 10px; width: 280px; text-align: center; }
+
     footer { background: #000; text-align: center; padding: 30px; margin-top: 60px; }
   </style>
 </head>
@@ -34,35 +49,56 @@
   </header>
 
   <section class="hero" data-aos="fade">
-    <h1>Промежуточная версия</h1>
-    <p>Заготовка полной копии сайта to-102.ru</p>
+    <h1>Точная копия to-102.ru</h1>
+    <p>Второй промежуточный вариант — почти финал</p>
   </section>
 
   <section id="services" class="section" data-aos="fade-up">
     <h2>Услуги</h2>
-    <p>Блок с карточками услуг</p>
+    <div class="services">
+      <div class="service-card">
+        <i class="fas fa-tools"></i>
+        <h3>Техобслуживание</h3>
+        <p>Обслуживание и ремонт ТС</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-oil-can"></i>
+        <h3>Замена масел</h3>
+        <p>Быстрая и качественная замена</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-car-crash"></i>
+        <h3>Диагностика</h3>
+        <p>Полная проверка систем</p>
+      </div>
+    </div>
   </section>
 
   <section id="about" class="section" data-aos="fade-up">
     <h2>О компании</h2>
-    <p>Описание компании</p>
+    <p style="text-align:center;">Наша компания оказывает услуги ТО и ремонта более 10 лет...</p>
   </section>
 
   <section id="benefits" class="section" data-aos="fade-up">
     <h2>Преимущества</h2>
-    <p>Список ключевых преимуществ</p>
+    <div class="benefits">
+      <div class="benefit"><strong>10+ лет опыта</strong><br>Работаем с 2013 года</div>
+      <div class="benefit"><strong>Сертифицированный персонал</strong><br>Все специалисты — профи</div>
+      <div class="benefit"><strong>Современное оборудование</strong><br>Новейшие стенды и ПО</div>
+    </div>
   </section>
 
   <section id="contacts" class="section" data-aos="fade-up">
     <h2>Контакты</h2>
-    <p>Адрес, телефон, карта, форма</p>
+    <p style="text-align:center;">г. Уфа, ул. Цветочная, 1/4 · +7 (927) 235-14-05</p>
   </section>
 
   <footer>
-    &copy; 2025 Копия сайта to-102.ru (промежуточная версия)
+    &copy; 2025 Копия to-102.ru — v2
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://kit.fontawesome.com/a2e0e6f91e.js" crossorigin="anonymous"></script>
   <script>AOS.init();</script>
 </body>
 </html>
