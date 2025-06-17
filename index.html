@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Официальный техосмотр в Уфе</title>
@@ -159,6 +161,28 @@
     .text-center {
       text-align: center;
     }
+  
+    .faq-item {
+      background: #1e1e1e;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      padding: 15px;
+      transition: all 0.3s ease;
+    }
+    .faq-question {
+      font-weight: bold;
+      color: #31d158;
+    }
+    .faq-answer {
+      display: none;
+      padding-top: 10px;
+      color: #ccc;
+    }
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
   </style>
 </head>
 <body>
@@ -182,9 +206,9 @@
   <section id="services" class="section" data-aos="fade-up">
     <h2>Категории ТС</h2>
     <div class="cards">
-      <div class="card"><h3>M1</h3><p>Легковые авто до 8 мест</p></div>
-      <div class="card"><h3>N1</h3><p>Грузовики до 3,5 тонн</p></div>
-      <div class="card"><h3>L</h3><p>Мотоциклы, мопеды</p></div>
+      <div class="card"><i class="fas fa-car fa-2x" style="color:#31d158;margin-bottom:10px;"></i><h3>M1</h3><p>Легковые авто до 8 мест</p></div>
+      <div class="card"><i class="fas fa-truck fa-2x" style="color:#31d158;margin-bottom:10px;"></i><h3>N1</h3><p>Грузовики до 3,5 тонн</p></div>
+      <div class="card"><i class="fas fa-motorcycle fa-2x" style="color:#31d158;margin-bottom:10px;"></i><h3>L</h3><p>Мотоциклы, мопеды</p></div>
     </div>
   </section>
 
@@ -193,21 +217,48 @@
     <p class="text-center">Работаем по ФЗ №170 с фотофиксацией. Выдача карты в ЕАИСТО в день осмотра. Надёжно, быстро, без переплат.</p>
   </section>
 
+  
+  <section id="about-inspection" class="section" data-aos="fade-up">
+    <h2>О техосмотре</h2>
+    <p class="text-center" style="max-width: 800px; margin: auto; line-height: 1.6;">
+      Все находящиеся в эксплуатации дорожные транспортные средства должны регулярно проходить технический осмотр для проверки соответствия технического состояния и оборудования транспортных средств требованиям безопасности дорожного движения.
+      <br><br>
+      <strong>Куда обратиться?</strong> Техосмотр проводится организацией (оператором технического осмотра), прошедшим аккредитацию по проведению технического осмотра соответствующей категории транспортных средств. Проводит аккредитацию профессиональное объединение страховщиков.
+      <br><br>
+      Граждане и юридические лица вправе обратиться к любому оператору независимо от места регистрации транспортного средства.
+    </p>
+
+    <div class="faq" style="margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question">Как часто нужно проходить техосмотр?</div>
+        <div class="faq-answer">Для новых автомобилей — через 4 года, далее — каждые 2 года. Для такси, автобусов, грузовиков — ежегодно.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question">Что нужно для прохождения ТО?</div>
+        <div class="faq-answer">Паспорт, СТС/ПТС и доверенность (если вы не собственник).</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question">Где посмотреть диагностическую карту?</div>
+        <div class="faq-answer">Она автоматически попадает в базу ЕАИСТО. Вы можете проверить её по VIN на сайте gibdd.ru.</div>
+      </div>
+    </div>
+  </section>
+
   <section id="benefits" class="section" data-aos="fade-up">
     <h2>Наши преимущества</h2>
     <div class="cards">
-      <div class="card"><strong>Аккредитация РСА</strong><br>Бессрочный аттестат</div>
-      <div class="card"><strong>Оформим ОСАГО</strong><br>Без беготни по сервисам</div>
-      <div class="card"><strong>10+ лет опыта</strong><br>С 2013 года на рынке</div>
+      <div class="card"><i class="fas fa-certificate fa-2x" style="color:#31d158;margin-bottom:10px;"></i><strong>Аккредитация РСА</strong><br>Бессрочный аттестат</div>
+      <div class="card"><i class="fas fa-file-signature fa-2x" style="color:#31d158;margin-bottom:10px;"></i><strong>Оформим ОСАГО</strong><br>Без беготни по сервисам</div>
+      <div class="card"><i class="fas fa-briefcase fa-2x" style="color:#31d158;margin-bottom:10px;"></i><strong>10+ лет опыта</strong><br>С 2013 года на рынке</div>
     </div>
   </section>
 
   <section id="prices" class="section" data-aos="fade-up">
     <h2>Стоимость ТО</h2>
     <div class="cards">
-      <div class="card"><h3>M1</h3><p>1050,79 ₽ / 30 мин</p></div>
-      <div class="card"><h3>N1</h3><p>1133,04 ₽ / 32 мин</p></div>
-      <div class="card"><h3>L</h3><p>364,07 ₽ / 10 мин</p></div>
+      <div class="card"><i class="fas fa-car fa-2x" style="color:#31d158;margin-bottom:10px;"></i><h3>M1</h3><p>1050,79 ₽ / 30 мин</p></div>
+      <div class="card"><i class="fas fa-truck fa-2x" style="color:#31d158;margin-bottom:10px;"></i><h3>N1</h3><p>1133,04 ₽ / 32 мин</p></div>
+      <div class="card"><i class="fas fa-motorcycle fa-2x" style="color:#31d158;margin-bottom:10px;"></i><h3>L</h3><p>364,07 ₽ / 10 мин</p></div>
     </div>
     <p class="text-center">Цены по постановлению №554 от 28.12.2024</p>
   </section>
