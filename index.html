@@ -3,317 +3,522 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Официальный техосмотр в Уфе</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <title>Техосмотр Уфа – Официальный пункт на Новочеркасской</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --accent: #4CAF50;
-      --bg-dark: #121212;
-      --bg-light: #F4F4F4;
-      --text-light: #EAEAEA;
-      --gold: #FFBB33;
-      --font-main: 'Arial', sans-serif;
+      --accent: #34be5b;
+      --hover: #299147;
+      --bg: #191a1d;
+      --card-bg: #24272d;
+      --gold: #ffda83;
+      --white: #fff;
+      --gray: #e0e0e0;
+      --font-main: 'Montserrat', 'Segoe UI', Arial, sans-serif;
     }
 
-    * { box-sizing: border-box; }
-
-    body {
-      background: var(--bg-dark);
-      color: var(--text-light);
-      margin: 0;
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg);
+      color: var(--white);
       font-family: var(--font-main);
+      font-size: 18px;
       scroll-behavior: smooth;
-      line-height: 1.6;
     }
 
     header {
-      background: rgba(0, 0, 0, 0.9);
-      padding: 15px 30px;
       position: sticky;
       top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      background: rgba(25,26,29,0.97);
+      z-index: 999;
+      border-bottom: 1px solid #26282d;
     }
 
-    nav {
+    .nav {
       display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--gold);
-      text-decoration: underline;
-    }
-
-    .hero {
-      height: 90vh;
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(76, 175, 80, 0.5)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 20px;
-      color: #fff;
-    }
-
-    .hero h1 {
-      font-size: 50px;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    }
-
-    .hero p {
-      font-size: 22px;
-      opacity: 0.85;
-    }
-
-    .section {
-      padding: 70px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section h2 {
-      text-align: center;
-      margin-bottom: 50px;
-      font-size: 36px;
-      color: var(--accent);
-    }
-
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
+      gap: 40px;
+      padding: 20px 0 12px 0;
     }
 
-    .card {
-      background: var(--bg-light);
-      padding: 25px;
-      border-radius: 15px;
-      width: 280px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    }
-
-    .contact-form {
-      max-width: 500px;
-      margin: 20px auto;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
+    .nav a {
+      color: var(--gray);
+      text-decoration: none;
+      padding: 4px 10px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
       border-radius: 8px;
-      border: 1px solid #ddd;
+      transition: color .2s, background .2s;
       font-size: 16px;
     }
 
-    .contact-form button {
-      width: 100%;
-      padding: 12px;
-      background: var(--accent);
-      color: #fff;
+    .nav a:hover, .nav a.active {
+      color: var(--accent);
+      background: #24272d;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .hero-row {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      justify-content: center;
+      margin: 60px 0 30px 0;
+      flex-wrap: wrap;
+    }
+    .hero-main {
+      flex: 1.5;
+      min-width: 320px;
+    }
+    .hero-main h1 {
+      font-size: 2.6rem;
+      color: var(--accent);
+      margin-bottom: 14px;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+    }
+    .hero-main .subtitle {
+      font-size: 1.25rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+    .hero-main .desc {
+      color: var(--gray);
+      font-size: 1.09rem;
+      margin-bottom: 25px;
+      opacity: .88;
+    }
+
+    .hero-card {
+      flex: 1;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 6px 24px #0002;
+      padding: 28px 28px 18px 28px;
+      min-width: 320px;
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      max-width: 370px;
+      animation: fade-in 1.2s;
+    }
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(-16px);}
+      to   { opacity: 1; transform: none;}
+    }
+    .hero-card .contacts {
+      font-size: 1rem;
+      margin-bottom: 18px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    .hero-card .contacts strong {
+      color: var(--white);
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+    .hero-card .contacts .addr {font-style: italic; margin-bottom: 4px;}
+    .hero-card .contacts .wa-link {
+      color: #3edb5b;
+      text-decoration: none;
+      font-size: 1.13em;
+      margin-left: 7px;
+    }
+    .hero-card form {
+      display: flex; flex-direction: column;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .hero-card input {
+      padding: 11px 14px;
+      border-radius: 7px;
       border: none;
-      border-radius: 8px;
+      font-size: 1em;
+      background: #1e2125;
+      color: var(--white);
+      outline: none;
+      margin-bottom: 2px;
+    }
+    .hero-card input:focus {box-shadow: 0 0 0 2px var(--accent);}
+    .hero-card button {
+      padding: 13px 0;
       font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .contact-form button:hover {
-      background: #388E3C;
-    }
-
-    iframe.map {
-      width: 100%;
-      height: 300px;
+      font-size: 1.05em;
+      background: var(--accent);
       border: none;
-      border-radius: 10px;
-      margin-top: 30px;
+      color: #111;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: background 0.19s;
+      margin-top: 3px;
+    }
+    .hero-card button:hover {background: var(--hover);}
+    .hero-card .agree {
+      font-size: 0.95em;
+      color: #ccc;
+      opacity: .75;
+      margin-top: 5px;
+      text-align: left;
+    }
+    .hero-card .agree a {
+      color: var(--gold); text-decoration: underline;
+    }
+    .hero-card .worktime {
+      margin-top: 9px;
+      color: #efb83e;
+      font-size: 0.98em;
+    }
+    .hero-card .map {
+      margin: 20px 0 0 0;
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+      height: 160px;
+    }
+
+    /* Services block */
+    .section {
+      margin: 50px 0 0 0;
+      padding-bottom: 0;
+    }
+    .section-title {
+      color: var(--accent);
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 35px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .cards-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 13px;
+      min-width: 215px;
+      max-width: 260px;
+      padding: 30px 20px 24px 20px;
+      box-shadow: 0 4px 14px #0002;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform .19s;
+    }
+    .card:hover {transform: translateY(-5px) scale(1.02);}
+    .card i {
+      font-size: 2.6em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      margin: 7px 0 6px 0;
+      color: var(--gold);
+      font-size: 1.18em;
+      font-weight: 600;
+      letter-spacing: .01em;
+    }
+    .card p {
+      color: var(--gray);
+      font-size: 1em;
+      opacity: .87;
+    }
+
+    /* Prices block */
+    .prices-table {
+      margin: 0 auto 20px auto;
+      max-width: 420px;
+      width: 100%;
+      border-radius: 12px;
+      background: #20232a;
+      box-shadow: 0 4px 14px #0002;
+      overflow: hidden;
+    }
+    .prices-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .prices-table th, .prices-table td {
+      padding: 13px 8px;
+      text-align: left;
+      font-size: 1.05em;
+    }
+    .prices-table th {
+      background: #23272f;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .prices-table tr:not(:last-child) td {
+      border-bottom: 1px solid #24272d;
+    }
+    .prices-table td {
+      color: var(--gray);
+    }
+    .prices-table .cat {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 1.08em;
+    }
+
+    /* FAQ block */
+    .faq {
+      margin: 40px auto 0 auto;
+      max-width: 650px;
+    }
+    .faq-item {
+      background: var(--card-bg);
+      border-radius: 9px;
+      margin-bottom: 12px;
+      padding: 17px 24px;
+      cursor: pointer;
+      color: var(--gray);
+      box-shadow: 0 2px 8px #0001;
+      transition: background .15s;
+      position: relative;
+      user-select: none;
+    }
+    .faq-item .faq-q {
+      font-weight: 600;
+      font-size: 1.08em;
+      color: var(--gold);
+    }
+    .faq-item .faq-toggle {
+      position: absolute; right: 22px; top: 15px;
+      font-size: 1.4em;
+      color: var(--accent);
+      transition: transform .21s;
+    }
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+    }
+    .faq-item .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height .4s, opacity .32s;
+      font-size: 1em;
+      margin-top: 8px;
+    }
+    .faq-item.open .faq-a {
+      max-height: 320px;
+      opacity: 1;
+      margin-top: 13px;
     }
 
     footer {
-      background: #212121;
+      margin-top: 60px;
+      background: #18191c;
+      padding: 26px 0;
       text-align: center;
-      padding: 30px;
-      color: #888;
-      font-size: 14px;
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .outlined {
-      color: var(--gold);
-      text-shadow:
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
-    }
-
-    /* FAQ стили */
-    .faq-item {
-      background-color: var(--bg-light);
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      padding: 15px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .faq-item:hover {
-      background-color: #f1f1f1;
-    }
-
-    .faq-question {
-      font-size: 18px;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .faq-answer {
-      font-size: 16px;
-      display: none;
-      margin-top: 10px;
-      padding-left: 10px;
-    }
-
-    .faq-item.open .faq-answer {
-      display: block;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      color: #979797;
+      font-size: 15px;
     }
 
     /* Адаптивность */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      .cards {
+    @media (max-width: 900px) {
+      .hero-row {
         flex-direction: column;
-        align-items: center;
+        gap: 18px;
+        align-items: stretch;
       }
-
-      .card {
-        width: 90%;
-      }
-
-      .section h2 {
-        font-size: 28px;
-      }
+      .hero-card {max-width: none;}
+    }
+    @media (max-width: 600px) {
+      .nav {gap: 13px; font-size: 0.93em;}
+      .section-title {font-size: 1.25em;}
+      .hero-main h1 {font-size: 1.5em;}
+      .hero-main .subtitle {font-size: 1em;}
+      .container {padding: 0 4px;}
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
+    <nav class="nav container">
       <a href="#services">Услуги</a>
-      <a href="#about">О компании</a>
-      <a href="#benefits">Преимущества</a>
       <a href="#prices">Цены</a>
+      <a href="#faq">Вопросы</a>
       <a href="#contacts">Контакты</a>
     </nav>
   </header>
-
-  <section class="hero" data-aos="zoom-in">
-    <div>
-      <h1 class="outlined">Официальный техосмотр в Уфе</h1>
-      <p>Сертифицированный пункт. Карта ЕАИСТО. ОСАГО без проблем.</p>
-    </div>
-  </section>
-
-  <!-- Секции с услугами, преимуществами и т.д. -->
-
-  <section id="about-inspection" class="section" data-aos="fade-up">
-    <h2 class="outlined">О техосмотре</h2>
-    <p>Информация о техосмотре и процессе...</p>
-
-    <!-- FAQ -->
-    <div class="faq" style="margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
-      <div class="faq-item">
-        <div class="faq-question">
-          Как часто нужно проходить техосмотр?
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">Регулярность прохождения техосмотра зависит от типа транспортного средства.</div>
+  <div class="container">
+    <div class="hero-row">
+      <div class="hero-main">
+        <h1>Техосмотр в Уфе<br>ул. Новочеркасская, 13/2</h1>
+        <div class="subtitle">Сертифицированный пункт. Официальная карта ЕАИСТО.</div>
+        <div class="desc">Выдаём диагностическую карту для ОСАГО за 30 минут. Легковые, грузовые и мото. Без очередей и переплат. Работаем строго по 170-ФЗ.</div>
       </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          Что нужно для прохождения технического осмотра?
-          <span class="faq-toggle">+</span>
+      <div class="hero-card">
+        <div class="contacts">
+          <strong>Пункт №102</strong>
+          <div class="addr"><i class="fa fa-map-marker-alt"></i> Уфа, Новочеркасская, 13/2</div>
+          <div><i class="fa fa-phone"></i> <a href="tel:+79872589238" style="color:var(--accent);text-decoration:none;">+7 (987) 258-92-38</a>
+            <a class="wa-link" href="https://wa.me/79872589238" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+          <div><i class="fa fa-envelope"></i> ufa.tehosmotr@yandex.ru</div>
         </div>
-        <div class="faq-answer">
-          Для прохождения техосмотра потребуется:
-          <ul>
-            <li>Паспорт гражданина РФ</li>
-            <li>ПТС или СТС</li>
-            <li>Доверенность (если осмотр проходит не владелец)</li>
-            <li>Оплата услуги</li>
-          </ul>
+        <form action="https://formspree.io/f/mwkgrvko" method="POST" autocomplete="on">
+          <input type="text" name="car" placeholder="Госномер или VIN" required>
+          <input type="text" name="brand" placeholder="Марка/модель авто" required>
+          <input type="text" name="fio" placeholder="Ваше имя" required>
+          <input type="tel" name="tel" placeholder="Телефон" required pattern="[\d\s\-\+\(\)]{6,}">
+          <button type="submit">Записаться на техосмотр</button>
+          <div class="agree">
+            Отправляя заявку, вы соглашаетесь с <a href="#">политикой обработки данных</a>
+          </div>
+        </form>
+        <div class="worktime"><i class="fa fa-clock"></i> Пн–Сб: 9:00–18:00</div>
+        <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae54ef236f130c882c8f8bfe02f7257dbf897bded7bd9cf57f59a8ef2d7203e03&amp;source=constructor" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <section id="services" class="section">
+      <div class="section-title">Услуги и категории</div>
+      <div class="cards-list">
+        <div class="card"><i class="fas fa-car"></i>
+          <h3>M1 – Легковые</h3>
+          <p>Авто до 8 мест<br>1050,79 ₽</p>
+        </div>
+        <div class="card"><i class="fas fa-truck"></i>
+          <h3>N1 – Грузовые</h3>
+          <p>До 3,5 тонн<br>1133,04 ₽</p>
+        </div>
+        <div class="card"><i class="fas fa-motorcycle"></i>
+          <h3>L – Мото</h3>
+          <p>Мотоциклы, мопеды<br>364,07 ₽</p>
         </div>
       </div>
-      <!-- Другие вопросы -->
-    </div>
-  </section>
+    </section>
+
+    <section id="prices" class="section">
+      <div class="section-title">Стоимость техосмотра</div>
+      <div class="prices-table">
+        <table>
+          <tr>
+            <th>Категория</th>
+            <th>Цена</th>
+            <th>Время</th>
+          </tr>
+          <tr>
+            <td class="cat">M1</td>
+            <td>1050,79 ₽</td>
+            <td>30 мин</td>
+          </tr>
+          <tr>
+            <td class="cat">N1</td>
+            <td>1133,04 ₽</td>
+            <td>32 мин</td>
+          </tr>
+          <tr>
+            <td class="cat">L</td>
+            <td>364,07 ₽</td>
+            <td>10 мин</td>
+          </tr>
+        </table>
+      </div>
+      <div style="color:#e0e0e0;text-align:center;font-size:1em;opacity:.77;">Цены по постановлению №554 от 28.12.2024</div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="section-title">Часто задаваемые вопросы</div>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-q">Как часто нужно проходить техосмотр?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">
+            Новые легковые авто проходят ТО впервые через 4 года с выпуска, затем — каждые 2 года. Грузовые и такси — ежегодно. Мотоциклы — каждые 2 года после 4 лет эксплуатации.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Что нужно для техосмотра?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">
+            <ul>
+              <li>Паспорт РФ</li>
+              <li>СТС или ПТС</li>
+              <li>Доверенность (если не владелец)</li>
+              <li>Оплата услуг</li>
+            </ul>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Что такое диагностическая карта?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">
+            Это документ, подтверждающий прохождение техосмотра и нужный для оформления ОСАГО. Вносится в базу ЕАИСТО.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Где проверить свою карту?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">
+            На сайте <a href="https://gibdd.ru" target="_blank" style="color:var(--accent);">gibdd.ru</a> по VIN или номеру кузова.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="section">
+      <div class="section-title">Контакты</div>
+      <div style="text-align:center;margin-bottom:16px;">
+        <b>Пункт №102</b><br>
+        Уфа, ул. Новочеркасская, 13/2<br>
+        <a href="tel:+79872589238" style="color:var(--accent);text-decoration:none;font-weight:600">+7 (987) 258‑92‑38</a><br>
+        <a href="mailto:ufa.tehosmotr@yandex.ru" style="color:#e0e0e0;text-decoration:underline;">ufa.tehosmotr@yandex.ru</a>
+      </div>
+      <div style="max-width: 550px; margin: 0 auto;">
+        <iframe class="map" style="height:200px;" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae54ef236f130c882c8f8bfe02f7257dbf897bded7bd9cf57f59a8ef2d7203e03&amp;source=constructor" loading="lazy"></iframe>
+      </div>
+    </section>
+  </div>
 
   <footer>
-    &copy; 2025 Пункт техосмотра Уфа · Официальный сайт
+    &copy; 2025 Пункт техосмотра Уфа &ndash; официальный сайт. <br>
+    ИП Газизова А.А., ОГРНИП 322028000092232, ИНН 027617127602
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-
   <script>
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.addEventListener('click', () => {
-        item.classList.toggle('open');
-        const icon = item.querySelector('.faq-toggle');
-        if (item.classList.contains('open')) {
-          icon.textContent = '−';
-        } else {
-          icon.textContent = '+';
+    // Активное меню при скролле (необязательно, можно убрать)
+    document.addEventListener('scroll', () => {
+      const sections = ['services','prices','faq','contacts'];
+      let found = false;
+      for (let i=sections.length-1; i>=0; --i) {
+        const el = document.getElementById(sections[i]);
+        if (el && window.scrollY+80 > el.offsetTop) {
+          document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+          document.querySelector('.nav a[href="#'+sections[i]+'"]').classList.add('active');
+          found = true;
+          break;
         }
+      }
+      if (!found) document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+    });
+
+    // FAQ раскрытие
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', function() {
+        this.classList.toggle('open');
       });
     });
   </script>
-
 </body>
 </html>
-
