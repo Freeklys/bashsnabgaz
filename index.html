@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Техосмотр • Зелёный стиль</title>
+  <style>
+    :root {
+      --green: #11a021;
+      --yellow: #ffe13e;
+      --white: #fff;
+      --text: #222;
+      --menu-height: 68px;
+    }
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--text);
+      font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+    }
+    .main-header {
+      background: var(--green);
+      text-align: center;
+      padding-top: 28px;
+      position: relative;
+    }
+    .main-logo {
+      width: 130px;
+      max-width: 36vw;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 4px 10px #0002);
+      z-index: 2;
+      position: relative;
+    }
+    .pattern-wrap {
+      width: 100%;
+      height: 50px;
+      position: relative;
+      overflow: hidden;
+      margin-top: -14px;
+      z-index: 1;
+    }
+    .pattern-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      position: absolute;
+      left: 0; bottom: 0;
+      z-index: 1;
+    }
+    nav.navbar {
+      background: var(--white);
+      box-shadow: 0 3px 10px #0001;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: var(--menu-height);
+      gap: 36px;
+      font-weight: bold;
+      font-size: 1.09em;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav.navbar a {
+      color: var(--green);
+      text-decoration: none;
+      padding: 9px 18px;
+      border-radius: 6px;
+      transition: background .18s, color .18s;
+    }
+    nav.navbar a:hover, nav.navbar a.active {
+      background: var(--green);
+      color: var(--white);
+    }
+    @media (max-width: 600px) {
+      .main-logo { width: 90px; }
+      nav.navbar { gap: 10px; font-size: 0.97em; }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <img src="logo.jfif" alt="Логотип" class="main-logo">
+    <div class="pattern-wrap">
+      <img src="pattern.jpg" alt="Декоративный паттерн" class="pattern-img">
+    </div>
+  </header>
+  <nav class="navbar">
+    <a href="#services">Услуги</a>
+    <a href="#prices">Цены</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <!-- Далее идут остальные секции... -->
+</body>
+</html>
