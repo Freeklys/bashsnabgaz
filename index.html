@@ -14,18 +14,69 @@
       --menu-height: 68px;
     }
     body { margin: 0; background: var(--white); color: var(--text); font-family: 'Segoe UI','Montserrat',Arial,sans-serif;}
-    .main-header {background:var(--green);text-align:center;padding-top:28px;position:relative;}
-    .main-logo {width:130px;max-width:36vw;margin-bottom:10px;filter:drop-shadow(0 4px 10px #0002);z-index:2;position:relative;}
-    .pattern-wrap {width:100%;height:60px;position:relative;overflow:hidden;margin-top:-14px;z-index:1;line-height:0;}
+    .main-header {background:var(--green);text-align:center;padding-top:22px;position:relative;}
+    .logo-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .main-logo {width:56px;height:56px;max-width:20vw;object-fit:contain;filter:drop-shadow(0 4px 10px #0002);}
+    .org-title {
+      color: #fff;
+      font-size: 1.42rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 6px #0a370638;
+      font-family: 'Montserrat','Segoe UI',Arial,sans-serif;
+    }
+    .pattern-wrap {width:100%;height:60px;position:relative;overflow:hidden;margin-top:-9px;z-index:1;line-height:0;}
     nav.navbar {background:var(--white);box-shadow:0 3px 10px #0001;display:flex;justify-content:center;align-items:center;height:var(--menu-height);gap:36px;font-weight:bold;font-size:1.09em;position:sticky;top:0;z-index:10;}
     nav.navbar a {color:var(--green);text-decoration:none;padding:9px 18px;border-radius:6px;transition:background .18s, color .18s;}
     nav.navbar a:hover,nav.navbar a.active{background:var(--green);color:var(--white);}
     .container{max-width:1100px;margin:0 auto;padding:0 16px;}
     .hero-row{display:flex;gap:40px;align-items:flex-start;justify-content:center;margin:60px 0 30px 0;flex-wrap:wrap;}
-    .hero-main{flex:1.5;min-width:320px;}
-    .hero-main h1{font-size:2.3rem;color:var(--green);margin-bottom:10px;font-weight:700;line-height:1.15;letter-spacing:0.01em;}
-    .hero-main .subtitle{font-size:1.15rem;color:var(--yellow);margin-bottom:10px;}
-    .hero-main .desc{color:#333;font-size:1.07rem;margin-bottom:25px;opacity:.91;}
+    .hero-main{
+      flex:1.5;min-width:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      background: #fff; border-radius:18px; padding:34px 25px 30px 25px; box-shadow:0 2px 20px #0001; margin-bottom:20px;
+    }
+    .hero-main h1{
+      font-size: 2.1rem;
+      color: var(--green);
+      margin-bottom: 10px;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.13;
+      letter-spacing: 0.01em;
+      margin-top: 0;
+    }
+    .hero-main .address {
+      color: #888;
+      font-size: 1.12rem;
+      margin-bottom: 0px;
+      text-align: center;
+      letter-spacing: 0.01em;
+      font-weight: 500;
+    }
+    .hero-main .subtitle {
+      font-size: 1.13rem;
+      color: var(--green);
+      margin-bottom: 12px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .hero-main .desc {
+      color: #444;
+      font-size: 1.02rem;
+      margin-bottom: 0;
+      margin-top: 10px;
+      opacity: .93;
+      text-align: center;
+      line-height: 1.53;
+      font-weight: 500;
+    }
     .hero-card{flex:1;background:#e8fbe6;border-radius:18px;box-shadow:0 6px 24px #0002;padding:28px 28px 18px 28px;min-width:320px;margin-top:0;display:flex;flex-direction:column;align-items:stretch;max-width:370px;}
     .hero-card .contacts{font-size:1rem;margin-bottom:18px;color:#2a4d32;line-height:1.6;}
     .hero-card .contacts strong{color:var(--green);display:block;font-size:1.1rem;margin-bottom:6px;}
@@ -64,14 +115,48 @@
     .faq-item.open .faq-a{max-height:500px;opacity:1;margin-top:13px;}
     .big-map{display:flex;justify-content:center;}
     .big-map iframe{width:100%;max-width:800px;height:340px;border-radius:14px;border:none;margin:auto;display:block;}
-    footer{margin-top:60px;background:#f7faf7;padding:26px 0;text-align:center;color:#8b8b8b;font-size:15px;}
-    @media (max-width:900px){.hero-row{flex-direction:column;gap:18px;align-items:stretch;}.hero-card{max-width:none;}}
-    @media (max-width:600px){.main-logo{width:90px;}nav.navbar{gap:10px;font-size:0.97em;}.container{padding:0 4px;}.big-map iframe{height:180px;}}
+    .btn-top {
+      position: fixed;
+      right: 26px;
+      bottom: 32px;
+      z-index: 888;
+      display: none;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      box-shadow: 0 3px 18px #0002;
+      font-size: 2em;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: background .18s, box-shadow .15s;
+    }
+    .btn-top:hover { background: #19d541; box-shadow: 0 6px 24px #0004; }
+    @media (max-width:900px){
+      .hero-row{flex-direction:column;gap:18px;align-items:stretch;}
+      .hero-card{max-width:none;}
+    }
+    @media (max-width:600px){
+      .main-logo{width:46px;height:46px;}
+      .logo-title-wrap{gap:8px;}
+      .org-title{font-size:1.12rem;}
+      nav.navbar{gap:10px;font-size:0.97em;}
+      .container{padding:0 4px;}
+      .big-map iframe{height:180px;}
+      .hero-main{padding:16px 5px 13px 5px;}
+      .hero-main h1{font-size:1.25rem;}
+    }
   </style>
 </head>
 <body>
   <header class="main-header">
-    <img src="logo.jfif" alt="Логотип" class="main-logo">
+    <div class="logo-title-wrap">
+      <img src="logo.jfif" alt="Логотип" class="main-logo">
+      <span class="org-title">ООО "БАШСНАБГАЗ"</span>
+    </div>
     <div class="pattern-wrap">
       <svg width="100%" height="60" viewBox="0 0 340 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <rect width="340" height="60" fill="#11a021"/>
@@ -113,7 +198,8 @@
   <div class="container">
     <div class="hero-row">
       <div class="hero-main">
-        <h1>Техосмотр в Уфе<br>ул. Цветочная, 1/4</h1>
+        <h1>Техосмотр в Уфе</h1>
+        <div class="address">ул. Цветочная, 1/4</div>
         <div class="subtitle">ООО "БАШСНАБГАЗ"</div>
         <div class="desc">Официальный пункт проведения технического осмотра транспорта. Выдаём диагностическую карту для ОСАГО за 30 минут. Все категории: легковые, грузовые, мото. Без очередей и переплат. Работаем строго по 170‑ФЗ.</div>
       </div>
@@ -292,11 +378,24 @@
     &copy; 2025 ООО "БАШСНАБГАЗ" — официальный сайт. <br>
     Все права защищены.
   </footer>
+  <button class="btn-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Наверх">
+    <i class="fas fa-arrow-up"></i>
+  </button>
   <script>
+    // FAQ раскрытие
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', function() {
         this.classList.toggle('open');
       });
+    });
+    // Показ кнопки "Наверх"
+    const btnTop = document.querySelector('.btn-top');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 260) {
+        btnTop.style.display = 'flex';
+      } else {
+        btnTop.style.display = 'none';
+      }
     });
   </script>
 </body>
