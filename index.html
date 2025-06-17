@@ -4,36 +4,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Копия to-102.ru — версия 2</title>
+  <title>Копия to-102.ru</title>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; }
-    header { background: #000; position: sticky; top: 0; z-index: 1000; padding: 20px; }
-    nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; scroll-behavior: smooth; }
+    header { background: #000; padding: 20px; position: sticky; top: 0; z-index: 1000; }
+    nav { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
     nav a { color: #0f0; text-decoration: none; font-weight: bold; }
 
     .hero {
-      height: 80vh;
+      height: 90vh;
       background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
       text-align: center; padding: 20px;
     }
-    .hero h1 { font-size: 48px; margin: 0 0 20px 0; }
+    .hero h1 { font-size: 56px; margin-bottom: 10px; }
     .hero p { font-size: 20px; opacity: 0.8; }
 
     .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
     .section h2 { text-align: center; margin-bottom: 40px; }
 
-    .services { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-    .service-card {
+    .services, .benefits {
+      display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+    }
+
+    .card {
       background: #222; padding: 20px; border-radius: 10px; width: 280px;
       text-align: center; transition: transform 0.3s ease;
     }
-    .service-card:hover { transform: scale(1.03); }
-    .service-card i { font-size: 32px; margin-bottom: 10px; color: #0f0; }
+    .card:hover { transform: scale(1.05); }
 
-    .benefits { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-    .benefit { background: #1a1a1a; padding: 20px; border-radius: 10px; width: 280px; text-align: center; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 6px; border: none;
+    }
+    .contact-form button {
+      padding: 10px 20px; border: none; border-radius: 6px;
+      background: #0f0; color: #000; cursor: pointer;
+    }
+
+    iframe.map {
+      width: 100%; height: 300px; border: none; border-radius: 10px; margin-top: 20px;
+    }
 
     footer { background: #000; text-align: center; padding: 30px; margin-top: 60px; }
   </style>
@@ -50,55 +61,48 @@
 
   <section class="hero" data-aos="fade">
     <h1>Точная копия to-102.ru</h1>
-    <p>Второй промежуточный вариант — почти финал</p>
+    <p>Готова к адаптации под ваш бренд</p>
   </section>
 
   <section id="services" class="section" data-aos="fade-up">
     <h2>Услуги</h2>
     <div class="services">
-      <div class="service-card">
-        <i class="fas fa-tools"></i>
-        <h3>Техобслуживание</h3>
-        <p>Обслуживание и ремонт ТС</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-oil-can"></i>
-        <h3>Замена масел</h3>
-        <p>Быстрая и качественная замена</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-car-crash"></i>
-        <h3>Диагностика</h3>
-        <p>Полная проверка систем</p>
-      </div>
+      <div class="card"><h3>Диагностика</h3><p>Полная проверка автомобиля</p></div>
+      <div class="card"><h3>Техобслуживание</h3><p>Регламентные работы</p></div>
+      <div class="card"><h3>Ремонт</h3><p>Ремонт подвески, ДВС и др.</p></div>
     </div>
   </section>
 
   <section id="about" class="section" data-aos="fade-up">
     <h2>О компании</h2>
-    <p style="text-align:center;">Наша компания оказывает услуги ТО и ремонта более 10 лет...</p>
+    <p style="text-align:center;">Мы работаем более 10 лет, оказывая квалифицированные услуги ТО и ремонта автомобилей всех категорий.</p>
   </section>
 
   <section id="benefits" class="section" data-aos="fade-up">
     <h2>Преимущества</h2>
     <div class="benefits">
-      <div class="benefit"><strong>10+ лет опыта</strong><br>Работаем с 2013 года</div>
-      <div class="benefit"><strong>Сертифицированный персонал</strong><br>Все специалисты — профи</div>
-      <div class="benefit"><strong>Современное оборудование</strong><br>Новейшие стенды и ПО</div>
+      <div class="card"><strong>Опыт 10+ лет</strong><br>Постоянная практика</div>
+      <div class="card"><strong>Сертифицированный персонал</strong><br>Обученные мастера</div>
+      <div class="card"><strong>Современное оборудование</strong><br>Диагностика и ремонт</div>
     </div>
   </section>
 
   <section id="contacts" class="section" data-aos="fade-up">
     <h2>Контакты</h2>
-    <p style="text-align:center;">г. Уфа, ул. Цветочная, 1/4 · +7 (927) 235-14-05</p>
+    <form class="contact-form" action="https://formspree.io/f/mwkgrvko" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" rows="5" placeholder="Ваше сообщение" required></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+    <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae54ef236f130c882c8f8bfe02f7257dbf897bded7bd9cf57f59a8ef2d7203e03&amp;source=constructor"></iframe>
   </section>
 
   <footer>
-    &copy; 2025 Копия to-102.ru — v2
+    &copy; 2025 Копия сайта to-102.ru
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://kit.fontawesome.com/a2e0e6f91e.js" crossorigin="anonymous"></script>
   <script>AOS.init();</script>
 </body>
 </html>
