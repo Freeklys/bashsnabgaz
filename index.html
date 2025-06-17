@@ -233,6 +233,94 @@
     @media (max-width: 700px) {
       .call-fab { display: flex; }
     }
+    /* --- Галерея документов --- */
+    .docs-title {
+      margin-top: 26px;
+      font-size: 1.08em;
+      color: #13551a;
+      font-weight: 700;
+      letter-spacing: .01em;
+      margin-bottom: 7px;
+    }
+    .doc-gallery {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .doc-thumb {
+      width: 92px;
+      height: 128px;
+      object-fit: cover;
+      border-radius: 7px;
+      box-shadow: 0 3px 16px #0001;
+      border: 1.5px solid #e2eee6;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.18s, border 0.17s;
+      background: #fff;
+    }
+    .doc-thumb:hover {
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 8px 28px #2ca85233;
+      border: 2.5px solid #31d158;
+      z-index: 2;
+    }
+    .doc-modal {
+      display: none;
+      position: fixed;
+      z-index: 10005;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(30,51,35, 0.82);
+      align-items: center;
+      justify-content: center;
+      animation: fadein 0.17s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .doc-modal.open {
+      display: flex;
+    }
+    .doc-modal-img {
+      max-width: 95vw;
+      max-height: 88vh;
+      border-radius: 13px;
+      background: #fff;
+      box-shadow: 0 7px 44px #0005;
+      animation: zoomin .28s;
+    }
+    @keyframes zoomin {
+      from { transform: scale(0.82);}
+      to { transform: scale(1);}
+    }
+    .doc-modal-caption {
+      color: #fff;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.13em;
+      opacity: 0.93;
+      text-shadow: 0 2px 12px #111;
+    }
+    .doc-modal-close {
+      position: absolute;
+      top: 22px; right: 44px;
+      font-size: 2.4em;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 1;
+      transition: color .19s;
+      text-shadow: 0 2px 12px #111, 0 1px 4px #222;
+    }
+    .doc-modal-close:hover { color: #ffe13e; }
+    @media (max-width:600px) {
+      .doc-thumb { width:60px;height:83px;}
+      .doc-modal-img { max-width:99vw; max-height:68vh;}
+      .doc-modal-close { top:11px; right:19px;}
+    }
     footer{margin-top:60px;background:#232323;padding:26px 0;text-align:center;color:#d1d1d1;font-size:16px;letter-spacing:0.02em;}
     @media (max-width:900px){
       .hero-row{flex-direction:column;gap:18px;align-items:stretch;}
@@ -516,9 +604,17 @@
       <div class="section-title" data-aos="zoom-in">Контакты</div>
       <div style="text-align:center;margin-bottom:16px;">
         <b>ООО "БАШСНАБГАЗ"</b><br>
-        Уфа, ул. Цветочная, 1/4<br>
+        ОГРН: 1200200023210 &nbsp; | &nbsp; ИНН: 0273934433<br>
+        Юр. Адрес: 450112, Российская Федерация,<br>
+        Республика Башкортостан, г. Уфа,<br>
+        ул. Цветочная, д. 1/4<br>
         <a href="tel:+79272351405" style="color:var(--green);text-decoration:none;font-weight:600">+7 (927) 235‑14‑05</a><br>
         <a href="mailto:to1629271@gmail.com" style="color:#444;text-decoration:underline;">to1629271@gmail.com</a>
+        <div class="docs-title">Документы:</div>
+        <div class="doc-gallery">
+          <img src="Attestat.png" alt="Аттестат аккредитации" class="doc-thumb" onclick="openDocModal(this)">
+          <img src="Prikaz.png" alt="Приказ о предоставлении аккредитации" class="doc-thumb" onclick="openDocModal(this)">
+        </div>
       </div>
       <div class="big-map">
         <iframe src="https://yandex.ru/map-widget/v1/?ll=56.072328%2C54.805951&z=17&l=map&pt=56.072328,54.805951,pm2gnm" loading="lazy"></iframe>
@@ -531,6 +627,12 @@
   <a href="tel:+79272351405" class="call-fab" title="Позвонить">
     <i class="fas fa-phone"></i>
   </a>
+  <!-- Модальное окно для документов -->
+  <div id="docModal" class="doc-modal" onclick="closeDocModal(event)">
+    <span class="doc-modal-close" onclick="closeDocModal(event)">&times;</span>
+    <img class="doc-modal-img" id="docModalImg" src="" alt="">
+    <div class="doc-modal-caption" id="docModalCaption"></div>
+  </div>
   <!-- Модальное окно "Политика конфиденциальности" -->
   <div id="policy-modal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:#0008;">
     <div style="max-width:500px;margin:70px auto;background:#fff;border-radius:13px;padding:34px 24px;box-shadow:0 5px 30px #0002;position:relative;">
@@ -599,6 +701,21 @@
           alert('Ошибка при отправке. Пожалуйста, попробуйте еще раз.');
       });
     });
+    // Документы: открытие модалки
+    function openDocModal(img) {
+      document.getElementById('docModalImg').src = img.src;
+      document.getElementById('docModalCaption').innerHTML = img.alt;
+      document.getElementById('docModal').classList.add('open');
+    }
+    function closeDocModal(event) {
+      if (event.target.classList.contains('doc-modal') || event.target.classList.contains('doc-modal-close')) {
+        document.getElementById('docModal').classList.remove('open');
+        setTimeout(function(){
+          document.getElementById('docModalImg').src='';
+          document.getElementById('docModalCaption').innerHTML = '';
+        }, 180);
+      }
+    }
   </script>
 </body>
 </html>
