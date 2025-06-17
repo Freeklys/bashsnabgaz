@@ -1,63 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ООО БАШСНАБГАЗ</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
   <style>
-    body { margin: 0; font-family: sans-serif; background: #111; color: #fff; scroll-behavior: smooth; }
+    body { background: #111; color: #fff; font-family: sans-serif; margin: 0; scroll-behavior: smooth; }
     header, footer { background: #000; padding: 20px; text-align: center; }
-    .logo { height: 60px; }
+    .nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; max-width: 1200px; margin: auto; }
+    .nav img { height: 50px; }
+    .nav a { color: #0f0; text-decoration: none; margin: 0 15px; font-weight: bold; }
     .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+    h2 { text-align: center; }
     .certificates { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-    .certificates img { max-width: 300px; border: 2px solid #fff; border-radius: 10px; transition: transform 0.3s ease; }
-    .certificates img:hover { transform: scale(1.05); }
-    .contact-info { line-height: 2; text-align: center; }
+    .certificates a img { width: 300px; border-radius: 10px; border: 2px solid #fff; transition: 0.3s ease; }
+    .certificates a img:hover { transform: scale(1.05); }
+    .contact-info { text-align: center; line-height: 2; }
     iframe.map { width: 100%; height: 400px; border: none; border-radius: 12px; }
-    input, textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 6px; border: none; }
-    form { max-width: 500px; margin: auto; text-align: left; }
+    form { max-width: 500px; margin: auto; }
+    input, textarea { width: 100%; margin-bottom: 10px; padding: 10px; border-radius: 6px; border: none; }
     button { background: #0f0; color: #000; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.jfif" alt="Логотип" class="logo">
-    <h1>ООО "БАШСНАБГАЗ"</h1>
-    <p>Категории ТС: A — L, B — M1, N1</p>
+    <div class="nav">
+      <img src="logo.jfif" alt="Логотип">
+      <div>
+        <a href="#attestat">Аттестат</a>
+        <a href="#certs">Сертификаты</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+    </div>
   </header>
 
-  <section class="section">
+  <section class="section" id="attestat" data-aos="fade-up">
     <h2>Аттестат аккредитации</h2>
-    <img src="Attestat.png" alt="Аттестат" style="width:100%; max-width:800px; display:block; margin:auto; border-radius: 12px;">
+    <a href="Attestat.png" data-lightbox="docs" data-title="Аттестат">
+      <img src="Attestat.png" alt="Аттестат" style="width:100%; max-width:800px; display:block; margin:auto;">
+    </a>
   </section>
 
-  <section class="section">
+  <section class="section" id="certs" data-aos="fade-up">
     <h2>Сертификаты и документы</h2>
     <div class="certificates">
-      <img src="Partner.png" alt="Партнёр">
-      <img src="Prikaz.png" alt="Приказ">
+      <a href="Partner.png" data-lightbox="docs" data-title="Партнёр"><img src="Partner.png" alt="Партнёр"></a>
+      <a href="Prikaz.png" data-lightbox="docs" data-title="Приказ"><img src="Prikaz.png" alt="Приказ"></a>
     </div>
   </section>
 
-  <section class="section contact-info">
+  <section class="section contact-info" id="contacts" data-aos="fade-up">
     <h2>Контакты</h2>
-    <p><strong>Адрес:</strong> г. Уфа, ул. Цветочная, д. 1/4</p>
-    <p><strong>Телефон:</strong> +7 (927) 235-14-05</p>
-    <p><strong>Email:</strong> <a href="mailto:to1629271@gmail.com" style="color:#0f0;">to1629271@gmail.com</a></p>
-    <p><strong>Режим работы:</strong><br>
-      Пн–Пт: 08:00–19:00<br>
-      Сб: 08:00–15:00<br>
-      Вс: выходной
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Мы на карте</h2>
+    <p><strong>ООО БАШСНАБГАЗ</strong></p>
+    <p>Адрес: г. Уфа, ул. Цветочная, д. 1/4</p>
+    <p>Телефон: +7 (927) 235-14-05</p>
+    <p>Email: <a href="mailto:to1629271@gmail.com" style="color:#0f0;">to1629271@gmail.com</a></p>
+    <p>Режим работы:<br>Пн–Пт: 08:00–19:00<br>Сб: 08:00–15:00<br>Вс: выходной</p>
     <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae54ef236f130c882c8f8bfe02f7257dbf897bded7bd9cf57f59a8ef2d7203e03&amp;source=constructor"></iframe>
   </section>
 
-  <section class="section">
+  <section class="section" data-aos="fade-up">
     <h2>Обратная связь</h2>
     <form action="https://formspree.io/f/mwkgrvko" method="POST">
       <input type="text" name="name" placeholder="Ваше имя" required>
@@ -68,7 +72,15 @@
   </section>
 
   <footer>
-    &copy; 2025 ООО "БАШСНАБГАЗ"
+    &copy; 2025 ООО БАШСНАБГАЗ
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
 </body>
 </html>
