@@ -8,6 +8,23 @@
   <meta name="keywords" content="техосмотр, Уфа, БАШСНАБГАЗ, диагностическая карта, ОСАГО, транспорт, технический осмотр">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ООО БАШСНАБГАЗ",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Цветочная, 1/4",
+      "addressLocality": "Уфа",
+      "addressCountry": "RU"
+    },
+    "telephone": "+79272351405",
+    "email": "to1629271@gmail.com",
+    "openingHours": "Mo-Fr 08:00-19:00, Sa 08:00-15:00",
+    "url": "https://ВАШ_САЙТ.РУ"
+  }
+  </script>
   <style>
     :root {
       --green: #11a021;
@@ -46,6 +63,7 @@
       text-align: left;
     }
     .pattern-wrap {width:100%;height:60px;position:relative;overflow:hidden;margin-top:-9px;z-index:1;line-height:0;}
+
     /* Бургер-меню стили */
     .burger {
       display: none;
@@ -210,9 +228,8 @@
     .hero-card form{display:flex;flex-direction:column;gap:12px;margin-bottom:6px;}
     .hero-card input{padding:11px 14px;border-radius:7px;border:1px solid #d0e6d0;font-size:1em;background:#fff;color:var(--text);outline:none;margin-bottom:2px;}
     .hero-card input:focus{box-shadow:0 0 0 2px var(--green);}
-    .hero-card button{
-      padding:13px 0;font-weight:bold;font-size:1.05em;background:var(--green);border:none;color:#fff;border-radius:7px;cursor:pointer;transition:background 0.19s;margin-top:3px;
-    }
+
+    .hero-card button{padding:13px 0;font-weight:bold;font-size:1.05em;background:var(--green);border:none;color:#fff;border-radius:7px;cursor:pointer;transition:background 0.19s;margin-top:3px;}
     .hero-card button:hover{background:#0b871b;}
     .hero-card .agree{font-size:0.95em;color:#678564;opacity:.82;margin-top:5px;text-align:left;}
     .hero-card .agree a{color:var(--green);text-decoration:underline;}
@@ -227,7 +244,9 @@
     .card h3{margin:7px 0 6px 0;color:var(--yellow);font-size:1.18em;font-weight:600;letter-spacing:.01em;}
     .card p{color:#333;font-size:1em;opacity:.87;}
     .section:nth-child(even) { background: var(--white);}
+
     .section:nth-child(odd) { background: var(--light);}
+
     .prices-table{margin:0 auto 20px auto;max-width:420px;width:100%;border-radius:12px;background:#f8fff6;box-shadow:var(--shadow);overflow:hidden;}
     .prices-table table{width:100%;border-collapse:collapse;}
     .prices-table th,.prices-table td{padding:13px 8px;text-align:left;font-size:1.05em;}
@@ -235,6 +254,7 @@
     .prices-table tr:not(:last-child) td{border-bottom:1px solid #d0e6d0;}
     .prices-table td{color:#333;}
     .prices-table .cat{color:var(--yellow);font-weight:600;font-size:1.08em;}
+
     .faq{margin:40px auto 0 auto;max-width:650px;}
     .faq-item{background:#e8fbe6;border-radius:9px;margin-bottom:12px;padding:17px 24px;cursor:pointer;color:#2a4d32;box-shadow:0 2px 8px #0001;transition:background .15s;position:relative;user-select:none;}
     .faq-item .faq-q{font-weight:600;font-size:1.14em;color:var(--green);}
@@ -619,63 +639,6 @@
             При подаче заявки онлайн оператор сам подскажет детали.
           </div>
         </div>
-        <div class="faq-item" data-aos="fade-up" data-aos-delay="160">
-          <div class="faq-q">Что проверяют при техосмотре?</div>
-          <span class="faq-toggle">+</span>
-          <div class="faq-a">
-            <ul>
-              <li>Работу тормозной системы</li>
-              <li>Световые приборы, стеклоочистители</li>
-              <li>Ремни безопасности, подушки</li>
-              <li>Шины, протектор</li>
-              <li>Отсутствие течей и коррозии</li>
-              <li>Работу двигателя, подвески, рулевого управления</li>
-            </ul>
-            По результатам выдается диагностическая карта.
-          </div>
-        </div>
-        <div class="faq-item" data-aos="fade-up" data-aos-delay="190">
-          <div class="faq-q">Что делать при утере диагностической карты?</div>
-          <span class="faq-toggle">+</span>
-          <div class="faq-a">
-            Карта восстанавливается через обращение к любому аккредитованному оператору или онлайн по VIN-номеру через реестр ЕАИСТО.<br>
-            При утере бумажного экземпляра — информация всегда доступна в электронной базе.
-          </div>
-        </div>
-        <div class="faq-item" data-aos="fade-up" data-aos-delay="220">
-          <div class="faq-q">Где проверить действительность карты?</div>
-          <span class="faq-toggle">+</span>
-          <div class="faq-a">
-            Проверить действительность карты можно на сайте <a href="https://gibdd.ru" target="_blank" style="color:var(--green);">gibdd.ru</a> по VIN или номеру кузова.
-          </div>
-        </div>
-        <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
-          <div class="faq-q">Можно ли пройти техосмотр вне места регистрации автомобиля?</div>
-          <span class="faq-toggle">+</span>
-          <div class="faq-a">
-            Да, вы можете пройти техосмотр в любом регионе России, независимо от регистрации вашего ТС.
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="contacts" class="section" data-aos="fade-up">
-      <div class="section-title" data-aos="zoom-in">Контакты</div>
-      <div style="text-align:center;margin-bottom:16px;">
-        <b>ООО "БАШСНАБГАЗ"</b><br>
-        ОГРН: 1200200023210 &nbsp; | &nbsp; ИНН: 0273934433<br>
-        Юр. Адрес: 450112, Российская Федерация,<br>
-        Республика Башкортостан, г. Уфа,<br>
-        ул. Цветочная, д. 1/4<br>
-        <a href="tel:+79272351405" style="color:var(--green);text-decoration:none;font-weight:600">+7 (927) 235‑14‑05</a><br>
-        <a href="mailto:to1629271@gmail.com" style="color:#444;text-decoration:underline;">to1629271@gmail.com</a>
-        <div class="docs-title">Документы:</div>
-        <div class="doc-gallery">
-          <img src="Attestat.png" alt="Аттестат аккредитации" class="doc-thumb" onclick="openDocModal(this)">
-          <img src="Prikaz.png" alt="Приказ о предоставлении аккредитации" class="doc-thumb" onclick="openDocModal(this)">
-        </div>
-      </div>
-      <div class="big-map">
-        <iframe src="https://yandex.ru/map-widget/v1/?ll=56.072328%2C54.805951&z=17&l=map&pt=56.072328,54.805951,pm2gnm" loading="lazy"></iframe>
       </div>
     </section>
   </div>
