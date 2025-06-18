@@ -8,93 +8,6 @@
   <meta name="keywords" content="техосмотр, Уфа, БАШСНАБГАЗ, диагностическая карта, ОСАГО, транспорт, технический осмотр">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <style>
-    :root {
-      --green: #11a021;
-      --yellow: #ffe13e;
-      --white: #fff;
-      --text: #232323;
-      --menu-height: 68px;
-      --light: #f4f9f3;
-      --light-alt: #f8fff6;
-      --border: #e0eae4;
-      --shadow: 0 6px 24px #0002;
-    }
-    body { margin: 0; background: var(--light); color: var(--text); font-family: 'Segoe UI','Montserrat',Arial,sans-serif;}
-    .main-header {background:var(--green);text-align:center;padding-top:22px;position:relative;}
-    .logo-title-wrap { display: flex; align-items: center; justify-content: center; gap: 28px; margin-bottom: 8px; flex-wrap: wrap; min-height: 60px; width: 100%;}
-    .main-logo {width:66px;height:66px;max-width:22vw;object-fit:contain;filter:drop-shadow(0 4px 10px #0002);}
-    .org-title { color: #fff; font-size: 2rem; font-weight: 800; letter-spacing: 0.03em; text-shadow: 0 2px 10px #0a370630; font-family: 'Montserrat','Segoe UI',Arial,sans-serif; padding-left: 10px; padding-right: 10px; min-width: 200px; text-align: left;}
-    .pattern-wrap {width:100%;height:60px;position:relative;overflow:hidden;margin-top:-9px;z-index:1;line-height:0;}
-    nav.navbar {background:var(--white);box-shadow:0 3px 10px #0001;display:flex;justify-content:center;align-items:center;height:var(--menu-height);gap:32px;font-weight:bold;font-size:1.09em;position:sticky;top:0;z-index:10;transition:.3s;}
-    nav.navbar a {color:var(--green);text-decoration:none;padding:9px 18px;border-radius:6px;transition:background .18s, color .18s;}
-    nav.navbar a:hover,nav.navbar a.active{background:var(--green);color:var(--white);}
-    .btn-signup {
-      background: var(--green);
-      color: #fff !important;
-      border-radius: 8px;
-      padding: 9px 25px !important;
-      margin-left: 14px;
-      box-shadow: 0 3px 12px #26c47a23;
-      font-weight: bold;
-      transition: background .16s, color .16s, box-shadow .2s;
-      border: 2px solid var(--green);
-    }
-    .btn-signup:hover { background: #fff !important; color: var(--green) !important; border: 2px solid var(--green);}
-    /* Бургер меню */
-    .burger { display: none; position: fixed; z-index: 2001; top: 17px; left: 18px; width: 38px; height: 38px; flex-direction: column; justify-content: center; align-items: center; cursor: pointer;}
-    .burger span { display: block; height: 4px; width: 28px; background: #fff; margin: 5px 0; border-radius: 3px; transition:.3s;}
-    .navbar-bg { display: none; position: fixed; z-index: 1999; top: 0; left: 0; width: 100vw; height: 100vh; background: #0007;}
-    @media (max-width: 900px) {
-      nav.navbar {position:fixed; left:0; right:0; top:0; flex-direction:column; align-items:flex-start; background:var(--white); height:auto; min-height:100vh; padding-top:95px; gap:0; box-shadow:0 6px 24px #0003; transform:translateY(-110%); transition:.38s;}
-      nav.navbar.open { transform:translateY(0);}
-      nav.navbar a {width:100%; text-align:left; border-radius:0; border-bottom:1px solid #eee; padding:18px 24px; font-size:1.18em;}
-      .burger { display:flex;}
-      .navbar-bg { display:block; opacity:0; transition:.3s;}
-      .navbar-bg.open { opacity:1; }
-    }
-    @media (min-width:901px){
-      .navbar-bg {display:none;}
-    }
-    /* Остальная адаптивность, мобильные стили */
-    @media (max-width:900px){
-      .hero-row{flex-direction:column;gap:18px;align-items:stretch;}
-      .hero-card{max-width:none;}
-      .hero-main{padding:20px 10px;}
-      .org-title{font-size:1.23rem;}
-      .main-logo{width:54px;height:54px;}
-    }
-    @media (max-width:600px){
-      .main-logo{width:44px;height:44px;}
-      .logo-title-wrap{gap:12px;}
-      .org-title{font-size:1.04rem;}
-      .container{padding:0 4px;}
-      .big-map iframe{height:180px;}
-      .hero-main{padding:10px 3px;}
-      nav.navbar{gap:10px;font-size:0.97em;}
-      .btn-signup { padding: 7px 8vw !important; font-size:1.1em;}
-      .cards-list {gap:10px;}
-      .card { min-width:140px; max-width:100%; padding:18px 5px 12px 5px;}
-    }
-    /* Все остальные стили (из твоего файла) оставь без изменений — они уже есть! */
-    /* ... */
-  </style>
-</head>
-<body>
-  <div class="burger" id="burgerMenu">
-    <span></span><span></span><span></span>
-  </div>
-  <div class="navbar-bg" id="navbarBg"></div>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Техосмотр • БАШСНАБГАЗ</title>
-  <meta name="description" content="Официальный техосмотр транспорта в Уфе. ООО 'БАШСНАБГАЗ' — выдача диагностических карт для ОСАГО, все категории. Без очередей, быстро, по закону.">
-  <meta name="keywords" content="техосмотр, Уфа, БАШСНАБГАЗ, диагностическая карта, ОСАГО, транспорт, технический осмотр">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -150,6 +63,76 @@
       text-align: left;
     }
     .pattern-wrap {width:100%;height:60px;position:relative;overflow:hidden;margin-top:-9px;z-index:1;line-height:0;}
+
+    /* Бургер-меню стили */
+    .burger {
+      display: none;
+      position: absolute;
+      right: 24px;
+      top: 18px;
+      width: 40px;
+      height: 40px;
+      z-index: 101;
+      background: none;
+      border: none;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .burger-bar {
+      width: 30px;
+      height: 4px;
+      background: #fff;
+      border-radius: 3px;
+      transition: all .3s;
+    }
+    @media (max-width:900px){
+      .burger {display: flex;}
+      nav.navbar {
+        display: none;
+        position: fixed;
+        left: 0; top: 0;
+        width: 80vw;
+        max-width: 330px;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 32px 24px 24px;
+        box-shadow: 0 0 0 100vw rgba(0,0,0,0.32);
+        gap: 0;
+        z-index: 100;
+        transform: translateX(-100%);
+        transition: transform .33s cubic-bezier(.77,0,.18,1);
+      }
+      nav.navbar.open {
+        display: flex;
+        transform: translateX(0);
+      }
+      nav.navbar a {
+        display: block;
+        margin: 0 0 24px 0;
+        font-size: 1.21em;
+        padding: 12px 0 12px 8px;
+        width: 100%;
+        color: var(--green);
+      }
+      .burger-bg {
+        display: none;
+        position: fixed;
+        z-index: 99;
+        left: 0; top: 0; width: 100vw; height: 100vh;
+        background: rgba(44,70,48,0.37);
+      }
+      .burger-bg.show { display: block;}
+    }
+    @media (min-width:901px){
+      .burger {display: none;}
+      nav.navbar {display: flex !important; position:sticky; top:0;}
+      .burger-bg {display: none !important;}
+    }
     nav.navbar {background:var(--white);box-shadow:0 3px 10px #0001;display:flex;justify-content:center;align-items:center;height:var(--menu-height);gap:32px;font-weight:bold;font-size:1.09em;position:sticky;top:0;z-index:10;}
     nav.navbar a {color:var(--green);text-decoration:none;padding:9px 18px;border-radius:6px;transition:background .18s, color .18s;}
     nav.navbar a:hover,nav.navbar a.active{background:var(--green);color:var(--white);}
@@ -407,15 +390,6 @@
       .doc-thumb { width:60px;height:83px;}
       .doc-modal-img { max-width:99vw; max-height:68vh;}
       .doc-modal-close { top:11px; right:19px;}
-    }
-    footer{margin-top:60px;background:#232323;padding:26px 0;text-align:center;color:#d1d1d1;font-size:16px;letter-spacing:0.02em;}
-    @media (max-width:900px){
-      .hero-row{flex-direction:column;gap:18px;align-items:stretch;}
-      .hero-card{max-width:none;}
-      .hero-main{padding:20px 10px;}
-      .org-title{font-size:1.23rem;}
-    }
-    @media (max-width:600px){
       .main-logo{width:46px;height:46px;}
       .logo-title-wrap{gap:12px;}
       .org-title{font-size:1.04rem;}
@@ -423,6 +397,13 @@
       .container{padding:0 4px;}
       .big-map iframe{height:180px;}
       .hero-main{padding:10px 3px;}
+    }
+    footer{margin-top:60px;background:#232323;padding:26px 0;text-align:center;color:#d1d1d1;font-size:16px;letter-spacing:0.02em;}
+    @media (max-width:900px){
+      .hero-row{flex-direction:column;gap:18px;align-items:stretch;}
+      .hero-card{max-width:none;}
+      .hero-main{padding:20px 10px;}
+      .org-title{font-size:1.23rem;}
     }
   </style>
 </head>
@@ -432,6 +413,11 @@
       <img src="logo.jfif" alt="Логотип" class="main-logo">
       <span class="org-title">ООО "БАШСНАБГАЗ"</span>
     </div>
+    <button class="burger" id="burgerBtn" aria-label="Открыть меню">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
     <div class="pattern-wrap">
       <svg width="100%" height="60" viewBox="0 0 340 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <rect width="340" height="60" fill="#11a021"/>
@@ -463,7 +449,8 @@
       </svg>
     </div>
   </header>
-  <nav class="navbar" data-aos="fade-down" data-aos-delay="150">
+  <div class="burger-bg" id="burgerBg"></div>
+  <nav class="navbar" id="mainNav" data-aos="fade-down" data-aos-delay="150">
     <a href="#services">Услуги</a>
     <a href="#prices">Цены</a>
     <a href="#about-inspection">О техосмотре</a>
@@ -738,18 +725,21 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, once: true });
+
     // Кнопка "Наверх"
     const btnTop = document.getElementById('btnTop');
     window.addEventListener('scroll', function() {
       btnTop.style.display = window.scrollY > 200 ? 'flex' : 'none';
     });
     btnTop.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+
     // FAQ раскрытие
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', function() {
         this.classList.toggle('open');
       });
     });
+
     // WhatsApp + Formspree форма
     document.getElementById('whatsappForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -788,6 +778,7 @@
           alert('Ошибка при отправке. Пожалуйста, попробуйте еще раз.');
       });
     });
+
     // Документы: открытие модалки
     function openDocModal(img) {
       document.getElementById('docModalImg').src = img.src;
@@ -806,61 +797,4 @@
   </script>
 </body>
 </html>
-  <!-- ... см. твой index.html ... -->
-  <!-- Например: -->
-  <header class="main-header" data-aos="fade-down">
-    <div class="logo-title-wrap">
-      <img src="logo.jfif" alt="Логотип" class="main-logo">
-      <span class="org-title">ООО "БАШСНАБГАЗ"</span>
-    </div>
-    <div class="pattern-wrap">
-      <!-- SVG ... -->
-    </div>
-  </header>
-  <nav class="navbar" data-aos="fade-down" data-aos-delay="150">
-    <!-- ... твои пункты меню ... -->
-  </nav>
-  <div class="container">
-    <!-- ... всё остальное ... -->
-  </div>
-  <!-- Кнопка "Наверх", call-fab, docModal, policy-modal, footer и т.д. ... -->
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Бургер-меню мобильное
-    const burger = document.getElementById('burgerMenu');
-    const navbar = document.querySelector('nav.navbar');
-    const navbarBg = document.getElementById('navbarBg');
-    function closeMenu() {
-      navbar.classList.remove('open');
-      navbarBg.classList.remove('open');
-    }
-    burger.onclick = function(){
-      navbar.classList.toggle('open');
-      navbarBg.classList.toggle('open');
-    }
-    navbarBg.onclick = closeMenu;
-    document.querySelectorAll('nav.navbar a').forEach(link => {
-      link.onclick = closeMenu;
-    });
-    // Остальные твои скрипты (AOS, FAQ, scroll, WhatsApp-форма и т.д. — ОСТАВЬ, ничего не удаляй!)
-    AOS.init({ duration: 800, once: true });
-    // ... (все остальные твои скрипты полностью)
-    // Lightbox (документы): улучшено!
-    function openDocModal(img) {
-      document.getElementById('docModalImg').src = img.src;
-      document.getElementById('docModalCaption').innerHTML = img.alt;
-      document.getElementById('docModal').classList.add('open');
-    }
-    function closeDocModal(event) {
-      if (event.target.classList.contains('doc-modal') || event.target.classList.contains('doc-modal-close')) {
-        document.getElementById('docModal').classList.remove('open');
-        setTimeout(function(){
-          document.getElementById('docModalImg').src='';
-          document.getElementById('docModalCaption').innerHTML = '';
-        }, 180);
-      }
-    }
-  </script>
-</body>
-</html>
