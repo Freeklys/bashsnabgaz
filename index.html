@@ -8,6 +8,93 @@
   <meta name="keywords" content="техосмотр, Уфа, БАШСНАБГАЗ, диагностическая карта, ОСАГО, транспорт, технический осмотр">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --green: #11a021;
+      --yellow: #ffe13e;
+      --white: #fff;
+      --text: #232323;
+      --menu-height: 68px;
+      --light: #f4f9f3;
+      --light-alt: #f8fff6;
+      --border: #e0eae4;
+      --shadow: 0 6px 24px #0002;
+    }
+    body { margin: 0; background: var(--light); color: var(--text); font-family: 'Segoe UI','Montserrat',Arial,sans-serif;}
+    .main-header {background:var(--green);text-align:center;padding-top:22px;position:relative;}
+    .logo-title-wrap { display: flex; align-items: center; justify-content: center; gap: 28px; margin-bottom: 8px; flex-wrap: wrap; min-height: 60px; width: 100%;}
+    .main-logo {width:66px;height:66px;max-width:22vw;object-fit:contain;filter:drop-shadow(0 4px 10px #0002);}
+    .org-title { color: #fff; font-size: 2rem; font-weight: 800; letter-spacing: 0.03em; text-shadow: 0 2px 10px #0a370630; font-family: 'Montserrat','Segoe UI',Arial,sans-serif; padding-left: 10px; padding-right: 10px; min-width: 200px; text-align: left;}
+    .pattern-wrap {width:100%;height:60px;position:relative;overflow:hidden;margin-top:-9px;z-index:1;line-height:0;}
+    nav.navbar {background:var(--white);box-shadow:0 3px 10px #0001;display:flex;justify-content:center;align-items:center;height:var(--menu-height);gap:32px;font-weight:bold;font-size:1.09em;position:sticky;top:0;z-index:10;transition:.3s;}
+    nav.navbar a {color:var(--green);text-decoration:none;padding:9px 18px;border-radius:6px;transition:background .18s, color .18s;}
+    nav.navbar a:hover,nav.navbar a.active{background:var(--green);color:var(--white);}
+    .btn-signup {
+      background: var(--green);
+      color: #fff !important;
+      border-radius: 8px;
+      padding: 9px 25px !important;
+      margin-left: 14px;
+      box-shadow: 0 3px 12px #26c47a23;
+      font-weight: bold;
+      transition: background .16s, color .16s, box-shadow .2s;
+      border: 2px solid var(--green);
+    }
+    .btn-signup:hover { background: #fff !important; color: var(--green) !important; border: 2px solid var(--green);}
+    /* Бургер меню */
+    .burger { display: none; position: fixed; z-index: 2001; top: 17px; left: 18px; width: 38px; height: 38px; flex-direction: column; justify-content: center; align-items: center; cursor: pointer;}
+    .burger span { display: block; height: 4px; width: 28px; background: #fff; margin: 5px 0; border-radius: 3px; transition:.3s;}
+    .navbar-bg { display: none; position: fixed; z-index: 1999; top: 0; left: 0; width: 100vw; height: 100vh; background: #0007;}
+    @media (max-width: 900px) {
+      nav.navbar {position:fixed; left:0; right:0; top:0; flex-direction:column; align-items:flex-start; background:var(--white); height:auto; min-height:100vh; padding-top:95px; gap:0; box-shadow:0 6px 24px #0003; transform:translateY(-110%); transition:.38s;}
+      nav.navbar.open { transform:translateY(0);}
+      nav.navbar a {width:100%; text-align:left; border-radius:0; border-bottom:1px solid #eee; padding:18px 24px; font-size:1.18em;}
+      .burger { display:flex;}
+      .navbar-bg { display:block; opacity:0; transition:.3s;}
+      .navbar-bg.open { opacity:1; }
+    }
+    @media (min-width:901px){
+      .navbar-bg {display:none;}
+    }
+    /* Остальная адаптивность, мобильные стили */
+    @media (max-width:900px){
+      .hero-row{flex-direction:column;gap:18px;align-items:stretch;}
+      .hero-card{max-width:none;}
+      .hero-main{padding:20px 10px;}
+      .org-title{font-size:1.23rem;}
+      .main-logo{width:54px;height:54px;}
+    }
+    @media (max-width:600px){
+      .main-logo{width:44px;height:44px;}
+      .logo-title-wrap{gap:12px;}
+      .org-title{font-size:1.04rem;}
+      .container{padding:0 4px;}
+      .big-map iframe{height:180px;}
+      .hero-main{padding:10px 3px;}
+      nav.navbar{gap:10px;font-size:0.97em;}
+      .btn-signup { padding: 7px 8vw !important; font-size:1.1em;}
+      .cards-list {gap:10px;}
+      .card { min-width:140px; max-width:100%; padding:18px 5px 12px 5px;}
+    }
+    /* Все остальные стили (из твоего файла) оставь без изменений — они уже есть! */
+    /* ... */
+  </style>
+</head>
+<body>
+  <div class="burger" id="burgerMenu">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="navbar-bg" id="navbarBg"></div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Техосмотр • БАШСНАБГАЗ</title>
+  <meta name="description" content="Официальный техосмотр транспорта в Уфе. ООО 'БАШСНАБГАЗ' — выдача диагностических карт для ОСАГО, все категории. Без очередей, быстро, по закону.">
+  <meta name="keywords" content="техосмотр, Уфа, БАШСНАБГАЗ, диагностическая карта, ОСАГО, транспорт, технический осмотр">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -346,10 +433,32 @@
       <span class="org-title">ООО "БАШСНАБГАЗ"</span>
     </div>
     <div class="pattern-wrap">
-      <!-- SVG pattern -->
       <svg width="100%" height="60" viewBox="0 0 340 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <rect width="340" height="60" fill="#11a021"/>
-        <!-- ... Полигонные элементы ... -->
+        <polygon points="0,60 0,42 14,60" fill="#fff"/>
+        <polygon points="14,60 7,36 28,60" fill="#fff"/>
+        <polygon points="28,60 22,49 42,60" fill="#fff"/>
+        <polygon points="42,60 35,44 56,60" fill="#fff"/>
+        <polygon points="56,60 53,37 70,60" fill="#fff"/>
+        <polygon points="70,60 65,48 84,60" fill="#fff"/>
+        <polygon points="84,60 80,40 98,60" fill="#fff"/>
+        <polygon points="98,60 96,47 112,60" fill="#fff"/>
+        <polygon points="112,60 110,39 126,60" fill="#fff"/>
+        <polygon points="126,60 120,44 140,60" fill="#fff"/>
+        <polygon points="140,60 138,35 154,60" fill="#fff"/>
+        <polygon points="154,60 150,40 168,60" fill="#fff"/>
+        <polygon points="168,60 162,38 182,60" fill="#fff"/>
+        <polygon points="182,60 178,45 196,60" fill="#fff"/>
+        <polygon points="196,60 192,41 210,60" fill="#fff"/>
+        <polygon points="210,60 204,48 224,60" fill="#fff"/>
+        <polygon points="224,60 220,42 238,60" fill="#fff"/>
+        <polygon points="238,60 234,39 252,60" fill="#fff"/>
+        <polygon points="252,60 248,46 266,60" fill="#fff"/>
+        <polygon points="266,60 260,40 280,60" fill="#fff"/>
+        <polygon points="280,60 278,45 294,60" fill="#fff"/>
+        <polygon points="294,60 290,39 308,60" fill="#fff"/>
+        <polygon points="308,60 304,42 320,60" fill="#fff"/>
+        <polygon points="320,60 318,44 332,60" fill="#fff"/>
         <polygon points="332,60 326,37 340,60" fill="#fff"/>
       </svg>
     </div>
@@ -425,8 +534,179 @@
         <iframe class="map" src="https://yandex.ru/map-widget/v1/?ll=56.072328%2C54.805951&z=17&l=map&pt=56.072328,54.805951,pm2gnm" loading="lazy"></iframe>
       </div>
     </div>
-    <!-- Остальные секции — услуги, цены, этапы, faq, контакты, big-map, футер — полностью такие, как были в твоём рабочем коде -->
-    <!-- ... если нужно — вставь блоки отсюда ... -->
+    <section id="services" class="section" data-aos="fade-up">
+      <div class="section-title" data-aos="zoom-in">Категории транспортных средств</div>
+      <div class="cards-list">
+        <div class="card" data-aos="fade-up" data-aos-delay="50"><i class="fas fa-motorcycle"></i>
+          <h3>A – L</h3>
+          <p>Мотоциклы, мопеды и скутеры</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-car"></i>
+          <h3>B – M1</h3>
+          <p>Легковые (до 8 мест)</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="150"><i class="fas fa-truck"></i>
+          <h3>N1</h3>
+          <p>Грузовые до 3,5 т</p>
+        </div>
+      </div>
+    </section>
+    <section id="prices" class="section" data-aos="fade-up">
+      <div class="section-title" data-aos="zoom-in">Стоимость техосмотра</div>
+      <div class="prices-table">
+        <table>
+          <tr>
+            <th>Категория</th>
+            <th>Цена</th>
+            <th>Время</th>
+          </tr>
+          <tr>
+            <td class="cat">A, L</td>
+            <td>364,07 ₽</td>
+            <td>10 мин</td>
+          </tr>
+          <tr>
+            <td class="cat">B, M1</td>
+            <td>1050,79 ₽</td>
+            <td>30 мин</td>
+          </tr>
+          <tr>
+            <td class="cat">N1</td>
+            <td>1133,04 ₽</td>
+            <td>32 мин</td>
+          </tr>
+        </table>
+      </div>
+      <div style="color:#444;text-align:center;font-size:1em;opacity:.77;">Цены по постановлению №554 от 28.12.2024</div>
+    </section>
+    <section id="about-inspection" class="section" data-aos="fade-up">
+      <div class="section-title" data-aos="zoom-in">О техосмотре</div>
+      <div style="max-width:760px;margin:0 auto 32px auto;line-height:1.6;font-size:1.12em;color:#333;opacity:.94;">
+        Все находящиеся в эксплуатации дорожные транспортные средства должны регулярно проходить технический осмотр для проверки соответствия технического состояния и оборудования транспортных средств требованиям безопасности дорожного движения.<br><br>
+        <b>Куда обратиться?</b> Техосмотр проводится организацией (оператором технического осмотра), прошедшим аккредитацию по проведению технического осмотра соответствующей категории транспортных средств. Проводит аккредитацию профессиональное объединение страховщиков. Граждане и юридические лица вправе обратиться к любому оператору независимо от места регистрации транспортного средства.
+      </div>
+    </section>
+    <!-- БЛОК ЭТАПОВ -->
+    <section id="steps" class="section" data-aos="fade-up">
+      <div class="section-title" data-aos="zoom-in">Как проходит техосмотр?</div>
+      <div class="cards-list" style="gap:32px;">
+        <div class="card" data-aos="fade-up" data-aos-delay="50">
+          <i class="fas fa-edit"></i>
+          <h3>1. Оставьте заявку</h3>
+          <p>Заполните простую форму на сайте или напишите нам в WhatsApp.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <i class="fas fa-comment-dots"></i>
+          <h3>2. Подтвердите время</h3>
+          <p>Мы свяжемся с вами для подтверждения даты и времени осмотра.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="150">
+          <i class="fas fa-car-side"></i>
+          <h3>3. Приезжайте на пункт</h3>
+          <p>Приезжайте по адресу: Цветочная, 1/4. Наши специалисты всё объяснят.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <i class="fas fa-file-signature"></i>
+          <h3>4. Получите карту</h3>
+          <p>Через 30 минут получите официальную диагностическую карту для ОСАГО.</p>
+        </div>
+      </div>
+    </section>
+    <section id="faq" class="section" data-aos="fade-up">
+      <div class="section-title" data-aos="zoom-in">Часто задаваемые вопросы</div>
+      <div class="faq">
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="70">
+          <div class="faq-q">Кто обязан проходить техосмотр?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            Техосмотр обязателен для всех транспортных средств, используемых на дорогах общего пользования, кроме новых легковых автомобилей младше 4 лет и мотоциклов младше 4 лет.<br>
+            Коммерческие, грузовые автомобили, такси и автобусы проходят ТО ежегодно.
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="faq-q">Как часто нужно проходить техосмотр?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            <ul>
+              <li>Легковые и мотоциклы: впервые через 4 года, далее — раз в 2 года</li>
+              <li>Грузовые, автобусы, такси: ежегодно</li>
+            </ul>
+            Даты могут меняться в зависимости от возраста и типа транспортного средства.
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="130">
+          <div class="faq-q">Что необходимо для прохождения техосмотра?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            <ul>
+              <li>Паспорт гражданина РФ</li>
+              <li>СТС или ПТС</li>
+              <li>Доверенность (если вы не владелец)</li>
+              <li>Оплата услуги</li>
+              <li>Чистое ТС — для быстрой диагностики</li>
+            </ul>
+            При подаче заявки онлайн оператор сам подскажет детали.
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="160">
+          <div class="faq-q">Что проверяют при техосмотре?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            <ul>
+              <li>Работу тормозной системы</li>
+              <li>Световые приборы, стеклоочистители</li>
+              <li>Ремни безопасности, подушки</li>
+              <li>Шины, протектор</li>
+              <li>Отсутствие течей и коррозии</li>
+              <li>Работу двигателя, подвески, рулевого управления</li>
+            </ul>
+            По результатам выдается диагностическая карта.
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="190">
+          <div class="faq-q">Что делать при утере диагностической карты?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            Карта восстанавливается через обращение к любому аккредитованному оператору или онлайн по VIN-номеру через реестр ЕАИСТО.<br>
+            При утере бумажного экземпляра — информация всегда доступна в электронной базе.
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="220">
+          <div class="faq-q">Где проверить действительность карты?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            Проверить действительность карты можно на сайте <a href="https://gibdd.ru" target="_blank" style="color:var(--green);">gibdd.ru</a> по VIN или номеру кузова.
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+          <div class="faq-q">Можно ли пройти техосмотр вне места регистрации автомобиля?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            Да, вы можете пройти техосмотр в любом регионе России, независимо от регистрации вашего ТС.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contacts" class="section" data-aos="fade-up">
+      <div class="section-title" data-aos="zoom-in">Контакты</div>
+      <div style="text-align:center;margin-bottom:16px;">
+        <b>ООО "БАШСНАБГАЗ"</b><br>
+        ОГРН: 1200200023210 &nbsp; | &nbsp; ИНН: 0273934433<br>
+        Юр. Адрес: 450112, Российская Федерация,<br>
+        Республика Башкортостан, г. Уфа,<br>
+        ул. Цветочная, д. 1/4<br>
+        <a href="tel:+79272351405" style="color:var(--green);text-decoration:none;font-weight:600">+7 (927) 235‑14‑05</a><br>
+        <a href="mailto:to1629271@gmail.com" style="color:#444;text-decoration:underline;">to1629271@gmail.com</a>
+        <div class="docs-title">Документы:</div>
+        <div class="doc-gallery">
+          <img src="Attestat.png" alt="Аттестат аккредитации" class="doc-thumb" onclick="openDocModal(this)">
+          <img src="Prikaz.png" alt="Приказ о предоставлении аккредитации" class="doc-thumb" onclick="openDocModal(this)">
+        </div>
+      </div>
+      <div class="big-map">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=56.072328%2C54.805951&z=17&l=map&pt=56.072328,54.805951,pm2gnm" loading="lazy"></iframe>
+      </div>
+    </section>
   </div>
   <!-- Кнопка "Наверх" -->
   <button class="btn-top" id="btnTop" title="Наверх"><i class="fas fa-arrow-up"></i></button>
@@ -509,6 +789,64 @@
       });
     });
     // Документы: открытие модалки
+    function openDocModal(img) {
+      document.getElementById('docModalImg').src = img.src;
+      document.getElementById('docModalCaption').innerHTML = img.alt;
+      document.getElementById('docModal').classList.add('open');
+    }
+    function closeDocModal(event) {
+      if (event.target.classList.contains('doc-modal') || event.target.classList.contains('doc-modal-close')) {
+        document.getElementById('docModal').classList.remove('open');
+        setTimeout(function(){
+          document.getElementById('docModalImg').src='';
+          document.getElementById('docModalCaption').innerHTML = '';
+        }, 180);
+      }
+    }
+  </script>
+</body>
+</html>
+  <!-- ... см. твой index.html ... -->
+  <!-- Например: -->
+  <header class="main-header" data-aos="fade-down">
+    <div class="logo-title-wrap">
+      <img src="logo.jfif" alt="Логотип" class="main-logo">
+      <span class="org-title">ООО "БАШСНАБГАЗ"</span>
+    </div>
+    <div class="pattern-wrap">
+      <!-- SVG ... -->
+    </div>
+  </header>
+  <nav class="navbar" data-aos="fade-down" data-aos-delay="150">
+    <!-- ... твои пункты меню ... -->
+  </nav>
+  <div class="container">
+    <!-- ... всё остальное ... -->
+  </div>
+  <!-- Кнопка "Наверх", call-fab, docModal, policy-modal, footer и т.д. ... -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Бургер-меню мобильное
+    const burger = document.getElementById('burgerMenu');
+    const navbar = document.querySelector('nav.navbar');
+    const navbarBg = document.getElementById('navbarBg');
+    function closeMenu() {
+      navbar.classList.remove('open');
+      navbarBg.classList.remove('open');
+    }
+    burger.onclick = function(){
+      navbar.classList.toggle('open');
+      navbarBg.classList.toggle('open');
+    }
+    navbarBg.onclick = closeMenu;
+    document.querySelectorAll('nav.navbar a').forEach(link => {
+      link.onclick = closeMenu;
+    });
+    // Остальные твои скрипты (AOS, FAQ, scroll, WhatsApp-форма и т.д. — ОСТАВЬ, ничего не удаляй!)
+    AOS.init({ duration: 800, once: true });
+    // ... (все остальные твои скрипты полностью)
+    // Lightbox (документы): улучшено!
     function openDocModal(img) {
       document.getElementById('docModalImg').src = img.src;
       document.getElementById('docModalCaption').innerHTML = img.alt;
