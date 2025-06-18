@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
+    /* Общие стили */
     :root {
       --green: #11a021;
       --yellow: #ffe13e;
@@ -20,18 +22,22 @@
       --border: #e0eae4;
       --shadow: 0 6px 24px #0002;
     }
+
     body {
       margin: 0;
       background: var(--light);
       color: var(--text);
-      font-family: 'Segoe UI','Montserrat',Arial,sans-serif;
+      font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
     }
+
+    /* Блок шапки */
     .main-header {
       background: var(--green);
       text-align: center;
       padding-top: 22px;
       position: relative;
     }
+
     .logo-title-wrap {
       display: flex;
       align-items: center;
@@ -42,6 +48,7 @@
       min-height: 60px;
       width: 100%;
     }
+
     .main-logo {
       width: 66px;
       height: 66px;
@@ -49,259 +56,283 @@
       object-fit: contain;
       filter: drop-shadow(0 4px 10px #0002);
     }
+
     .org-title {
       color: #fff;
       font-size: 2rem;
       font-weight: 800;
       letter-spacing: 0.03em;
       text-shadow: 0 2px 10px #0a370630;
-      font-family: 'Montserrat','Segoe UI',Arial,sans-serif;
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
       padding-left: 10px;
       padding-right: 10px;
       min-width: 200px;
       text-align: left;
     }
 
-    /* Новый стиль для мобильного меню */
-    .menu-btn {
-      display: flex;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10;
-      background: var(--green);
-      border-radius: 50%;
-      padding: 15px;
-      cursor: pointer;
-    }
-    .menu-btn i {
-      color: white;
-      font-size: 1.8rem;
-    }
-
-    /* Скрытое меню по умолчанию */
-    .side-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 250px;
-      height: 100%;
-      background-color: var(--white);
-      box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
-      transition: right 0.3s ease;
-      z-index: 9;
-    }
-
-    .side-menu.open {
-      right: 0;
-    }
-
-    .side-menu a {
-      display: block;
-      padding: 15px;
-      text-decoration: none;
-      color: var(--green);
-      font-weight: 600;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .side-menu a:hover {
-      background: var(--light-alt);
-    }
-
-    /* Скрыть меню, когда открыта боковая панель */
-    .side-menu-bg {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 8;
-    }
-    .side-menu-bg.show {
-      display: block;
-    }
-
-    /* Контентные разделы */
-    .section {
-      margin: 50px 0;
-      padding-bottom: 0;
-      animation: fadeIn 1s ease-out;
-    }
-
-    .section-title {
-      color: var(--green);
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 35px;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-
-    .cards-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 28px;
-      margin-bottom: 30px;
-    }
-
-    .card {
-      background: var(--light-alt);
-      border-radius: 13px;
-      min-width: 215px;
-      max-width: 260px;
-      padding: 30px 20px 24px 20px;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: transform .19s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px) scale(1.02);
-    }
-
-    .card i {
-      font-size: 2.6em;
-      color: var(--green);
-      margin-bottom: 12px;
-    }
-
-    .card h3 {
-      margin: 7px 0 6px 0;
-      color: var(--yellow);
-      font-size: 1.18em;
-      font-weight: 600;
-      letter-spacing: .01em;
-    }
-
-    .card p {
-      color: #333;
-      font-size: 1em;
-      opacity: .87;
-    }
-
-    /* Форма */
-    .form-container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
+    /* Стили навигации */
+    nav.navbar {
       background: var(--white);
-      box-shadow: var(--shadow);
-      border-radius: 10px;
-    }
-
-    .form-container input,
-    .form-container button {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
-
-    .form-container button {
-      background: var(--green);
-      color: white;
+      box-shadow: 0 3px 10px #0001;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: var(--menu-height);
+      gap: 32px;
       font-weight: bold;
+      font-size: 1.09em;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav.navbar a {
+      color: var(--green);
+      text-decoration: none;
+      padding: 9px 18px;
+      border-radius: 6px;
+      transition: background .18s, color .18s;
+    }
+
+    nav.navbar a:hover,
+    nav.navbar a.active {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    /* Стили для мобильного меню */
+    .burger {
+      display: none;
+      position: absolute;
+      right: 24px;
+      top: 18px;
+      width: 40px;
+      height: 40px;
+      z-index: 101;
+      background: none;
+      border: none;
       cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 7px;
     }
 
-    .form-container button:hover {
-      background: #19d541;
+    .burger-bar {
+      width: 30px;
+      height: 4px;
+      background: #fff;
+      border-radius: 3px;
+      transition: all .3s;
     }
 
-    /* Анимация */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
+    @media (max-width: 900px) {
+      .burger {
+        display: flex;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      nav.navbar {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 80vw;
+        max-width: 330px;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 32px 24px 24px;
+        box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.32);
+        gap: 0;
+        z-index: 100;
+        transform: translateX(-100%);
+        transition: transform .33s cubic-bezier(.77, 0, .18, 1);
+      }
+
+      nav.navbar.open {
+        display: flex;
+        transform: translateX(0);
+      }
+
+      nav.navbar a {
+        display: block;
+        margin: 0 0 24px 0;
+        font-size: 1.21em;
+        padding: 12px 0 12px 8px;
+        width: 100%;
+        color: var(--green);
+      }
+
+      .burger-bg {
+        display: none;
+        position: fixed;
+        z-index: 99;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(44, 70, 48, 0.37);
+      }
+
+      .burger-bg.show {
+        display: block;
       }
     }
 
-    /* Стиль для десктопа */
     @media (min-width: 901px) {
-      .menu-btn {
+      .burger {
         display: none;
       }
 
-      .side-menu {
+      nav.navbar {
+        display: flex !important;
         position: sticky;
         top: 0;
-        right: 0;
-        width: auto;
-        height: auto;
-        box-shadow: none;
-        background: none;
       }
 
-      .side-menu a {
-        display: inline-block;
-        padding: 12px 20px;
-        font-size: 1.1em;
-        border-bottom: none;
+      .burger-bg {
+        display: none !important;
       }
     }
   </style>
 </head>
+
 <body>
   <header class="main-header" data-aos="fade-down">
     <div class="logo-title-wrap">
       <img src="logo.jfif" alt="Логотип" class="main-logo">
       <span class="org-title">ООО "БАШСНАБГАЗ"</span>
     </div>
-    <!-- Кнопка для открытия меню -->
-    <div class="menu-btn" id="menuBtn">
-      <i class="fas fa-bars"></i>
+    <button class="burger" id="burger" aria-label="Открыть меню">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
+    <div class="pattern-wrap">
+      <svg width="100%" height="60" viewBox="0 0 340 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <rect width="340" height="60" fill="#11a021" />
+        <polygon points="0,60 0,42 14,60" fill="#fff" />
+        <polygon points="14,60 7,36 28,60" fill="#fff" />
+        <polygon points="28,60 22,49 42,60" fill="#fff" />
+        <polygon points="42,60 35,44 56,60" fill="#fff" />
+        <polygon points="56,60 53,37 70,60" fill="#fff" />
+        <polygon points="70,60 65,48 84,60" fill="#fff" />
+        <polygon points="84,60 80,40 98,60" fill="#fff" />
+        <polygon points="98,60 96,47 112,60" fill="#fff" />
+        <polygon points="112,60 110,39 126,60" fill="#fff" />
+        <polygon points="126,60 120,44 140,60" fill="#fff" />
+        <polygon points="140,60 138,35 154,60" fill="#fff" />
+        <polygon points="154,60 150,40 168,60" fill="#fff" />
+        <polygon points="168,60 162,38 182,60" fill="#fff" />
+        <polygon points="182,60 178,45 196,60" fill="#fff" />
+        <polygon points="196,60 192,41 210,60" fill="#fff" />
+        <polygon points="210,60 204,48 224,60" fill="#fff" />
+        <polygon points="224,60 220,42 238,60" fill="#fff" />
+        <polygon points="238,60 234,39 252,60" fill="#fff" />
+        <polygon points="252,60 248,46 266,60" fill="#fff" />
+        <polygon points="266,60 260,40 280,60" fill="#fff" />
+        <polygon points="280,60 278,45 294,60" fill="#fff" />
+        <polygon points="294,60 290,39 308,60" fill="#fff" />
+        <polygon points="308,60 304,42 320,60" fill="#fff" />
+        <polygon points="320,60 318,44 332,60" fill="#fff" />
+        <polygon points="332,60 326,37 340,60" fill="#fff" />
+      </svg>
     </div>
-
-    <!-- Боковое меню -->
-    <div class="side-menu" id="sideMenu">
-      <a href="#services">Услуги</a>
-      <a href="#prices">Цены</a>
-      <a href="#about-inspection">О техосмотре</a>
-      <a href="#steps">Этапы</a>
-      <a href="#faq">Вопросы</a>
-      <a href="#contacts">Контакты</a>
-      <a href="#form">Записаться</a>
-    </div>
-
-    <!-- Фон для бокового меню -->
-    <div class="side-menu-bg" id="sideMenuBg"></div>
   </header>
-
+  <nav class="navbar" id="mainNav">
+    <a href="#services">Услуги</a>
+    <a href="#prices">Цены</a>
+    <a href="#about-inspection">О техосмотре</a>
+    <a href="#steps">Этапы</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#contacts">Контакты</a>
+    <a href="#form" class="btn-signup">Записаться</a>
+  </nav>
+  <div class="burger-bg" id="burgerBg"></div>
   <div class="container">
+    <div class="hero-row">
+      <div class="hero-main" data-aos="fade-right">
+        <div class="hero-textblock">
+          <span class="hero-org">ООО "БАШСНАБГАЗ"</span>
+          <span class="hero-title">Техосмотр в Уфе</span>
+          <span class="hero-address">ул. Цветочная, 1/4</span>
+          <span class="hero-desc">
+            Аккредитованный пункт технического осмотра для всех категорий транспортных средств — легковых, грузовых, мотоциклов и мопедов.
+            <br><br>
+            <b>Почему выбирают нас?</b>
+            <ul>
+              <li>Диагностическая карта для ОСАГО оформляется за 30 минут</li>
+              <li>Работаем строго по 170‑ФЗ, все этапы прозрачны и официальны</li>
+              <li>Современное оборудование и опытные эксперты</li>
+              <li>Принимаем без очередей — по записи и живой очереди</li>
+              <li>Бесплатная консультация по вопросам техосмотра и документов</li>
+            </ul>
+            Удобное расположение, возможность быстрой оплаты и дружелюбный персонал.<br>
+            <b>Официально. Надёжно. Прозрачно.</b>
+          </span>
+        </div>
+      </div>
+      <div class="hero-card" id="form" data-aos="fade-left">
+        <div class="contacts">
+          <strong>ООО "БАШСНАБГАЗ"</strong>
+          <div class="addr"><i class="fa fa-map-marker-alt"></i> Уфа, Цветочная, 1/4</div>
+          <div><i class="fa fa-phone"></i> <a href="tel:+79272351405" style="color:var(--green);text-decoration:none;">+7 (927) 235-14-05</a>
+            <a class="wa-link" href="https://wa.me/79272351405" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+          <div><i class="fa fa-envelope"></i> to1629271@gmail.com</div>
+        </div>
+        <!-- Форма на WhatsApp + Email -->
+        <form id="whatsappForm" action="https://formspree.io/f/mwkgrvko" method="POST" autocomplete="on">
+          <input type="text" name="car" placeholder="Госномер или VIN" required>
+          <input type="text" name="brand" placeholder="Марка/модель авто" required>
+          <input type="text" name="fio" placeholder="Ваше имя" required>
+          <input type="tel" name="tel" placeholder="Телефон" required pattern="[\d\s\-\+\(\)]{6,}">
+          <button type="submit">Записаться на техосмотр</button>
+          <div class="agree">
+            Отправляя заявку, вы соглашаетесь с <a href="#" onclick="document.getElementById('policy-modal').style.display='block';return false;">политикой обработки данных</a>
+          </div>
+        </form>
+        <!-- Сообщение "Спасибо!" -->
+        <div id="thanks-message" style="display:none; margin-top:32px; background:#e8fbe6; color:#146b24; border-radius:11px; padding:24px 20px; text-align:center; font-size:1.18em; box-shadow:0 6px 24px #0001; font-weight:600;">
+          <i class="fa fa-check-circle" style="font-size:1.8em;color:#31d158;vertical-align:middle;margin-right:10px;"></i>
+          Спасибо! Ваша заявка успешно отправлена.<br>
+          Мы свяжемся с вами в ближайшее время.<br>
+          <span style="font-size:0.98em;opacity:0.8;display:block;margin-top:10px;">(Не забудьте подтвердить запись в чате WhatsApp — окно уже открыто)</span>
+        </div>
+        <div class="worktime">
+          <i class="fa fa-clock"></i>
+          <div>
+            <b>Режим работы:</b><br>
+            Пн–Пт: 08:00–19:00<br>
+            Сб: 08:00–15:00<br>
+            Вс: выходной
+          </div>
+        </div>
+        <iframe class="map" src="https://yandex.ru/map-widget/v1/?ll=56.072328%2C54.805951&z=17&l=map&pt=56.072328,54.805951,pm2gnm" loading="lazy"></iframe>
+      </div>
+    </div>
+    <!-- Раздел услуг -->
     <section id="services" class="section" data-aos="fade-up">
-      <div class="section-title">Категории транспортных средств</div>
+      <div class="section-title" data-aos="zoom-in">Категории транспортных средств</div>
       <div class="cards-list">
-        <div class="card" data-aos="fade-up" data-aos-delay="50">
-          <i class="fas fa-motorcycle"></i>
+        <div class="card" data-aos="fade-up" data-aos-delay="50"><i class="fas fa-motorcycle"></i>
           <h3>A – L</h3>
           <p>Мотоциклы, мопеды и скутеры</p>
         </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="100">
-          <i class="fas fa-car"></i>
+        <div class="card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-car"></i>
           <h3>B – M1</h3>
           <p>Легковые (до 8 мест)</p>
         </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="150">
-          <i class="fas fa-truck"></i>
+        <div class="card" data-aos="fade-up" data-aos-delay="150"><i class="fas fa-truck"></i>
           <h3>N1</h3>
           <p>Грузовые до 3,5 т</p>
         </div>
       </div>
     </section>
+    <!-- Раздел цен -->
     <section id="prices" class="section" data-aos="fade-up">
-      <div class="section-title">Стоимость техосмотра</div>
+      <div class="section-title" data-aos="zoom-in">Стоимость техосмотра</div>
       <div class="prices-table">
         <table>
           <tr>
@@ -328,17 +359,17 @@
       </div>
       <div style="color:#444;text-align:center;font-size:1em;opacity:.77;">Цены по постановлению №554 от 28.12.2024</div>
     </section>
-
+    <!-- О техосмотре -->
     <section id="about-inspection" class="section" data-aos="fade-up">
-      <div class="section-title">О техосмотре</div>
+      <div class="section-title" data-aos="zoom-in">О техосмотре</div>
       <div style="max-width:760px;margin:0 auto 32px auto;line-height:1.6;font-size:1.12em;color:#333;opacity:.94;">
         Все находящиеся в эксплуатации дорожные транспортные средства должны регулярно проходить технический осмотр для проверки соответствия технического состояния и оборудования транспортных средств требованиям безопасности дорожного движения.<br><br>
         <b>Куда обратиться?</b> Техосмотр проводится организацией (оператором технического осмотра), прошедшим аккредитацию по проведению технического осмотра соответствующей категории транспортных средств. Проводит аккредитацию профессиональное объединение страховщиков. Граждане и юридические лица вправе обратиться к любому оператору независимо от места регистрации транспортного средства.
       </div>
     </section>
-
+    <!-- Этапы техосмотра -->
     <section id="steps" class="section" data-aos="fade-up">
-      <div class="section-title">Как проходит техосмотр?</div>
+      <div class="section-title" data-aos="zoom-in">Как проходит техосмотр?</div>
       <div class="cards-list" style="gap:32px;">
         <div class="card" data-aos="fade-up" data-aos-delay="50">
           <i class="fas fa-edit"></i>
@@ -362,9 +393,9 @@
         </div>
       </div>
     </section>
-
+    <!-- FAQ -->
     <section id="faq" class="section" data-aos="fade-up">
-      <div class="section-title">Часто задаваемые вопросы</div>
+      <div class="section-title" data-aos="zoom-in">Часто задаваемые вопросы</div>
       <div class="faq">
         <div class="faq-item" data-aos="fade-up" data-aos-delay="70">
           <div class="faq-q">Кто обязан проходить техосмотр?</div>
@@ -438,9 +469,9 @@
         </div>
       </div>
     </section>
-
+    <!-- Контакты и документы -->
     <section id="contacts" class="section" data-aos="fade-up">
-      <div class="section-title">Контакты</div>
+      <div class="section-title" data-aos="zoom-in">Контакты</div>
       <div style="text-align:center;margin-bottom:16px;">
         <b>ООО "БАШСНАБГАЗ"</b><br>
         ОГРН: 1200200023210 &nbsp; | &nbsp; ИНН: 0273934433<br>
@@ -455,64 +486,120 @@
           <img src="Prikaz.png" alt="Приказ о предоставлении аккредитации" class="doc-thumb" onclick="openDocModal(this)">
         </div>
       </div>
+      <div class="big-map">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=56.072328%2C54.805951&z=17&l=map&pt=56.072328,54.805951,pm2gnm" loading="lazy"></iframe>
+      </div>
     </section>
   </div>
-
+  <!-- Кнопка "Наверх" -->
+  <button class="btn-top" id="btnTop" title="Наверх"><i class="fas fa-arrow-up"></i></button>
+  <!-- Кнопка "Позвонить" (мобильная) -->
+  <a href="tel:+79272351405" class="call-fab" title="Позвонить">
+    <i class="fas fa-phone"></i>
+  </a>
   <!-- Модальное окно для документов -->
   <div id="docModal" class="doc-modal" onclick="closeDocModal(event)">
     <span class="doc-modal-close" onclick="closeDocModal(event)">&times;</span>
     <img class="doc-modal-img" id="docModalImg" src="" alt="">
     <div class="doc-modal-caption" id="docModalCaption"></div>
   </div>
-
-  <!-- Форма для записи на техосмотр -->
-  <section id="form" class="section" data-aos="fade-up">
-    <div class="section-title">Записаться на техосмотр</div>
-    <div class="form-container">
-      <form action="https://formspree.io/f/mwkgrvko" method="POST">
-        <input type="text" name="car" placeholder="Госномер или VIN" required>
-        <input type="text" name="brand" placeholder="Марка/модель авто" required>
-        <input type="text" name="fio" placeholder="Ваше имя" required>
-        <input type="tel" name="tel" placeholder="Телефон" required pattern="[\d\s\-\+\(\)]{6,}">
-        <button type="submit">Записаться на техосмотр</button>
-      </form>
+  <!-- Модальное окно "Политика конфиденциальности" -->
+  <div id="policy-modal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:#0008;">
+    <div style="max-width:500px;margin:70px auto;background:#fff;border-radius:13px;padding:34px 24px;box-shadow:0 5px 30px #0002;position:relative;">
+      <button onclick="document.getElementById('policy-modal').style.display='none'" style="position:absolute;top:13px;right:19px;background:none;border:none;font-size:1.6em;color:#aaa;cursor:pointer;">&times;</button>
+      <h2 style="color:#11a021;margin-top:0;">Политика конфиденциальности</h2>
+      <div style="font-size:1em;color:#222;line-height:1.7;">
+        Ваши данные используются только для обратной связи и записи на техосмотр. Они не передаются третьим лицам и обрабатываются строго в соответствии с ФЗ РФ №152 "О персональных данных".<br><br>
+        Оставляя заявку, вы соглашаетесь с обработкой персональных данных для связи и предоставления услуг.
+      </div>
     </div>
-  </section>
-
-  <!-- Фон для документации -->
-  <div id="sideMenuBg" class="side-menu-bg"></div>
-
+  </div>
+  <footer>
+    &copy; 2025 ООО "БАШСНАБГАЗ" — официальный сайт.<br>
+    Все права защищены.
+  </footer>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    // Анимация блоков при скролле
     AOS.init({ duration: 800, once: true });
 
-    // Открытие и закрытие бокового меню
-    const menuBtn = document.getElementById('menuBtn');
-    const sideMenu = document.getElementById('sideMenu');
-    const sideMenuBg = document.getElementById('sideMenuBg');
+    // Кнопка "Наверх"
+    const btnTop = document.getElementById('btnTop');
+    window.addEventListener('scroll', function() {
+      btnTop.style.display = window.scrollY > 200 ? 'flex' : 'none';
+    });
+    btnTop.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
 
-    menuBtn.onclick = () => {
-      sideMenu.classList.toggle('open');
-      sideMenuBg.classList.toggle('show');
-    };
+    // FAQ раскрытие
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', function() {
+        this.classList.toggle('open');
+      });
+    });
 
-    sideMenuBg.onclick = () => {
-      sideMenu.classList.remove('open');
-      sideMenuBg.classList.remove('show');
-    };
+    // Форма (WhatsApp + Formspree)
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const car = this.car.value.trim();
+      const brand = this.brand.value.trim();
+      const fio = this.fio.value.trim();
+      const tel = this.tel.value.trim();
 
-    // Открытие и закрытие модального окна документа
+      if (!car || !brand || !fio || !tel) {
+        alert('Пожалуйста, заполните все поля.');
+        return;
+      }
+
+      // Открыть WhatsApp с сообщением
+      const message =
+        `Здравствуйте! Хочу записаться на техосмотр:\n` +
+        `• Госномер/VIN: ${car}\n` +
+        `• Марка/модель: ${brand}\n` +
+        `• Имя: ${fio}\n` +
+        `• Телефон: ${tel}`;
+
+      const phone = "79272351405";
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+
+      // AJAX-запрос на Formspree
+      const formData = new FormData(this);
+      fetch(this.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+          document.getElementById('whatsappForm').style.display = 'none';
+          document.getElementById('thanks-message').style.display = 'block';
+      }).catch(function(error) {
+          alert('Ошибка при отправке. Пожалуйста, попробуйте еще раз.');
+      });
+    });
+
+    // Галерея документов: открытие модального окна
     function openDocModal(img) {
       document.getElementById('docModalImg').src = img.src;
       document.getElementById('docModalCaption').innerHTML = img.alt;
       document.getElementById('docModal').classList.add('open');
     }
-
     function closeDocModal(event) {
       if (event.target.classList.contains('doc-modal') || event.target.classList.contains('doc-modal-close')) {
         document.getElementById('docModal').classList.remove('open');
+        setTimeout(function(){
+          document.getElementById('docModalImg').src='';
+          document.getElementById('docModalCaption').innerHTML = '';
+        }, 180);
       }
     }
+
+    // Мобильное меню с горизонтальной прокруткой
+    // (работает для секций меню на мобильном)
+    document.querySelectorAll('.mobile-scrollnav a').forEach(link => {
+      link.onclick = function() {
+        document.querySelector('.mobile-scrollnav a.active')?.classList.remove('active');
+        this.classList.add('active');
+      };
+    });
   </script>
 </body>
 </html>
