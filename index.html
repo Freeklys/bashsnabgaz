@@ -8,23 +8,6 @@
   <meta name="keywords" content="техосмотр, Уфа, БАШСНАБГАЗ, диагностическая карта, ОСАГО, транспорт, технический осмотр">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "ООО БАШСНАБГАЗ",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "ул. Цветочная, 1/4",
-      "addressLocality": "Уфа",
-      "addressCountry": "RU"
-    },
-    "telephone": "+79272351405",
-    "email": "to1629271@gmail.com",
-    "openingHours": "Mo-Fr 08:00-19:00, Sa 08:00-15:00",
-    "url": "https://ВАШ_САЙТ.РУ"
-  }
-  </script>
   <style>
     :root {
       --green: #11a021;
@@ -37,6 +20,7 @@
       --border: #e0eae4;
       --shadow: 0 6px 24px #0002;
     }
+
     body { margin: 0; background: var(--light); color: var(--text); font-family: 'Segoe UI','Montserrat',Arial,sans-serif;}
     .main-header {background:var(--green);text-align:center;padding-top:22px;position:relative;}
     .logo-title-wrap {
@@ -50,6 +34,7 @@
       width: 100%;
     }
     .main-logo {width:66px;height:66px;max-width:22vw;object-fit:contain;filter:drop-shadow(0 4px 10px #0002);}
+
     .org-title {
       color: #fff;
       font-size: 2rem;
@@ -63,7 +48,7 @@
       text-align: left;
     }
     .pattern-wrap {width:100%;height:60px;position:relative;overflow:hidden;margin-top:-9px;z-index:1;line-height:0;}
-    /* Бургер-меню стили */
+    /* --- Бургер-меню стили --- */
     .burger {
       display: none;
       position: absolute;
@@ -87,6 +72,7 @@
       border-radius: 3px;
       transition: all .3s;
     }
+
     @media (max-width:900px){
       .burger {display: flex;}
       nav.navbar {
@@ -127,11 +113,13 @@
       }
       .burger-bg.show { display: block;}
     }
+
     @media (min-width:901px){
       .burger {display: none;}
       nav.navbar {display: flex !important; position:sticky; top:0;}
       .burger-bg {display: none !important;}
     }
+
     nav.navbar {background:var(--white);box-shadow:0 3px 10px #0001;display:flex;justify-content:center;align-items:center;height:var(--menu-height);gap:32px;font-weight:bold;font-size:1.09em;position:sticky;top:0;z-index:10;}
     nav.navbar a {color:var(--green);text-decoration:none;padding:9px 18px;border-radius:6px;transition:background .18s, color .18s;}
     nav.navbar a:hover,nav.navbar a.active{background:var(--green);color:var(--white);}
@@ -154,8 +142,11 @@
     @media (max-width:600px){
       .btn-signup { padding: 7px 8vw !important; font-size:1.1em;}
     }
+
     .container{max-width:1100px;margin:0 auto;padding:0 16px;}
-    .hero-row{
+
+    /* Hero Section */
+    .hero-row {
       display: flex;
       gap: 40px;
       align-items: stretch;
@@ -163,9 +154,22 @@
       margin: 60px 0 30px 0;
       flex-wrap: wrap;
     }
-    .hero-main{
-      flex:1.5;min-width:320px;background:#fff;border-radius:18px;padding:38px 36px 32px 36px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;margin-bottom:20px;min-height:350px;
+
+    .hero-main {
+      flex: 1.5;
+      min-width: 320px;
+      background: #fff;
+      border-radius: 18px;
+      padding: 38px 36px 32px 36px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 20px;
+      min-height: 350px;
     }
+
     .hero-textblock {
       width: 100%;
       text-align: left;
@@ -176,6 +180,7 @@
       flex-direction: column;
       gap: 7px;
     }
+
     .hero-org {
       color: var(--green);
       font-size: 1.22rem;
@@ -184,81 +189,316 @@
       letter-spacing: .01em;
       text-transform: uppercase;
     }
+
     .hero-title {
       font-size: 2rem;
       color: #222;
       font-weight: 700;
       margin-bottom: 0px;
     }
+
     .hero-address {
       color: #7c7c7c;
       font-size: 1.12rem;
       font-weight: 600;
       margin-bottom: 0px;
     }
+
     .hero-desc {
       color: #444;
       margin-top: 8px;
       font-size: 1.08rem;
       font-weight: 500;
     }
+
     .hero-main ul {
       margin: 8px 0 8px 1em;
       padding-left: 1em;
     }
-    .hero-card{
-      flex:1;
-      background:#e8fbe6;
-      border-radius:18px;
-      box-shadow:var(--shadow);
-      padding:28px 28px 18px 28px;
-      min-width:320px;
-      max-width:400px;
-      margin-top:0;
-      display:flex;
-      flex-direction:column;
-      align-items:stretch;
-      justify-content:flex-start;
+
+    .hero-card {
+      flex: 1;
+      background: #e8fbe6;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 28px 28px 18px 28px;
+      min-width: 320px;
+      max-width: 400px;
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
     }
-    .hero-card .contacts{font-size:1rem;margin-bottom:18px;color:#2a4d32;line-height:1.6;}
-    .hero-card .contacts strong{color:var(--green);display:block;font-size:1.1rem;margin-bottom:6px;}
-    .hero-card .contacts .addr{font-style:italic;margin-bottom:4px;}
-    .hero-card .contacts .wa-link{color:#3edb5b;text-decoration:none;font-size:1.13em;margin-left:7px;}
-    .hero-card form{display:flex;flex-direction:column;gap:12px;margin-bottom:6px;}
-    .hero-card input{padding:11px 14px;border-radius:7px;border:1px solid #d0e6d0;font-size:1em;background:#fff;color:var(--text);outline:none;margin-bottom:2px;}
-    .hero-card input:focus{box-shadow:0 0 0 2px var(--green);}
-    .hero-card button{padding:13px 0;font-weight:bold;font-size:1.05em;background:var(--green);border:none;color:#fff;border-radius:7px;cursor:pointer;transition:background 0.19s;margin-top:3px;}
-    .hero-card button:hover{background:#0b871b;}
-    .hero-card .agree{font-size:0.95em;color:#678564;opacity:.82;margin-top:5px;text-align:left;}
-    .hero-card .agree a{color:var(--green);text-decoration:underline;}
-    .hero-card .worktime{margin-top:9px;color:#ad9402;font-size:0.98em;}
-    .hero-card .map{margin:20px 0 0 0;border-radius:8px;border:none;width:100%;height:160px;}
-    .section{margin:50px 0 0 0;padding-bottom:0;}
-    .section-title{color:var(--green);font-size:2rem;text-align:center;margin-bottom:35px;font-weight:700;letter-spacing:0.01em;}
-    .cards-list{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:30px;}
-    .card{background:var(--light-alt);border-radius:13px;min-width:215px;max-width:260px;padding:30px 20px 24px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .19s;}
-    .card:hover{transform:translateY(-5px) scale(1.02);}
-    .card i{font-size:2.6em;color:var(--green);margin-bottom:12px;}
-    .card h3{margin:7px 0 6px 0;color:var(--yellow);font-size:1.18em;font-weight:600;letter-spacing:.01em;}
-    .card p{color:#333;font-size:1em;opacity:.87;}
-    .section:nth-child(even) { background: var(--white);}
-    .section:nth-child(odd) { background: var(--light);}
-    .prices-table{margin:0 auto 20px auto;max-width:420px;width:100%;border-radius:12px;background:#f8fff6;box-shadow:var(--shadow);overflow:hidden;}
-    .prices-table table{width:100%;border-collapse:collapse;}
-    .prices-table th,.prices-table td{padding:13px 8px;text-align:left;font-size:1.05em;}
-    .prices-table th{background:#e4f2e2;color:var(--green);font-weight:700;}
-    .prices-table tr:not(:last-child) td{border-bottom:1px solid #d0e6d0;}
-    .prices-table td{color:#333;}
-    .prices-table .cat{color:var(--yellow);font-weight:600;font-size:1.08em;}
-    .faq{margin:40px auto 0 auto;max-width:650px;}
-    .faq-item{background:#e8fbe6;border-radius:9px;margin-bottom:12px;padding:17px 24px;cursor:pointer;color:#2a4d32;box-shadow:0 2px 8px #0001;transition:background .15s;position:relative;user-select:none;}
-    .faq-item .faq-q{font-weight:600;font-size:1.14em;color:var(--green);}
-    .faq-item .faq-toggle{position:absolute;right:22px;top:15px;font-size:1.4em;color:var(--yellow);transition:transform .21s;}
-    .faq-item.open .faq-toggle{transform:rotate(45deg);}
-    .faq-item .faq-a{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s,opacity .32s;font-size:1.16em;line-height:1.8;margin-top:8px;}
-    .faq-item.open .faq-a{max-height:900px;opacity:1;margin-top:13px;}
-    .big-map{display:flex;justify-content:center;}
-    .big-map iframe{width:100%;max-width:800px;height:340px;border-radius:14px;border:none;margin:auto;display:block;}
+
+    .hero-card .contacts {
+      font-size: 1rem;
+      margin-bottom: 18px;
+      color: #2a4d32;
+      line-height: 1.6;
+    }
+
+    .hero-card .contacts strong {
+      color: var(--green);
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .hero-card .contacts .addr {
+      font-style: italic;
+      margin-bottom: 4px;
+    }
+
+    .hero-card .contacts .wa-link {
+      color: #3edb5b;
+      text-decoration: none;
+      font-size: 1.13em;
+      margin-left: 7px;
+    }
+
+    .hero-card form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .hero-card input {
+      padding: 11px 14px;
+      border-radius: 7px;
+      border: 1px solid #d0e6d0;
+      font-size: 1em;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      margin-bottom: 2px;
+    }
+
+    .hero-card input:focus {
+      box-shadow: 0 0 0 2px var(--green);
+    }
+
+    .hero-card button {
+      padding: 13px 0;
+      font-weight: bold;
+      font-size: 1.05em;
+      background: var(--green);
+      border: none;
+      color: #fff;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: background 0.19s;
+      margin-top: 3px;
+    }
+
+    .hero-card button:hover {
+      background: #0b871b;
+    }
+
+    .hero-card .agree {
+      font-size: 0.95em;
+      color: #678564;
+      opacity: .82;
+      margin-top: 5px;
+      text-align: left;
+    }
+
+    .hero-card .agree a {
+      color: var(--green);
+      text-decoration: underline;
+    }
+
+    .hero-card .worktime {
+      margin-top: 9px;
+      color: #ad9402;
+      font-size: 0.98em;
+    }
+
+    .hero-card .map {
+      margin: 20px 0 0 0;
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+      height: 160px;
+    }
+
+    .section {
+      margin: 50px 0;
+      padding-bottom: 0;
+    }
+
+    .section-title {
+      color: var(--green);
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 35px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .cards-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+    .card {
+      background: var(--light-alt);
+      border-radius: 13px;
+      min-width: 215px;
+      max-width: 260px;
+      padding: 30px 20px 24px 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform .19s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    .card i {
+      font-size: 2.6em;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin: 7px 0 6px 0;
+      color: var(--yellow);
+      font-size: 1.18em;
+      font-weight: 600;
+      letter-spacing: .01em;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 1em;
+      opacity: .87;
+    }
+
+    .section:nth-child(even) {
+      background: var(--white);
+    }
+
+    .section:nth-child(odd) {
+      background: var(--light);
+    }
+
+    .prices-table {
+      margin: 0 auto 20px auto;
+      max-width: 420px;
+      width: 100%;
+      border-radius: 12px;
+      background: #f8fff6;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .prices-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .prices-table th, .prices-table td {
+      padding: 13px 8px;
+      text-align: left;
+      font-size: 1.05em;
+    }
+
+    .prices-table th {
+      background: #e4f2e2;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .prices-table tr:not(:last-child) td {
+      border-bottom: 1px solid #d0e6d0;
+    }
+
+    .prices-table td {
+      color: #333;
+    }
+
+    .prices-table .cat {
+      color: var(--yellow);
+      font-weight: 600;
+      font-size: 1.08em;
+    }
+
+    .faq {
+      margin: 40px auto 0 auto;
+      max-width: 650px;
+    }
+
+    .faq-item {
+      background: #e8fbe6;
+      border-radius: 9px;
+      margin-bottom: 12px;
+      padding: 17px 24px;
+      cursor: pointer;
+      color: #2a4d32;
+      box-shadow: 0 2px 8px #0001;
+      transition: background .15s;
+      position: relative;
+      user-select: none;
+    }
+
+    .faq-item .faq-q {
+      font-weight: 600;
+      font-size: 1.14em;
+      color: var(--green);
+    }
+
+    .faq-item .faq-toggle {
+      position: absolute;
+      right: 22px;
+      top: 15px;
+      font-size: 1.4em;
+      color: var(--yellow);
+      transition: transform .21s;
+    }
+
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    .faq-item .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height .4s, opacity .32s;
+      font-size: 1.16em;
+      line-height: 1.8;
+      margin-top: 8px;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 900px;
+      opacity: 1;
+      margin-top: 13px;
+    }
+
+    .big-map {
+      display: flex;
+      justify-content: center;
+    }
+
+    .big-map iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 340px;
+      border-radius: 14px;
+      border: none;
+      margin: auto;
+      display: block;
+    }
+
     .btn-top {
       position: fixed;
       right: 26px;
@@ -278,7 +518,12 @@
       justify-content: center;
       transition: background .18s, box-shadow .15s;
     }
-    .btn-top:hover { background: #19d541; box-shadow: 0 6px 24px #0004; }
+
+    .btn-top:hover {
+      background: #19d541;
+      box-shadow: 0 6px 24px #0004;
+    }
+
     .call-fab {
       display: none;
       position: fixed;
@@ -298,111 +543,16 @@
       text-align: center;
       line-height: 54px;
     }
-    .call-fab:hover { background: #2fd158; color: #fff;}
+
+    .call-fab:hover {
+      background: #2fd158;
+      color: #fff;
+    }
+
     @media (max-width: 700px) {
-      .call-fab { display: flex; }
-    }
-    /* --- Галерея документов --- */
-    .docs-title {
-      margin-top: 26px;
-      font-size: 1.08em;
-      color: #13551a;
-      font-weight: 700;
-      letter-spacing: .01em;
-      margin-bottom: 7px;
-    }
-    .doc-gallery {
-      display: flex;
-      gap: 18px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .doc-thumb {
-      width: 92px;
-      height: 128px;
-      object-fit: cover;
-      border-radius: 7px;
-      box-shadow: 0 3px 16px #0001;
-      border: 1.5px solid #e2eee6;
-      cursor: pointer;
-      transition: transform 0.25s, box-shadow 0.18s, border 0.17s;
-      background: #fff;
-    }
-    .doc-thumb:hover {
-      transform: scale(1.1) translateY(-3px);
-      box-shadow: 0 8px 28px #2ca85233;
-      border: 2.5px solid #31d158;
-      z-index: 2;
-    }
-    .doc-modal {
-      display: none;
-      position: fixed;
-      z-index: 10005;
-      left: 0; top: 0;
-      width: 100vw; height: 100vh;
-      background: rgba(30,51,35, 0.82);
-      align-items: center;
-      justify-content: center;
-      animation: fadein 0.17s;
-    }
-    @keyframes fadein {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-    .doc-modal.open {
-      display: flex;
-    }
-    .doc-modal-img {
-      max-width: 95vw;
-      max-height: 88vh;
-      border-radius: 13px;
-      background: #fff;
-      box-shadow: 0 7px 44px #0005;
-      animation: zoomin .28s;
-    }
-    @keyframes zoomin {
-      from { transform: scale(0.82); }
-      to { transform: scale(1); }
-    }
-    .doc-modal-caption {
-      color: #fff;
-      text-align: center;
-      margin-top: 20px;
-      font-size: 1.13em;
-      opacity: 0.93;
-      text-shadow: 0 2px 12px #111;
-    }
-    .doc-modal-close {
-      position: absolute;
-      top: 22px; right: 44px;
-      font-size: 2.4em;
-      color: #fff;
-      font-weight: 700;
-      cursor: pointer;
-      z-index: 1;
-      transition: color .19s;
-      text-shadow: 0 2px 12px #111, 0 1px 4px #222;
-    }
-    .doc-modal-close:hover { color: #ffe13e; }
-    @media (max-width:600px) {
-      .doc-thumb { width:60px;height:83px;}
-      .doc-modal-img { max-width:99vw; max-height:68vh;}
-      .doc-modal-close { top:11px; right:19px;}
-      .main-logo{width:46px;height:46px;}
-      .logo-title-wrap{gap:12px;}
-      .org-title{font-size:1.04rem;}
-      nav.navbar{gap:10px;font-size:0.97em;}
-      .container{padding:0 4px;}
-      .big-map iframe{height:180px;}
-      .hero-main{padding:10px 3px;}
-    }
-    footer{margin-top:60px;background:#232323;padding:26px 0;text-align:center;color:#d1d1d1;font-size:16px;letter-spacing:0.02em;}
-    @media (max-width:900px){
-      .hero-row{flex-direction:column;gap:18px;align-items:stretch;}
-      .hero-card{max-width:none;}
-      .hero-main{padding:20px 10px;}
-      .org-title{font-size:1.23rem;}
+      .call-fab {
+        display: flex;
+      }
     }
   </style>
 </head>
@@ -565,6 +715,7 @@
       </div>
       <div style="color:#444;text-align:center;font-size:1em;opacity:.77;">Цены по постановлению №554 от 28.12.2024</div>
     </section>
+
     <section id="about-inspection" class="section" data-aos="fade-up">
       <div class="section-title" data-aos="zoom-in">О техосмотре</div>
       <div style="max-width:760px;margin:0 auto 32px auto;line-height:1.6;font-size:1.12em;color:#333;opacity:.94;">
@@ -572,7 +723,6 @@
         <b>Куда обратиться?</b> Техосмотр проводится организацией (оператором технического осмотра), прошедшим аккредитацию по проведению технического осмотра соответствующей категории транспортных средств. Проводит аккредитацию профессиональное объединение страховщиков. Граждане и юридические лица вправе обратиться к любому оператору независимо от места регистрации транспортного средства.
       </div>
     </section>
-    <!-- БЛОК ЭТАПОВ -->
     <section id="steps" class="section" data-aos="fade-up">
       <div class="section-title" data-aos="zoom-in">Как проходит техосмотр?</div>
       <div class="cards-list" style="gap:32px;">
@@ -598,6 +748,7 @@
         </div>
       </div>
     </section>
+
     <section id="faq" class="section" data-aos="fade-up">
       <div class="section-title" data-aos="zoom-in">Часто задаваемые вопросы</div>
       <div class="faq">
@@ -694,33 +845,12 @@
       </div>
     </section>
   </div>
-  <!-- Кнопка "Наверх" -->
-  <button class="btn-top" id="btnTop" title="Наверх"><i class="fas fa-arrow-up"></i></button>
-  <!-- Кнопка "Позвонить" (мобильная) -->
-  <a href="tel:+79272351405" class="call-fab" title="Позвонить">
-    <i class="fas fa-phone"></i>
-  </a>
-  <!-- Модальное окно для документов -->
-  <div id="docModal" class="doc-modal" onclick="closeDocModal(event)">
-    <span class="doc-modal-close" onclick="closeDocModal(event)">&times;</span>
-    <img class="doc-modal-img" id="docModalImg" src="" alt="">
-    <div class="doc-modal-caption" id="docModalCaption"></div>
-  </div>
-  <!-- Модальное окно "Политика конфиденциальности" -->
-  <div id="policy-modal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:#0008;">
-    <div style="max-width:500px;margin:70px auto;background:#fff;border-radius:13px;padding:34px 24px;box-shadow:0 5px 30px #0002;position:relative;">
-      <button onclick="document.getElementById('policy-modal').style.display='none'" style="position:absolute;top:13px;right:19px;background:none;border:none;font-size:1.6em;color:#aaa;cursor:pointer;">&times;</button>
-      <h2 style="color:#11a021;margin-top:0;">Политика конфиденциальности</h2>
-      <div style="font-size:1em;color:#222;line-height:1.7;">
-        Ваши данные используются только для обратной связи и записи на техосмотр. Они не передаются третьим лицам и обрабатываются строго в соответствии с ФЗ РФ №152 "О персональных данных".<br><br>
-        Оставляя заявку, вы соглашаетесь с обработкой персональных данных для связи и предоставления услуг.
-      </div>
-    </div>
-  </div>
+
   <footer>
     &copy; 2025 ООО "БАШСНАБГАЗ" — официальный сайт.<br>
     Все права защищены.
   </footer>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, once: true });
@@ -738,6 +868,7 @@
         this.classList.toggle('open');
       });
     });
+    
     // WhatsApp + Formspree форма
     document.getElementById('whatsappForm').addEventListener('submit', function(e) {
       e.preventDefault();
