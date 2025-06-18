@@ -8,23 +8,6 @@
   <meta name="keywords" content="техосмотр, Уфа, БАШСНАБГАЗ, диагностическая карта, ОСАГО, транспорт, технический осмотр">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "ООО БАШСНАБГАЗ",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "ул. Цветочная, 1/4",
-      "addressLocality": "Уфа",
-      "addressCountry": "RU"
-    },
-    "telephone": "+79272351405",
-    "email": "to1629271@gmail.com",
-    "openingHours": "Mo-Fr 08:00-19:00, Sa 08:00-15:00",
-    "url": "https://ВАШ_САЙТ.РУ"
-  }
-  </script>
   <style>
     :root {
       --green: #11a021;
@@ -227,7 +210,9 @@
     .hero-card form{display:flex;flex-direction:column;gap:12px;margin-bottom:6px;}
     .hero-card input{padding:11px 14px;border-radius:7px;border:1px solid #d0e6d0;font-size:1em;background:#fff;color:var(--text);outline:none;margin-bottom:2px;}
     .hero-card input:focus{box-shadow:0 0 0 2px var(--green);}
-    .hero-card button{padding:13px 0;font-weight:bold;font-size:1.05em;background:var(--green);border:none;color:#fff;border-radius:7px;cursor:pointer;transition:background 0.19s;margin-top:3px;}
+    .hero-card button{
+      padding:13px 0;font-weight:bold;font-size:1.05em;background:var(--green);border:none;color:#fff;border-radius:7px;cursor:pointer;transition:background 0.19s;margin-top:3px;
+    }
     .hero-card button:hover{background:#0b871b;}
     .hero-card .agree{font-size:0.95em;color:#678564;opacity:.82;margin-top:5px;text-align:left;}
     .hero-card .agree a{color:var(--green);text-decoration:underline;}
@@ -362,8 +347,8 @@
       animation: zoomin .28s;
     }
     @keyframes zoomin {
-      from { transform: scale(0.82);}
-      to { transform: scale(1);}
+      from { transform: scale(0.82); }
+      to { transform: scale(1); }
     }
     .doc-modal-caption {
       color: #fff;
