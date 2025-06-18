@@ -8,23 +8,6 @@
   <meta name="keywords" content="техосмотр, Уфа, БАШСНАБГАЗ, диагностическая карта, ОСАГО, транспорт, технический осмотр">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "ООО БАШСНАБГАЗ",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "ул. Цветочная, 1/4",
-      "addressLocality": "Уфа",
-      "addressCountry": "RU"
-    },
-    "telephone": "+79272351405",
-    "email": "to1629271@gmail.com",
-    "openingHours": "Mo-Fr 08:00-19:00, Sa 08:00-15:00",
-    "url": "https://ВАШ_САЙТ.РУ"
-  }
-  </script>
   <style>
     :root {
       --green: #11a021;
@@ -50,7 +33,6 @@
       width: 100%;
     }
     .main-logo {width:66px;height:66px;max-width:22vw;object-fit:contain;filter:drop-shadow(0 4px 10px #0002);}
-
     .org-title {
       color: #fff;
       font-size: 2rem;
@@ -64,7 +46,68 @@
       text-align: left;
     }
     .pattern-wrap {width:100%;height:60px;position:relative;overflow:hidden;margin-top:-9px;z-index:1;line-height:0;}
-    /* Бургер-меню стили */
+    nav.navbar {
+      background:var(--white);
+      box-shadow:0 3px 10px #0001;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:var(--menu-height);
+      gap:32px;
+      font-weight:bold;
+      font-size:1.09em;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    nav.navbar a {
+      color:var(--green);
+      text-decoration:none;
+      padding:9px 18px;
+      border-radius:6px;
+      transition:background .18s, color .18s;
+    }
+    nav.navbar a:hover,nav.navbar a.active{background:var(--green);color:var(--white);}
+    .btn-signup {
+      background: var(--green);
+      color: #fff !important;
+      border-radius: 8px;
+      padding: 9px 25px !important;
+      margin-left: 14px;
+      box-shadow: 0 3px 12px #26c47a23;
+      font-weight: bold;
+      transition: background .16s, color .16s, box-shadow .2s;
+      border: 2px solid var(--green);
+    }
+    .btn-signup:hover {
+      background: #fff !important;
+      color: var(--green) !important;
+      border: 2px solid var(--green);
+    }
+    @media (max-width:900px){
+      nav.navbar {
+        flex-direction: column;
+        gap: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 84vw;
+        max-width: 340px;
+        background: var(--white);
+        align-items: flex-start;
+        padding: 80px 30px 32px 22px;
+        transform: translateX(-110%);
+        transition: transform .35s cubic-bezier(.77,0,.18,1);
+        box-shadow: 0 0 0 100vw rgba(0,0,0,0.32);
+        z-index: 1200;
+      }
+      nav.navbar.open {transform: translateX(0);}
+      nav.navbar a {width:100%;display:block;padding:16px 8px;margin:0 0 8px 0;font-size:1.21em;}
+    }
+    @media (min-width:901px){
+      nav.navbar {display:flex !important; position:sticky; top:0;}
+    }
     .burger {
       display: none;
       position: absolute;
@@ -72,7 +115,7 @@
       top: 18px;
       width: 40px;
       height: 40px;
-      z-index: 101;
+      z-index: 1500;
       background: none;
       border: none;
       cursor: pointer;
@@ -90,73 +133,15 @@
     }
     @media (max-width:900px){
       .burger {display: flex;}
-      nav.navbar {
-        display: none;
-        position: fixed;
-        left: 0; top: 0;
-        width: 80vw;
-        max-width: 330px;
-        height: 100vh;
-        background: var(--white);
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 40px 32px 24px 24px;
-        box-shadow: 0 0 0 100vw rgba(0,0,0,0.32);
-        gap: 0;
-        z-index: 100;
-        transform: translateX(-100%);
-        transition: transform .33s cubic-bezier(.77,0,.18,1);
-      }
-      nav.navbar.open {
-        display: flex;
-        transform: translateX(0);
-      }
-      nav.navbar a {
-        display: block;
-        margin: 0 0 24px 0;
-        font-size: 1.21em;
-        padding: 12px 0 12px 8px;
-        width: 100%;
-        color: var(--green);
-      }
-      .burger-bg {
-        display: none;
-        position: fixed;
-        z-index: 99;
-        left: 0; top: 0; width: 100vw; height: 100vh;
-        background: rgba(44,70,48,0.37);
-      }
-      .burger-bg.show { display: block;}
     }
-    @media (min-width:901px){
-      .burger {display: none;}
-      nav.navbar {display: flex !important; position:sticky; top:0;}
-      .burger-bg {display: none !important;}
+    .burger-bg {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(44,70,48,0.37);
     }
-    nav.navbar {background:var(--white);box-shadow:0 3px 10px #0001;display:flex;justify-content:center;align-items:center;height:var(--menu-height);gap:32px;font-weight:bold;font-size:1.09em;position:sticky;top:0;z-index:10;}
-    nav.navbar a {color:var(--green);text-decoration:none;padding:9px 18px;border-radius:6px;transition:background .18s, color .18s;}
-    nav.navbar a:hover,nav.navbar a.active{background:var(--green);color:var(--white);}
-
-    .btn-signup {
-      background: var(--green);
-      color: #fff !important;
-      border-radius: 8px;
-      padding: 9px 25px !important;
-      margin-left: 14px;
-      box-shadow: 0 3px 12px #26c47a23;
-      font-weight: bold;
-      transition: background .16s, color .16s, box-shadow .2s;
-      border: 2px solid var(--green);
-    }
-    .btn-signup:hover {
-      background: #fff !important;
-      color: var(--green) !important;
-      border: 2px solid var(--green);
-    }
-    @media (max-width:600px){
-      .btn-signup { padding: 7px 8vw !important; font-size:1.1em;}
-    }
-
+    .burger-bg.show { display: block;}
     .container{max-width:1100px;margin:0 auto;padding:0 16px;}
     .hero-row{
       display: flex;
@@ -241,13 +226,11 @@
     .cards-list{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:30px;}
     .card{background:var(--light-alt);border-radius:13px;min-width:215px;max-width:260px;padding:30px 20px 24px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .19s;}
     .card:hover{transform:translateY(-5px) scale(1.02);}
-
     .card i{font-size:2.6em;color:var(--green);margin-bottom:12px;}
     .card h3{margin:7px 0 6px 0;color:var(--yellow);font-size:1.18em;font-weight:600;letter-spacing:.01em;}
     .card p{color:#333;font-size:1em;opacity:.87;}
     .section:nth-child(even) { background: var(--white);}
     .section:nth-child(odd) { background: var(--light);}
-
     .prices-table{margin:0 auto 20px auto;max-width:420px;width:100%;border-radius:12px;background:#f8fff6;box-shadow:var(--shadow);overflow:hidden;}
     .prices-table table{width:100%;border-collapse:collapse;}
     .prices-table th,.prices-table td{padding:13px 8px;text-align:left;font-size:1.05em;}
@@ -255,7 +238,6 @@
     .prices-table tr:not(:last-child) td{border-bottom:1px solid #d0e6d0;}
     .prices-table td{color:#333;}
     .prices-table .cat{color:var(--yellow);font-weight:600;font-size:1.08em;}
-
     .faq{margin:40px auto 0 auto;max-width:650px;}
     .faq-item{background:#e8fbe6;border-radius:9px;margin-bottom:12px;padding:17px 24px;cursor:pointer;color:#2a4d32;box-shadow:0 2px 8px #0001;transition:background .15s;position:relative;user-select:none;}
     .faq-item .faq-q{font-weight:600;font-size:1.14em;color:var(--green);}
@@ -263,10 +245,8 @@
     .faq-item.open .faq-toggle{transform:rotate(45deg);}
     .faq-item .faq-a{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s,opacity .32s;font-size:1.16em;line-height:1.8;margin-top:8px;}
     .faq-item.open .faq-a{max-height:900px;opacity:1;margin-top:13px;}
-
     .big-map{display:flex;justify-content:center;}
     .big-map iframe{width:100%;max-width:800px;height:340px;border-radius:14px;border:none;margin:auto;display:block;}
-
     .btn-top {
       position: fixed;
       right: 26px;
@@ -405,7 +385,6 @@
       .big-map iframe{height:180px;}
       .hero-main{padding:10px 3px;}
     }
-
     footer{margin-top:60px;background:#232323;padding:26px 0;text-align:center;color:#d1d1d1;font-size:16px;letter-spacing:0.02em;}
     @media (max-width:900px){
       .hero-row{flex-direction:column;gap:18px;align-items:stretch;}
@@ -421,6 +400,15 @@
       <img src="logo.jfif" alt="Логотип" class="main-logo">
       <span class="org-title">ООО "БАШСНАБГАЗ"</span>
     </div>
+    <nav class="mobile-navbar" id="mobileNav">
+      <a href="#services">Услуги</a>
+      <a href="#prices">Цены</a>
+      <a href="#about-inspection">О техосмотре</a>
+      <a href="#steps">Этапы</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+      <a href="#form" class="btn-signup">Записаться</a>
+    </nav>
     <button class="burger" id="burger" aria-label="Открыть меню">
       <span class="burger-bar"></span>
       <span class="burger-bar"></span>
@@ -457,16 +445,6 @@
       </svg>
     </div>
   </header>
-  <nav class="navbar" id="mainNav">
-    <a href="#services">Услуги</a>
-    <a href="#prices">Цены</a>
-    <a href="#about-inspection">О техосмотре</a>
-    <a href="#steps">Этапы</a>
-    <a href="#faq">Вопросы</a>
-    <a href="#contacts">Контакты</a>
-    <a href="#form" class="btn-signup">Записаться</a>
-  </nav>
-  <div class="burger-bg" id="burgerBg"></div>
   <div class="container">
     <div class="hero-row">
       <div class="hero-main" data-aos="fade-right">
@@ -529,107 +507,59 @@
         <iframe class="map" src="https://yandex.ru/map-widget/v1/?ll=56.072328%2C54.805951&z=17&l=map&pt=56.072328,54.805951,pm2gnm" loading="lazy"></iframe>
       </div>
     </div>
-    </div>
-    <section id="services" class="section" data-aos="fade-up">
-      <div class="section-title" data-aos="zoom-in">Категории транспортных средств</div>
-      <div class="cards-list">
-        <div class="card" data-aos="fade-up" data-aos-delay="50"><i class="fas fa-motorcycle"></i>
-          <h3>A – L</h3>
-          <p>Мотоциклы, мопеды и скутеры</p>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-car"></i>
-          <h3>B – M1</h3>
-          <p>Легковые (до 8 мест)</p>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="150"><i class="fas fa-truck"></i>
-          <h3>N1</h3>
-          <p>Грузовые до 3,5 т</p>
-        </div>
-      </div>
-    </section>
-    <section id="prices" class="section" data-aos="fade-up">
-      <div class="section-title" data-aos="zoom-in">Стоимость техосмотра</div>
-      <div class="prices-table">
-        <table>
-          <tr>
-            <th>Категория</th>
-            <th>Цена</th>
-            <th>Время</th>
-          </tr>
-          <tr>
-            <td class="cat">A, L</td>
-            <td>364,07 ₽</td>
-            <td>10 мин</td>
-          </tr>
-          <tr>
-            <td class="cat">B, M1</td>
-            <td>1050,79 ₽</td>
-            <td>30 мин</td>
-          </tr>
-          <tr>
-            <td class="cat">N1</td>
-            <td>1133,04 ₽</td>
-            <td>32 мин</td>
-          </tr>
-        </table>
-      </div>
-      <div style="color:#444;text-align:center;font-size:1em;opacity:.77;">Цены по постановлению №554 от 28.12.2024</div>
-    </section>
-    <section id="about-inspection" class="section" data-aos="fade-up">
-      <div class="section-title" data-aos="zoom-in">О техосмотре</div>
-      <div style="max-width:760px;margin:0 auto 32px auto;line-height:1.6;font-size:1.12em;color:#333;opacity:.94;">
-        Все находящиеся в эксплуатации дорожные транспортные средства должны регулярно проходить технический осмотр для проверки соответствия технического состояния и оборудования транспортных средств требованиям безопасности дорожного движения.<br><br>
-        <b>Куда обратиться?</b> Техосмотр проводится организацией (оператором технического осмотра), прошедшим аккредитацию по проведению технического осмотра соответствующей категории транспортных средств. Проводит аккредитацию профессиональное объединение страховщиков. Граждане и юридические лица вправе обратиться к любому оператору независимо от места регистрации транспортного средства.
-      </div>
-    </section>
-    <!-- БЛОК ЭТАПОВ -->
-    <section id="steps" class="section" data-aos="fade-up">
-      <div class="section-title" data-aos="zoom-in">Как проходит техосмотр?</div>
-      <div class="cards-list" style="gap:32px;">
-        <div class="card" data-aos="fade-up" data-aos-delay="50">
-          <i class="fas fa-edit"></i>
-          <h3>1. Оставьте заявку</h3>
-          <p>Заполните простую форму на сайте или напишите нам в WhatsApp.</p>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="100">
-          <i class="fas fa-comment-dots"></i>
-          <h3>2. Подтвердите время</h3>
-          <p>Мы свяжемся с вами для подтверждения даты и времени осмотра.</p>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="150">
-          <i class="fas fa-car-side"></i>
-          <h3>3. Приезжайте на пункт</h3>
-          <p>Приезжайте по адресу: Цветочная, 1/4. Наши специалисты всё объяснят.</p>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="200">
-          <i class="fas fa-file-signature"></i>
-          <h3>4. Получите карту</h3>
-          <p>Через 30 минут получите официальную диагностическую карту для ОСАГО.</p>
-        </div>
-      </div>
-    </section>
-    <section id="faq" class="section" data-aos="fade-up">
-      <div class="section-title" data-aos="zoom-in">Часто задаваемые вопросы</div>
-      <div class="faq">
-        <div class="faq-item" data-aos="fade-up" data-aos-delay="70">
-          <div class="faq-q">Кто обязан проходить техосмотр?</div>
-          <span class="faq-toggle">+</span>
-          <div class="faq-a">
-            Техосмотр обязателен для всех транспортных средств, используемых на дорогах общего пользования, кроме новых легковых автомобилей младше 4 лет и мотоциклов младше 4 лет.<br>
-            Коммерческие, грузовые автомобили, такси и автобусы проходят ТО ежегодно.
-          </div>
-        </div>
-        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="faq-q">Как часто нужно проходить техосмотр?</div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="130">
+          <div class="faq-q">Что необходимо для прохождения техосмотра?</div>
           <span class="faq-toggle">+</span>
           <div class="faq-a">
             <ul>
-              <li>Легковые и мотоциклы: впервые через 4 года, далее — раз в 2 года</li>
-              <li>Грузовые, автобусы, такси: ежегодно</li>
+              <li>Паспорт гражданина РФ</li>
+              <li>СТС или ПТС</li>
+              <li>Доверенность (если вы не владелец)</li>
+              <li>Оплата услуги</li>
+              <li>Чистое ТС — для быстрой диагностики</li>
             </ul>
-            Даты могут меняться в зависимости от возраста и типа транспортного средства.
+            При подаче заявки онлайн оператор сам подскажет детали.
           </div>
         </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="160">
+          <div class="faq-q">Что проверяют при техосмотре?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            <ul>
+              <li>Работу тормозной системы</li>
+              <li>Световые приборы, стеклоочистители</li>
+              <li>Ремни безопасности, подушки</li>
+              <li>Шины, протектор</li>
+              <li>Отсутствие течей и коррозии</li>
+              <li>Работу двигателя, подвески, рулевого управления</li>
+            </ul>
+            По результатам выдается диагностическая карта.
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="190">
+          <div class="faq-q">Что делать при утере диагностической карты?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            Карта восстанавливается через обращение к любому аккредитованному оператору или онлайн по VIN-номеру через реестр ЕАИСТО.<br>
+            При утере бумажного экземпляра — информация всегда доступна в электронной базе.
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="220">
+          <div class="faq-q">Где проверить действительность карты?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            Проверить действительность карты можно на сайте <a href="https://gibdd.ru" target="_blank" style="color:var(--green);">gibdd.ru</a> по VIN или номеру кузова.
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+          <div class="faq-q">Можно ли пройти техосмотр вне места регистрации автомобиля?</div>
+          <span class="faq-toggle">+</span>
+          <div class="faq-a">
+            Да, вы можете пройти техосмотр в любом регионе России, независимо от регистрации вашего ТС.
+          </div>
+        </div>
+      </div>
+    </section>
         <div class="faq-item" data-aos="fade-up" data-aos-delay="130">
           <div class="faq-q">Что необходимо для прохождения техосмотра?</div>
           <span class="faq-toggle">+</span>
@@ -804,28 +734,29 @@
     }
   </script>
   <script>
-    // Управление бургер-меню
-    const burger = document.getElementById('burger');
-    const mainNav = document.getElementById('mainNav');
-    burger.onclick = function() {
-      mainNav.classList.toggle('open');
+    // Меню на мобильных (слайдер вместо бургера)
+    const nav = document.getElementById('mainNav');
+    const navOverlay = document.createElement('div');
+    navOverlay.className = "burger-bg";
+    document.body.appendChild(navOverlay);
+
+    document.getElementById('burger').onclick = function() {
+      nav.classList.toggle('open');
+      navOverlay.classList.toggle('show');
       document.body.classList.toggle('menu-open');
-      burger.classList.toggle('active');
     };
-    mainNav.querySelectorAll('a').forEach(link => {
+    nav.querySelectorAll('a').forEach(link => {
       link.onclick = function() {
-        mainNav.classList.remove('open');
+        nav.classList.remove('open');
+        navOverlay.classList.remove('show');
         document.body.classList.remove('menu-open');
-        burger.classList.remove('active');
       };
     });
-    document.addEventListener('click', function(e){
-      if(mainNav.classList.contains('open') && !mainNav.contains(e.target) && e.target!==burger && !burger.contains(e.target)){
-        mainNav.classList.remove('open');
-        document.body.classList.remove('menu-open');
-        burger.classList.remove('active');
-      }
-    });
+    navOverlay.onclick = function() {
+      nav.classList.remove('open');
+      navOverlay.classList.remove('show');
+      document.body.classList.remove('menu-open');
+    };
   </script>
 </body>
 </html>
